@@ -1,0 +1,270 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!-- Based on Bo105 and Alouette 2 -->
+
+<PropertyList>
+
+  <fx>
+
+    <engine>
+      <name>turbine0-start</name>
+      <mode>once</mode>
+      <path>Aircraft/AirCrane/Sounds/turbine-start.wav</path>
+      <condition>
+        <greater-than>
+          <property>sim/model/aircrane/state</property>
+          <value>0</value>
+        </greater-than>
+      </condition>
+      <volume>
+	<factor>0.12</factor>
+      </volume>
+      <reference-dist>50</reference-dist>
+      <max-dist>200</max-dist>
+    </engine>
+
+    <engine>
+      <name>turbine0-loop</name>
+      <mode>looped</mode>
+      <path>Aircraft/AirCrane/Sounds/turbine-loop.wav</path>
+      <condition>
+        <greater-than>
+          <property>sim/model/aircrane/state</property>
+          <value>0</value>
+        </greater-than>
+      </condition>
+      <volume>
+	<factor>0.12</factor>
+      </volume>
+      <reference-dist>50</reference-dist>
+      <max-dist>200</max-dist>
+    </engine>
+
+    <engine>
+      <name>turbine0-shutdown</name>
+      <mode>once</mode>
+      <path>Aircraft/AirCrane/Sounds/turbine-stop.wav</path>
+      <condition>
+        <greater-than>
+          <property>sim/model/aircrane/state</property>
+          <value>0</value>
+        </greater-than>
+      </condition>
+      <volume>
+	<factor>0.12</factor>
+      </volume>
+      <reference-dist>50</reference-dist>
+      <max-dist>200</max-dist>
+    </engine>
+
+    <rotor>
+      <name>rotor-outside</name>
+      <mode>looped</mode>
+      <path>Aircraft/AirCrane/Sounds/rotor-loop.wav</path>
+      <condition>
+        <and>
+          <greater-than>
+            <property>rotors/main/rpm</property>
+            <value>50</value>
+          </greater-than>
+          <not>
+            <property>sim/crashed</property>
+          </not>
+          <not>
+            <equals>
+              <property>sim/current-view/view-number</property>
+              <value>99</value>
+            </equals>
+          </not>
+        </and>
+      </condition>
+      <volume>
+        <property>rotors/gear/torque-sound-filtered</property>
+      </volume>
+      <pitch>
+        <property>rotors/main/rpm</property>
+        <factor>0.00263</factor>
+        <offset>-0.0</offset>
+        <max>2.5</max>
+      </pitch>
+      <position>
+        <x> -2 </x>
+        <y> 0 </y>
+        <z> 1 </z>
+      </position>
+      <reference-dist>100</reference-dist>
+      <max-dist>1000</max-dist>
+    </rotor>
+
+    <rotor>
+      <name>rotor-inside</name>
+      <mode>looped</mode>
+      <path>Aircraft/AirCrane/Sounds/rotor-loop.wav</path>
+      <condition>
+        <and>
+          <greater-than>
+            <property>rotors/main/rpm</property>
+            <value>50</value>
+          </greater-than>
+          <not>
+            <property>sim/crashed</property>
+          </not>
+          <equals>
+            <property>sim/current-view/view-number</property>
+            <value>0</value>
+          </equals>
+        </and>
+      </condition>
+      <volume>
+        <property>rotors/gear/torque-sound-filtered</property>
+      </volume>
+      <pitch>
+        <property>rotors/main/rpm</property>
+        <factor>0.004255</factor>
+        <offset>-0.0</offset>
+        <max>2.5</max>
+      </pitch>
+      <reference-dist>100</reference-dist>
+      <max-dist>1000</max-dist>
+    </rotor>
+
+    <rotor>
+      <name>tail-rotor</name>
+      <mode>looped</mode>
+      <path>Aircraft/AirCrane/Sounds/tail-loop.wav</path>
+      <condition>
+        <and>
+          <greater-than>
+            <property>rotors/main/rpm</property>
+            <value>50</value>
+          </greater-than>
+          <not>
+            <property>sim/crashed</property>
+          </not>
+          <not>
+            <equals>
+              <property>sim/current-view/view-number</property>
+              <value>0</value>
+            </equals>
+          </not>
+        </and>
+      </condition>
+      <volume>
+        <property>rotors/gear/torque-sound-filtered</property>
+        <factor>0.75</factor>
+      </volume>
+      <pitch>
+        <property>rotors/tail/rpm</property>
+        <factor>0.0023</factor>
+        <offset>-0.0</offset>
+        <max>2.5</max>
+      </pitch>
+      <position>
+        <x> 9 </x>
+        <y> -0.4 </y>
+        <z> 2 </z>
+      </position>
+      <orientation>
+        <x> 1 </x>
+        <y> -.2 </y>
+        <z> 0 </z>
+        <inner-angle>50</inner-angle>
+        <outer-angle>100</outer-angle>
+        <outer-gain>0.1</outer-gain>
+      </orientation>
+    </rotor>
+
+    <contact>
+      <name>ground contact</name>
+      <mode>once</mode>
+      <path>Sounds/helicopter-skid.wav</path>
+      <condition>
+        <property>gear/gear[0]/wow</property>
+      </condition>
+      <volume>
+        <factor>0.8</factor>
+      </volume>
+      <pitch>
+        <factor>0.01</factor>
+      </pitch>
+      <reference-dist>5.0</reference-dist>
+      <max-dist>10.0</max-dist>
+    </contact>
+
+    <contact>
+      <name>ground contact</name>
+      <mode>once</mode>
+      <path>Sounds/helicopter-skid.wav</path>
+      <condition>
+        <property>gear/gear[1]/wow</property>
+      </condition>
+      <volume>
+        <factor>0.8</factor>
+      </volume>
+      <pitch>
+        <factor>0.01</factor>
+      </pitch>
+      <reference-dist>5.0</reference-dist>
+      <max-dist>10.0</max-dist>
+    </contact>
+
+    <contact>
+      <name>ground contact</name>
+      <mode>once</mode>
+      <path>Sounds/helicopter-skid.wav</path>
+      <condition>
+        <property>gear/gear[2]/wow</property>
+      </condition>
+      <volume>
+        <factor>0.8</factor>
+      </volume>
+      <pitch>
+        <factor>0.01</factor>
+      </pitch>
+      <reference-dist>5.0</reference-dist>
+      <max-dist>10.0</max-dist>
+    </contact>
+
+    <wind>
+      <name>wind</name>
+      <mode>looped</mode>
+      <path>Sounds/wind.wav</path>
+      <condition>
+        <and>
+          <property>velocities/airspeed-kt</property>
+          <not>
+            <property>sim/crashed</property>
+          </not>
+        </and>
+      </condition>
+      <volume>
+        <property>velocities/airspeed-kt</property>
+        <factor>0.0015</factor>
+        <min>0.00</min>
+        <max>0.25</max>
+      </volume>
+      <pitch>
+        <property>velocities/airspeed-kt</property>
+        <factor>0.01</factor>
+        <offset>1.25</offset>
+      </pitch>
+      <reference-dist>10.0</reference-dist>
+      <max-dist>20.0</max-dist>
+    </wind>
+
+    <crash>
+      <name>intense ground contact</name>
+      <mode>once</mode>
+      <path>Sounds/crash.wav</path>
+      <property>sim/crashed</property>
+      <volume>
+        <factor>1</factor>
+      </volume>
+      <pitch>
+        <factor>0.1</factor>
+      </pitch>
+    </crash>
+
+  </fx>
+
+</PropertyList>

@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+************************************************************************
+Air-Crane simulation config.
+
+************************************************************************
+-->
+
+<PropertyList>
+
+  <sim include="Nasal/views.xml">
+
+    <description>AirCrane (Yasim)</description>
+    <author>BARANGER Emmanuel (3D), Heiko Schulz (FDM)</author>
+    <status>alpha</status>
+    <license>GPL v2</license>
+
+    <flight-model>yasim</flight-model>
+    <aero>aircrane</aero>
+    <fuel-fraction>0.8</fuel-fraction>
+
+    <startup>
+      <splash-texture>Aircraft/AirCrane/aircrane-splash.png</splash-texture>
+    </startup> 
+
+    <sound>
+      <path>Aircraft/AirCrane/Sounds/aircrane-sound.xml</path>
+    </sound>
+
+    <model>
+      <path archive="y">Aircraft/AirCrane/Models/aircrane.xml</path>
+      <aircrane>
+        <state type="int">0</state>
+        <engine type="float">0.0</engine>
+        <rotor-step-deg type="float">-1.0</rotor-step-deg>
+      </aircrane>
+    </model>
+
+   <weight n="0">
+      <name>Pilot</name>
+      <weight-lb>180</weight-lb>
+      <max-lb>300</max-lb>
+    </weight>
+
+    <weight n="1">
+      <name>Co-Pilot</name>
+      <weight-lb>180</weight-lb>
+      <max-lb>300</max-lb>
+    </weight>
+
+    <weight n="2">
+      <name>Right Passenger</name>
+      <weight-lb>0</weight-lb>
+      <max-lb>300</max-lb>
+    </weight>
+
+       <weight n="3">
+      <name>Load</name>
+      <weight-lb>10000</weight-lb>
+      <max-lb>20000</max-lb>
+    </weight>
+    
+    <help>
+      <title>AirCrane - background and help</title>
+      <line></line>
+      <key>
+        <name>d</name>
+        <desc>Left door</desc>
+      </key>
+      <key>
+        <name>D</name>
+        <desc>Left windows</desc>
+      </key>
+    </help>
+
+  </sim>
+
+  <controls>
+    <engines>
+      <engine n="0">
+        <magnetos>0</magnetos>
+      </engine>
+    </engines>
+    <gear>
+      <brake-parking>1</brake-parking>
+    </gear>
+    <rotor>
+      <reltarget>1</reltarget>
+      <maxreltorque>1</maxreltorque>
+    </rotor>
+  </controls>
+
+  <instrumentation>
+    <gsdi>
+      <serviceable type="bool">true</serviceable>
+      <enabled type="bool">true</enabled>
+    </gsdi>
+  </instrumentation>
+
+  <input>
+    <keyboard include="Nasal/aircrane-keyboard.xml"/>
+  </input>
+
+  <nasal>
+    <aircrane>
+      <file>Aircraft/AirCrane/Nasal/doors.nas</file>
+      <file>Aircraft/AirCrane/Nasal/aircrane.nas</file>
+    </aircrane>
+  </nasal>
+
+  <rotors>
+    <main>
+      <rpm type="double">0</rpm>
+      <cone-deg type="double">0</cone-deg>
+      <cone1-deg type="double">0</cone1-deg>
+      <cone2-deg type="double">0</cone2-deg>
+      <cone3-deg type="double">0</cone3-deg>
+      <cone4-deg type="double">0</cone4-deg>
+    </main>
+  </rotors>
+
+</PropertyList>
+

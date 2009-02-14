@@ -1,0 +1,222 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<PropertyList>
+
+  <path>aircrane.ac</path>
+
+  <nasal>
+    <load>
+      var livery_update = aircraft.livery_update.new("Aircraft/AirCrane/Models/Liveries", 10);
+    </load>
+    <unload>
+      livery_update.stop();
+    </unload>
+  </nasal>
+
+  <animation>
+    <!-- Objets opaques -->
+    <object-name>fuselage</object-name>
+    <object-name>supportlight</object-name>
+    <object-name>antennes</object-name>
+    <object-name>caches</object-name>
+    <object-name>caches2</object-name>
+    <object-name>moteurs</object-name>
+    <object-name>intmoteurs</object-name>
+    <object-name>cables1</object-name>
+    <object-name>cables2</object-name>
+    <object-name>rebords</object-name>
+    <object-name>arbres</object-name>
+    <object-name>arbre2</object-name>
+    <object-name>supports</object-name>
+    <object-name>aileron</object-name>
+    <object-name>roueG</object-name>
+    <object-name>roueD</object-name>
+    <object-name>roueA</object-name>
+    <object-name>axeG</object-name>
+    <object-name>axeD</object-name>
+    <object-name>caches3</object-name>
+    <object-name>structure</object-name>
+    <object-name>axerotor</object-name>
+    <object-name>cotesaxerotor</object-name>
+    <object-name>echelles</object-name>
+    <object-name>tampons</object-name>
+    <object-name>pate1</object-name>
+    <object-name>pate2</object-name>
+    <object-name>pate3</object-name>
+    <object-name>pate4</object-name>
+
+    <!-- Transparence -->
+    <object-name>vitres</object-name>
+  </animation>
+
+  <animation>
+    <type>shader</type>
+    <shader>chrome</shader>
+    <texture>glass_shader.png</texture>
+    <object-name>vitres</object-name>
+  </animation>
+
+  <animation>
+    <type>noshadow</type>
+    <object-name>vitres</object-name>
+  </animation>
+
+  <animation>
+    <type>material</type>
+    <object-name>fuselage</object-name>
+    <object-name>supportlight</object-name>
+    <object-name>antennes</object-name>
+    <object-name>caches</object-name>
+    <object-name>caches2</object-name>
+    <object-name>moteurs</object-name>
+    <object-name>intmoteurs</object-name>
+    <object-name>cables1</object-name>
+    <object-name>cables2</object-name>
+    <object-name>rebords</object-name>
+    <object-name>arbres</object-name>
+    <object-name>arbre2</object-name>
+    <object-name>supports</object-name>
+    <object-name>aileron</object-name>
+    <object-name>roueG</object-name>
+    <object-name>roueD</object-name>
+    <object-name>roueA</object-name>
+    <object-name>axeG</object-name>
+    <object-name>axeD</object-name>
+    <object-name>caches3</object-name>
+    <object-name>structure</object-name>
+    <object-name>axerotor</object-name>
+    <object-name>cotesaxerotor</object-name>
+    <object-name>echelles</object-name>
+    <object-name>tampons</object-name>
+    <object-name>pate1</object-name>
+    <object-name>pate2</object-name>
+    <object-name>pate3</object-name>
+    <object-name>pate4</object-name>
+
+    <property-base>sim/model/livery</property-base>
+    <texture-prop>texture</texture-prop>
+    <texture>texture.png</texture>
+<!--
+    <diffuse>
+      <red-prop>diffuse/red</red-prop>
+      <green-prop>diffuse/green</green-prop>
+      <blue-prop>diffuse/blue</blue-prop>
+    </diffuse>
+
+    <ambient>
+      <red-prop>ambient/red</red-prop>
+      <green-prop>ambient/green</green-prop>
+      <blue-prop>ambient/blue</blue-prop>
+    </ambient>
+-->
+    <specular>
+      <red-prop>specular/red</red-prop>
+      <green-prop>specular/green</green-prop>
+      <blue-prop>specular/blue</blue-prop>
+    </specular>
+
+    <emission>
+      <red-prop>emission/red</red-prop>
+      <green-prop>emission/green</green-prop>
+      <blue-prop>emission/blue</blue-prop>
+    </emission>
+<!--
+    <shininess>
+      <shininess-prop>shininess</shininess-prop>
+    </shininess>
+-->
+  </animation>
+
+  <!-- Intérieur -->
+  <model>
+    <path>Aircraft/AirCrane/Models/Interior/interior.xml</path>
+    <offsets>
+      <x-m> 0.0 </x-m>
+      <y-m> 0.0 </y-m>
+      <z-m> 0.0 </z-m>
+      <roll-deg>    0.0 </roll-deg>
+      <pitch-deg>   0.0 </pitch-deg>
+      <heading-deg> 0.0 </heading-deg>
+    </offsets>
+  </model>
+
+  <!-- Rotor principale -->
+  <model>
+    <path>Aircraft/AirCrane/Models/MainRotor/mainrotor.xml</path>
+    <offsets>
+      <x-m> -2.606 </x-m>
+      <y-m>  0.000 </y-m>
+      <z-m>  1.383 </z-m>
+      <roll-deg>    0.000 </roll-deg>
+      <pitch-deg>  -3.000 </pitch-deg>
+      <heading-deg> 0.000 </heading-deg>
+    </offsets>
+  </model>
+
+  <!-- Rotor de queue -->
+  <model>
+    <path>Aircraft/AirCrane/Models/TailRotor/tailrotor.xml</path>
+    <offsets>
+      <x-m> 11.840 </x-m>
+      <y-m> -0.840 </y-m>
+      <z-m>  1.293 </z-m>
+      <roll-deg>   90.000 </roll-deg>
+      <pitch-deg>   0.000 </pitch-deg>
+      <heading-deg> 0.000 </heading-deg>
+    </offsets>
+  </model>
+
+  <!-- Rotation des roues lors du roulage -->
+  <animation>
+    <type>spin</type>
+    <object-name>roueA</object-name>
+    <property>gear/gear[0]/rollspeed-ms</property>
+    <factor> 30 </factor>
+    <center>
+      <x-m> -8.539 </x-m>
+      <y-m>  0.000 </y-m>
+      <z-m> -3.680 </z-m>
+    </center>
+    <axis>
+      <x>  0.000 </x>
+      <y> -1.000 </y>
+      <z>  0.000 </z>
+    </axis>
+  </animation>
+
+  <animation>
+    <type>spin</type>
+    <object-name>roueG</object-name>
+    <property>gear/gear[1]/rollspeed-ms</property>
+    <factor> 30 </factor>
+    <center>
+      <x-m> -1.144 </x-m>
+      <y-m> -3.013 </y-m>
+      <z-m> -3.530 </z-m>
+    </center>
+    <axis>
+      <x>  0.000 </x>
+      <y> -1.000 </y>
+      <z>  0.000 </z>
+    </axis>
+  </animation>
+
+  <animation>
+    <type>spin</type>
+    <object-name>roueD</object-name>
+    <property>gear/gear[2]/rollspeed-ms</property>
+    <factor> 30 </factor>
+    <center>
+      <x-m> -1.144 </x-m>
+      <y-m>  3.013 </y-m>
+      <z-m> -3.530 </z-m>
+    </center>
+    <axis>
+      <x>  0.000 </x>
+      <y> -1.000 </y>
+      <z>  0.000 </z>
+    </axis>
+  </animation>
+
+</PropertyList>
+

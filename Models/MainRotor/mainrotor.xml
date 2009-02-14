@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<PropertyList>
+
+  <path>mainrotor.ac</path>
+
+  <animation>
+    <object-name>rotor</object-name>
+  </animation>
+
+  <!-- Blades -->
+  <model>
+    <name>Blade1</name>
+    <path>Aircraft/AirCrane/Models/MainRotor/blade1.xml</path>
+    <offsets>
+      <x-m> 0.0 </x-m>
+      <y-m> 0.0 </y-m>
+      <z-m> 0.0 </z-m>
+      <roll-deg>    0.000 </roll-deg>
+      <pitch-deg>   0.000 </pitch-deg>
+      <heading-deg> 0.000 </heading-deg>
+    </offsets>
+  </model>
+
+  <model>
+    <name>Blade2</name>
+    <path>Aircraft/AirCrane/Models/MainRotor/blade2.xml</path>
+    <offsets>
+      <x-m> 0.0 </x-m>
+      <y-m> 0.0 </y-m>
+      <z-m> 0.0 </z-m>
+      <roll-deg>     0.000 </roll-deg>
+      <pitch-deg>    0.000 </pitch-deg>
+      <heading-deg> 60.000 </heading-deg>
+    </offsets>
+  </model>
+
+  <model>
+    <name>Blade3</name>
+    <path>Aircraft/AirCrane/Models/MainRotor/blade3.xml</path>
+    <offsets>
+      <x-m> 0.0 </x-m>
+      <y-m> 0.0 </y-m>
+      <z-m> 0.0 </z-m>
+      <roll-deg>      0.000 </roll-deg>
+      <pitch-deg>     0.000 </pitch-deg>
+      <heading-deg> 120.000 </heading-deg>
+    </offsets>
+  </model>
+
+  <model>
+    <name>Blade4</name>
+    <path>Aircraft/AirCrane/Models/MainRotor/blade4.xml</path>
+    <offsets>
+      <x-m> 0.0 </x-m>
+      <y-m> 0.0 </y-m>
+      <z-m> 0.0 </z-m>
+      <roll-deg>      0.000 </roll-deg>
+      <pitch-deg>     0.000 </pitch-deg>
+      <heading-deg> 180.000 </heading-deg>
+    </offsets>
+  </model>
+
+  <model>
+    <name>Blade5</name>
+    <path>Aircraft/AirCrane/Models/MainRotor/blade5.xml</path>
+    <offsets>
+      <x-m> 0.0 </x-m>
+      <y-m> 0.0 </y-m>
+      <z-m> 0.0 </z-m>
+      <roll-deg>      0.000 </roll-deg>
+      <pitch-deg>     0.000 </pitch-deg>
+      <heading-deg> 240.000 </heading-deg>
+    </offsets>
+  </model>
+
+  <model>
+    <name>Blade6</name>
+    <path>Aircraft/AirCrane/Models/MainRotor/blade6.xml</path>
+    <offsets>
+      <x-m> 0.0 </x-m>
+      <y-m> 0.0 </y-m>
+      <z-m> 0.0 </z-m>
+      <roll-deg>      0.000 </roll-deg>
+      <pitch-deg>     0.000 </pitch-deg>
+      <heading-deg> 300.000 </heading-deg>
+    </offsets>
+  </model>
+
+  <animation>
+    <name>rotorcomplet</name>
+    <object-name>rotor</object-name>
+    <object-name>Blade1</object-name>
+    <object-name>Blade2</object-name>
+    <object-name>Blade3</object-name>
+    <object-name>Blade4</object-name>
+    <object-name>Blade5</object-name>
+    <object-name>Blade6</object-name>
+  </animation>
+
+  <animation>
+    <type>rotate</type>
+    <object-name>rotorcomplet</object-name>
+    <property>rotors/main/blade[0]/position-deg</property>
+    <center>
+       <x-m> 0.000 </x-m>
+       <y-m> 0.000 </y-m>
+       <z-m> 0.000 </z-m>
+    </center>
+    <axis>
+      <x>  0.000 </x>
+      <y>  0.000 </y>
+      <z>  1.000 </z>
+    </axis>
+  </animation>
+
+</PropertyList>
+

@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<PropertyList>
+
+  <path>interior.ac</path>
+
+  <animation>
+    <!-- Objets opaques -->
+    <object-name>interieur</object-name>
+    <object-name>tour</object-name>
+    <object-name>planchet</object-name>
+
+    <!-- Objets transparents -->
+    <object-name>intvitres</object-name>
+  </animation>
+
+  <animation>
+    <type>shader</type>
+    <shader>chrome</shader>
+    <texture>shader.png</texture>
+    <object-name>intvitres</object-name>
+  </animation>
+
+  <animation>
+    <type>noshadow</type>
+    <object-name>intvitres</object-name>
+  </animation>
+
+  <!-- Planche de bord -->
+  <model>
+    <path>Aircraft/AirCrane/Models/Interior/Panel/panel.xml</path>
+    <offsets>
+      <x-m> -9.391 </x-m>
+      <y-m>  0.000 </y-m>
+      <z-m> -1.499 </z-m>
+      <roll-deg>    0.000 </roll-deg>
+      <pitch-deg>   0.000 </pitch-deg>
+      <heading-deg> 0.000 </heading-deg>
+    </offsets>
+  </model>
+
+  <!-- Pilote -->
+  <model>
+    <path>Aircraft/AirCrane/Models/Pilot/pilot.xml</path>
+    <offsets>
+      <x-m> -8.892 </x-m>
+      <y-m>  0.521 </y-m>
+      <z-m> -1.625 </z-m>
+    </offsets>
+  </model>
+
+  <!-- Copilote
+  <model>
+    <path>Aircraft/Alphajet/Models/Pilot/pilot.xml</path>
+    <offsets>
+      <x-m> -1.607 </x-m>
+      <y-m>  0.000 </y-m>
+      <z-m> -0.300 </z-m>
+    </offsets>
+  </model> -->
+
+</PropertyList>
+

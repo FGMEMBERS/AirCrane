@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<PropertyList>
+
+  <path>panel.ac</path>
+
+  <animation>
+    <!-- Objets opaques -->
+    <object-name>panel1</object-name>
+    <object-name>panel2</object-name>
+    <object-name>panel3</object-name>
+    <object-name>panel4</object-name>
+  </animation>
+
+  <!-- ai 
+  <model>
+    <path>Aircraft/AirCrane/Models/Interior/Panel/Instruments/ai/ai.xml</path>
+    <offsets>
+      <x-m> -0.013 </x-m>
+      <y-m>  0.452 </y-m>
+      <z-m>  0.016 </z-m>
+      <roll-deg>    0.000 </roll-deg>
+      <pitch-deg>  -6.000 </pitch-deg>
+      <heading-deg> 0.000 </heading-deg>
+    </offsets>
+  </model> -->
+
+</PropertyList>
+
