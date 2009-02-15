@@ -11,6 +11,11 @@
     <object-name>planchet</object-name>
     <object-name>reposepieds</object-name>
     <object-name>accoudoir</object-name>
+    <object-name>barre</object-name>
+    <object-name>gruesiege1</object-name>
+    <object-name>gruesiege2</object-name>
+    <object-name>grueinstr</object-name>
+    <object-name>plaque</object-name>
 
     <!-- Objets transparents -->
     <object-name>intvitres</object-name>

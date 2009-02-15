@@ -128,56 +128,10 @@
       <max-dist>1000</max-dist>
     </rotor>
 
-    <rotor>
-      <name>tail-rotor</name>
-      <mode>looped</mode>
-      <path>Aircraft/AirCrane/Sounds/tail-loop.wav</path>
-      <condition>
-        <and>
-          <greater-than>
-            <property>rotors/main/rpm</property>
-            <value>50</value>
-          </greater-than>
-          <not>
-            <property>sim/crashed</property>
-          </not>
-          <not>
-            <equals>
-              <property>sim/current-view/view-number</property>
-              <value>0</value>
-            </equals>
-          </not>
-        </and>
-      </condition>
-      <volume>
-        <property>rotors/gear/torque-sound-filtered</property>
-        <factor>0.75</factor>
-      </volume>
-      <pitch>
-        <property>rotors/tail/rpm</property>
-        <factor>0.0023</factor>
-        <offset>-0.0</offset>
-        <max>2.5</max>
-      </pitch>
-      <position>
-        <x> 9 </x>
-        <y> -0.4 </y>
-        <z> 2 </z>
-      </position>
-      <orientation>
-        <x> 1 </x>
-        <y> -.2 </y>
-        <z> 0 </z>
-        <inner-angle>50</inner-angle>
-        <outer-angle>100</outer-angle>
-        <outer-gain>0.1</outer-gain>
-      </orientation>
-    </rotor>
-
     <contact>
       <name>ground contact</name>
       <mode>once</mode>
-      <path>Sounds/helicopter-skid.wav</path>
+      <path>Aircraft/AirCrane/Sounds/wheel.wav</path>
       <condition>
         <property>gear/gear[0]/wow</property>
       </condition>
@@ -194,7 +148,7 @@
     <contact>
       <name>ground contact</name>
       <mode>once</mode>
-      <path>Sounds/helicopter-skid.wav</path>
+      <path>Aircraft/AirCrane/Sounds/wheel.wav</path>
       <condition>
         <property>gear/gear[1]/wow</property>
       </condition>
@@ -211,7 +165,7 @@
     <contact>
       <name>ground contact</name>
       <mode>once</mode>
-      <path>Sounds/helicopter-skid.wav</path>
+      <path>Aircraft/AirCrane/Sounds/wheel.wav</path>
       <condition>
         <property>gear/gear[2]/wow</property>
       </condition>
