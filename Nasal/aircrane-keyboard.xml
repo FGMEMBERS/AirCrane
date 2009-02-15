@@ -47,21 +47,21 @@
       </mod-up>
     </key>
 
-    <key n="123">
-      <name>{</name>
-      <desc>Shutdown Engines</desc>
-      <binding>
-        <command>nasal</command>
-        <script>aircrane.engines(0)</script>
-      </binding>
-    </key>
-
     <key n="125">
       <name>}</name>
       <desc>Start Engines</desc>
       <binding>
         <command>nasal</command>
         <script>aircrane.engines(1)</script>
+      </binding>
+    </key>
+
+    <key n="123">
+      <name>{</name>
+      <desc>Shutdown Engines</desc>
+      <binding>
+        <command>nasal</command>
+        <script>aircrane.engines(0)</script>
       </binding>
     </key>
 

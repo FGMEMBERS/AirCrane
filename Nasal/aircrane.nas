@@ -129,9 +129,10 @@ var engines = func {
 			update_state(1);
 		}
 	} else {
-		rotor.setValue(0);				# engines stopped
-		state.setValue(0);
-		interpolate(engine, 0, 4);
+#		rotor.setValue(0);				# engines stopped
+#		state.setValue(0);
+#		interpolate(engine, 0, 4);
+                        update_state(0);
 	}
 }
 

@@ -32,11 +32,6 @@
     <object-name>arbre2</object-name>
     <object-name>supports</object-name>
     <object-name>aileron</object-name>
-    <object-name>roueG</object-name>
-    <object-name>roueD</object-name>
-    <object-name>roueA</object-name>
-    <object-name>axeG</object-name>
-    <object-name>axeD</object-name>
     <object-name>structure</object-name>
     <object-name>axerotor</object-name>
     <object-name>cotesaxerotor</object-name>
@@ -50,6 +45,15 @@
     <object-name>porteD</object-name>
     <object-name>supportaileron</object-name>
     <object-name>blocmoteur1</object-name>
+    <object-name>roueG</object-name>
+    <object-name>roueD</object-name>
+    <object-name>roueA</object-name>
+    <object-name>axeAH</object-name>
+    <object-name>axeAB</object-name>
+    <object-name>axeGH</object-name>
+    <object-name>axeGB</object-name>
+    <object-name>axeDH</object-name>
+    <object-name>axeDB</object-name>
 
     <!-- Transparence -->
     <object-name>vitres</object-name>
@@ -86,11 +90,6 @@
     <object-name>arbre2</object-name>
     <object-name>supports</object-name>
     <object-name>aileron</object-name>
-    <object-name>roueG</object-name>
-    <object-name>roueD</object-name>
-    <object-name>roueA</object-name>
-    <object-name>axeG</object-name>
-    <object-name>axeD</object-name>
     <object-name>structure</object-name>
     <object-name>axerotor</object-name>
     <object-name>cotesaxerotor</object-name>
@@ -104,6 +103,15 @@
     <object-name>porteD</object-name>
     <object-name>supportaileron</object-name>
     <object-name>blocmoteur1</object-name>
+    <object-name>roueG</object-name>
+    <object-name>roueD</object-name>
+    <object-name>roueA</object-name>
+    <object-name>axeAH</object-name>
+    <object-name>axeAB</object-name>
+    <object-name>axeGH</object-name>
+    <object-name>axeGB</object-name>
+    <object-name>axeDH</object-name>
+    <object-name>axeDB</object-name>
 
     <property-base>sim/model/livery</property-base>
     <texture-prop>texture</texture-prop>
@@ -178,6 +186,73 @@
     </offsets>
   </model>
 
+  <!-- Compression -->
+  <animation>
+    <name>RoueAvant</name>
+    <object-name>roueA</object-name>
+    <object-name>axeAB</object-name>
+  </animation>
+
+  <animation>
+    <name>RoueGauche</name>
+    <object-name>roueG</object-name>
+    <object-name>axeGB</object-name>
+  </animation>
+  
+  <animation>
+    <name>RoueDroite</name>
+    <object-name>roueD</object-name>
+    <object-name>axeDB</object-name>
+  </animation>
+
+  <animation>
+    <type>translate</type>
+    <object-name>RoueAvant</object-name>
+    <property>gear/gear[0]/compression-norm</property>
+    <interpolation>
+      <entry><ind> 0.000 </ind><dep> -0.10 </dep></entry>
+      <entry><ind> 0.086 </ind><dep>  0.00 </dep></entry>
+      <entry><ind> 1.000 </ind><dep>  0.11 </dep></entry>
+    </interpolation>
+    <axis>
+      <x> 0.0 </x>
+      <y> 0.0 </y>
+      <z> 1.0 </z>
+    </axis>
+  </animation>
+ 
+  <animation>
+    <type>translate</type>
+    <object-name>RoueGauche</object-name>
+    <property>gear/gear[1]/compression-norm</property>
+    <interpolation>
+      <entry><ind> 0.00 </ind><dep> -0.10 </dep></entry>
+      <entry><ind> 0.29 </ind><dep>  0.00 </dep></entry>
+      <entry><ind> 1.00 </ind><dep>  0.28 </dep></entry>
+    </interpolation>
+    <axis>
+      <x> 0.0 </x>
+      <y> 0.0 </y>
+      <z> 1.0 </z>
+    </axis>
+  </animation>
+ 
+  <animation>
+    <type>translate</type>
+    <object-name>RoueDroite</object-name>
+    <property>gear/gear[2]/compression-norm</property>
+    <interpolation>
+      <entry><ind> 0.00 </ind><dep> -0.10 </dep></entry>
+      <entry><ind> 0.29 </ind><dep>  0.00 </dep></entry>
+      <entry><ind> 1.00 </ind><dep>  0.28 </dep></entry>
+    </interpolation>
+    <axis>
+      <x> 0.0 </x>
+      <y> 0.0 </y>
+      <z> 1.0 </z>
+    </axis>
+  </animation>
+ 
   <!-- Rotation des roues lors du roulage -->
   <animation>
     <type>spin</type>

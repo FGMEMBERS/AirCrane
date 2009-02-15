@@ -194,7 +194,7 @@
         spring="3.2"
         damp="1.0"
         sfric="1.5"
-        dfric=".8"
+        dfric="0.8"
         initial-load="2">
         <control-input axis="/controls/gear/brake-right" control="BRAKE"/>
         <control-input axis="/controls/gear/brake-parking" control="BRAKE"/>
