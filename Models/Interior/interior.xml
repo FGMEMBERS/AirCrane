@@ -9,6 +9,8 @@
     <object-name>interieur</object-name>
     <object-name>tour</object-name>
     <object-name>planchet</object-name>
+    <object-name>reposepieds</object-name>
+    <object-name>accoudoir</object-name>
 
     <!-- Objets transparents -->
     <object-name>intvitres</object-name>

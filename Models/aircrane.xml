@@ -20,10 +20,13 @@
     <object-name>antennes</object-name>
     <object-name>caches</object-name>
     <object-name>caches2</object-name>
+    <object-name>caches3</object-name>
+    <object-name>caches4</object-name>
     <object-name>moteurs</object-name>
     <object-name>intmoteurs</object-name>
     <object-name>cables1</object-name>
     <object-name>cables2</object-name>
+    <object-name>cables3</object-name>
     <object-name>rebords</object-name>
     <object-name>arbres</object-name>
     <object-name>arbre2</object-name>
@@ -34,7 +37,6 @@
     <object-name>roueA</object-name>
     <object-name>axeG</object-name>
     <object-name>axeD</object-name>
-    <object-name>caches3</object-name>
     <object-name>structure</object-name>
     <object-name>axerotor</object-name>
     <object-name>cotesaxerotor</object-name>
@@ -44,6 +46,10 @@
     <object-name>pate2</object-name>
     <object-name>pate3</object-name>
     <object-name>pate4</object-name>
+    <object-name>porteG</object-name>
+    <object-name>porteD</object-name>
+    <object-name>supportaileron</object-name>
+    <object-name>blocmoteur1</object-name>
 
     <!-- Transparence -->
     <object-name>vitres</object-name>
@@ -68,10 +74,13 @@
     <object-name>antennes</object-name>
     <object-name>caches</object-name>
     <object-name>caches2</object-name>
+    <object-name>caches3</object-name>
+    <object-name>caches4</object-name>
     <object-name>moteurs</object-name>
     <object-name>intmoteurs</object-name>
     <object-name>cables1</object-name>
     <object-name>cables2</object-name>
+    <object-name>cables3</object-name>
     <object-name>rebords</object-name>
     <object-name>arbres</object-name>
     <object-name>arbre2</object-name>
@@ -82,7 +91,6 @@
     <object-name>roueA</object-name>
     <object-name>axeG</object-name>
     <object-name>axeD</object-name>
-    <object-name>caches3</object-name>
     <object-name>structure</object-name>
     <object-name>axerotor</object-name>
     <object-name>cotesaxerotor</object-name>
@@ -92,6 +100,10 @@
     <object-name>pate2</object-name>
     <object-name>pate3</object-name>
     <object-name>pate4</object-name>
+    <object-name>porteG</object-name>
+    <object-name>porteD</object-name>
+    <object-name>supportaileron</object-name>
+    <object-name>blocmoteur1</object-name>
 
     <property-base>sim/model/livery</property-base>
     <texture-prop>texture</texture-prop>
