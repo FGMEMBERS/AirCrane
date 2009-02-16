@@ -193,17 +193,9 @@
   <animation>
     <type>rotate</type>
     <object-name>blade4</object-name>
-    <object-name>propblur4</object-name>
-    <object-name>propdisc4</object-name>
     <object-name>blade3</object-name>
-    <object-name>propblur3</object-name>
-    <object-name>propdisc3</object-name>
     <object-name>blade2</object-name>
-    <object-name>propblur2</object-name>
-    <object-name>propdisc2</object-name>
     <object-name>blade1</object-name>
-    <object-name>propblur1</object-name>
-    <object-name>propdisc1</object-name>
     <property>rotors/main/blade[4]/incidence-deg</property>
     <center>
        <x-m> 0.000 </x-m>
