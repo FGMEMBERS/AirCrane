@@ -54,6 +54,7 @@
     <object-name>axeGB</object-name>
     <object-name>axeDH</object-name>
     <object-name>axeDB</object-name>
+    <object-name>axetail</object-name>
 
     <!-- Transparence -->
     <object-name>vitres</object-name>
@@ -112,6 +113,7 @@
     <object-name>axeGB</object-name>
     <object-name>axeDH</object-name>
     <object-name>axeDB</object-name>
+    <object-name>axetail</object-name>
 
     <property-base>sim/model/livery</property-base>
     <texture-prop>texture</texture-prop>
@@ -177,9 +179,9 @@
   <model>
     <path>Aircraft/AirCrane/Models/TailRotor/tailrotor.xml</path>
     <offsets>
-      <x-m> 11.840 </x-m>
-      <y-m> -0.840 </y-m>
-      <z-m>  1.293 </z-m>
+      <x-m> 11.118 </x-m>
+      <y-m> -1.023 </y-m>
+      <z-m>  1.319 </z-m>
       <roll-deg>   90.000 </roll-deg>
       <pitch-deg>   0.000 </pitch-deg>
       <heading-deg> 0.000 </heading-deg>

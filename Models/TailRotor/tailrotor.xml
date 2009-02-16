@@ -15,7 +15,7 @@
     <offsets>
       <x-m> 0.000 </x-m>
       <y-m> 0.000 </y-m>
-      <z-m> 0.389 </z-m>
+      <z-m> 0.000 </z-m>
       <roll-deg>    0.000 </roll-deg>
       <pitch-deg>   0.000 </pitch-deg>
       <heading-deg> 0.000 </heading-deg>
@@ -28,10 +28,10 @@
     <offsets>
       <x-m> 0.000 </x-m>
       <y-m> 0.000 </y-m>
-      <z-m> 0.389 </z-m>
+      <z-m> 0.000 </z-m>
       <roll-deg>     0.000 </roll-deg>
       <pitch-deg>    0.000 </pitch-deg>
-      <heading-deg> 72.000 </heading-deg>
+      <heading-deg> 90.000 </heading-deg>
     </offsets>
   </model>
 
@@ -41,10 +41,10 @@
     <offsets>
       <x-m> 0.000 </x-m>
       <y-m> 0.000 </y-m>
-      <z-m> 0.389 </z-m>
+      <z-m> 0.000 </z-m>
       <roll-deg>      0.000 </roll-deg>
       <pitch-deg>     0.000 </pitch-deg>
-      <heading-deg> 144.000 </heading-deg>
+      <heading-deg> 180.000 </heading-deg>
     </offsets>
   </model>
 
@@ -54,23 +54,10 @@
     <offsets>
       <x-m> 0.000 </x-m>
       <y-m> 0.000 </y-m>
-      <z-m> 0.389 </z-m>
+      <z-m> 0.000 </z-m>
       <roll-deg>      0.000 </roll-deg>
       <pitch-deg>     0.000 </pitch-deg>
-      <heading-deg> 216.000 </heading-deg>
-    </offsets>
-  </model>
-
-  <model>
-    <name>Blade5</name>
-    <path>Aircraft/AirCrane/Models/TailRotor/blade.xml</path>
-    <offsets>
-      <x-m> 0.000 </x-m>
-      <y-m> 0.000 </y-m>
-      <z-m> 0.389 </z-m>
-      <roll-deg>      0.000 </roll-deg>
-      <pitch-deg>     0.000 </pitch-deg>
-      <heading-deg> 288.000 </heading-deg>
+      <heading-deg> 270.000 </heading-deg>
     </offsets>
   </model>
 
@@ -81,7 +68,6 @@
     <object-name>Blade2</object-name>
     <object-name>Blade3</object-name>
     <object-name>Blade4</object-name>
-    <object-name>Blade5</object-name>
   </animation>
 
   <!-- Rotation du rotor -->
