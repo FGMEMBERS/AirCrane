@@ -169,6 +169,16 @@
 -->
   </animation>
 
+  <!-- Effet de particules -->
+  <model>
+    <path>Aircraft/AirCrane/Models/Effects/particles.xml</path>
+    <offsets>
+      <x-m> -2.606 </x-m>
+      <y-m>  0.000 </y-m>
+      <z-m> -3.500 </z-m>
+   </offsets>
+  </model>
+
   <!-- Intérieur -->
   <model>
     <path>Aircraft/AirCrane/Models/Interior/interior.xml</path>
