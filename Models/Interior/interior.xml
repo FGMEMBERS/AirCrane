@@ -16,6 +16,7 @@
     <object-name>gruesiege2</object-name>
     <object-name>grueinstr</object-name>
     <object-name>plaque</object-name>
+    <object-name>cranejoystick</object-name>
 
     <!-- Objets transparents -->
     <object-name>intvitres</object-name>

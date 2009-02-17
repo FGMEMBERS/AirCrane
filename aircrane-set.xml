@@ -64,12 +64,20 @@ Air-Crane simulation config.
       <title>AirCrane - background and help</title>
       <line></line>
       <key>
-        <name>d</name>
-        <desc>Left door</desc>
+        <name>{</name>
+        <desc>Start engines</desc>
       </key>
       <key>
-        <name>D</name>
-        <desc>Left windows</desc>
+        <name>}</name>
+        <desc>Shutdown engines</desc>
+      </key>
+      <key>
+        <name>R</name>
+        <desc>Toggle rotor brake</desc>
+      </key>
+      <key>
+        <name>r</name>
+        <desc>Apply rotor brake</desc>
       </key>
     </help>
 
@@ -78,6 +86,9 @@ Air-Crane simulation config.
   <controls>
     <engines>
       <engine n="0">
+        <magnetos>0</magnetos>
+      </engine>
+      <engine n="1">
         <magnetos>0</magnetos>
       </engine>
     </engines>
@@ -101,13 +112,6 @@ Air-Crane simulation config.
     <keyboard include="Nasal/aircrane-keyboard.xml"/>
   </input>
 
-  <nasal>
-    <aircrane>
-      <file>Aircraft/AirCrane/Nasal/doors.nas</file>
-      <file>Aircraft/AirCrane/Nasal/aircrane.nas</file>
-    </aircrane>
-  </nasal>
-
   <rotors>
     <main>
       <rpm type="double">0</rpm>
@@ -118,6 +122,14 @@ Air-Crane simulation config.
       <cone4-deg type="double">0</cone4-deg>
     </main>
   </rotors>
+
+  <nasal>
+    <aircrane>
+      <file>Aircraft/AirCrane/Nasal/doors.nas</file>
+      <file>Aircraft/AirCrane/Nasal/light.nas</file>
+      <file>Aircraft/AirCrane/Nasal/aircrane.nas</file>
+    </aircrane>
+  </nasal>
 
 </PropertyList>
 

@@ -18,37 +18,8 @@ var normatan = func(x) { math.atan2(x, 1) * 2 / math.pi }
 var turbine_timer = aircraft.timer.new("/sim/time/hobbs/turbines", 10);
 aircraft.timer.new("/sim/time/hobbs/helicopter", nil).start();
 
-# strobes ===========================================================
-var strobe_switch = props.globals.getNode("controls/lighting/strobe", 1);
-aircraft.light.new("sim/model/aircrane/lighting/strobe-top", [0.05, 1.00], strobe_switch);
-aircraft.light.new("sim/model/aircrane/lighting/strobe-bottom", [0.05, 1.03], strobe_switch);
-
-# beacons ===========================================================
-var beacon_switch = props.globals.getNode("controls/lighting/beacon", 1);
-aircraft.light.new("sim/model/aircrane/lighting/beacon-top", [0.62, 0.62], beacon_switch);
-aircraft.light.new("sim/model/aircrane/lighting/beacon-bottom", [0.63, 0.63], beacon_switch);
-
-# nav lights ========================================================
-var nav_light_switch = props.globals.getNode("controls/lighting/nav-lights", 1);
-var visibility = props.globals.getNode("environment/visibility-m", 1);
-var sun_angle = props.globals.getNode("sim/time/sun-angle-rad", 1);
-var nav_lights = props.globals.getNode("sim/model/aircrane/lighting/nav-lights", 1);
-
-var nav_light_loop = func {
-	if (nav_light_switch.getValue()) {
-		nav_lights.setValue(visibility.getValue() < 5000 or sun_angle.getValue() > 1.4);
-	} else {
-		nav_lights.setValue(0);
-	}
-	settimer(nav_light_loop, 3);
-}
-
-settimer(nav_light_loop, 0);
-
 # engines/rotor =====================================================
 var state = props.globals.getNode("sim/model/aircrane/state");
-var is_inside_view = props.globals.getNode("sim/model/aircrane/is_inside_view");
-var is_outside_view = props.globals.getNode("sim/model/aircrane/is_outside_view");
 var engine = props.globals.getNode("sim/model/aircrane/engine");
 var rotor = props.globals.getNode("controls/engines/engine/magnetos");
 var rotor_rpm = props.globals.getNode("rotors/main/rpm");
@@ -129,10 +100,9 @@ var engines = func {
 			update_state(1);
 		}
 	} else {
-#		rotor.setValue(0);				# engines stopped
-#		state.setValue(0);
-#		interpolate(engine, 0, 4);
-                        update_state(0);
+		rotor.setValue(0);				# engines stopped
+		state.setValue(0);
+		interpolate(engine, 0, 4);
 	}
 }
 
@@ -150,7 +120,7 @@ var update_rotor_cone_angle = func {
 	c = cone.getValue();
 	cone1.setDoubleValue( f *c *0.40 + (1-f) * c );
 	cone2.setDoubleValue( f *c *0.35);
-	cone3.setDoubleValue( f *c *0.3);
+	cone3.setDoubleValue( f *c *0.30);
 	cone4.setDoubleValue( f *c *0.25);
 }
 
@@ -164,11 +134,7 @@ var update_torque = func(dt) {
 	torque_pct.setDoubleValue(torque_val / 5300);
 }
 
-
-
-
 # sound =============================================================
-
 # stall sound
 var stall_val = 0;
 stall.setDoubleValue(0);
@@ -245,8 +211,6 @@ var update_slide = func {
 		skid[i].update();
 	}
 }
-
-
 
 # crash handler =====================================================
 #var load = nil;
