@@ -6,6 +6,9 @@
 
   <animation>
     <object-name>rotor</object-name>
+    <object-name>assemble</object-name>
+    <object-name>axeH</object-name>
+    <object-name>axeV</object-name>
   </animation>
 
   <!-- Blades -->
@@ -97,7 +100,7 @@
     <object-name>Blade6</object-name>
   </animation>
 
-  <!-- Rotation du rotor -->
+  <!-- Rotation du rotor 
   <animation>
     <type>rotate</type>
     <object-name>touteslespales</object-name>
@@ -130,11 +133,14 @@
       <y>-1.000 </y>
       <z> 0.000 </z>
     </axis>
-  </animation>
+  </animation> -->
 
   <animation>
     <name>rotorcomplet</name>
     <object-name>rotor</object-name>
+    <object-name>assemble</object-name>
+    <object-name>axeH</object-name>
+    <object-name>axeV</object-name>
     <object-name>Blade1</object-name>
     <object-name>Blade2</object-name>
     <object-name>Blade3</object-name>

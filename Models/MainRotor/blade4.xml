@@ -18,6 +18,9 @@
     <object-name>blade2</object-name>
     <object-name>blade3</object-name>
     <object-name>blade4</object-name>
+    <object-name>attache</object-name>
+    <object-name>attache2</object-name>
+    <object-name>attache3</object-name>
 
     <!-- Transparence -->
     <object-name>propblur1</object-name>
@@ -44,11 +47,16 @@
 
   <!-- Sélection blade/blur/disc main rotor-->
   <animation>
-    <type>select</type>
+    <name>DiscComplet</name>
     <object-name>propdisc1</object-name>
     <object-name>propdisc2</object-name>
     <object-name>propdisc3</object-name>
     <object-name>propdisc4</object-name>
+  </animation>
+
+  <animation>
+    <type>select</type>
+    <object-name>DiscComplet</object-name>
     <condition>
       <greater-than>
         <property>rotors/main/rpm</property>
@@ -58,11 +66,16 @@
   </animation>
 
   <animation>
-    <type>select</type>
+    <name>BlurComplet</name>
     <object-name>propblur1</object-name>
     <object-name>propblur2</object-name>
     <object-name>propblur3</object-name>
     <object-name>propblur4</object-name>
+  </animation>
+
+  <animation>
+    <type>select</type>
+    <object-name>BlurComplet</object-name>
     <condition>
       <and>
         <greater-than>
@@ -78,11 +91,16 @@
   </animation>
 
   <animation>
-    <type>select</type>
+    <name>PaleComplete</name>
     <object-name>blade1</object-name>
     <object-name>blade2</object-name>
     <object-name>blade3</object-name>
     <object-name>blade4</object-name>
+  </animation>
+
+  <animation>
+    <type>select</type>
+    <object-name>PaleComplete</object-name>
     <condition>
       <less-than>
         <property>rotors/main/rpm</property>
@@ -91,78 +109,9 @@
     </condition>
   </animation>
 
-  <!-- Axe 3 de pliage des pâles pour le cône -->
-  <animation>
-    <type>rotate</type>
-    <object-name>blade4</object-name>
-    <object-name>propblur4</object-name>
-    <object-name>propdisc4</object-name>
-    <property>rotors/main/cone4-deg</property>
-    <factor> -1 </factor>
-    <center>
-       <x-m>  8.272 </x-m>
-       <y-m>  0.029 </y-m>
-       <z-m> -0.012 </z-m>
-    </center>
-    <axis>
-      <x> 0.000 </x>
-      <y> 1.000 </y>
-      <z> 0.000 </z>
-    </axis>
-  </animation>
-
-  <!-- Axe 2 de pliage des pâles pour le cône -->
-  <animation>
-    <type>rotate</type>
-    <object-name>blade4</object-name>
-    <object-name>propblur4</object-name>
-    <object-name>propdisc4</object-name>
-    <object-name>blade3</object-name>
-    <object-name>propblur3</object-name>
-    <object-name>propdisc3</object-name>
-    <property>rotors/main/cone3-deg</property>
-    <factor> -1 </factor>
-    <center>
-       <x-m>  6.048 </x-m>
-       <y-m>  0.035 </y-m>
-       <z-m> -0.008 </z-m>
-    </center>
-    <axis>
-      <x> 0.000 </x>
-      <y> 1.000 </y>
-      <z> 0.000 </z>
-    </axis>
-  </animation>
-
-  <!-- Axe 1 de pliage des pâles pour le cône -->
-  <animation>
-    <type>rotate</type>
-    <object-name>blade4</object-name>
-    <object-name>propblur4</object-name>
-    <object-name>propdisc4</object-name>
-    <object-name>blade3</object-name>
-    <object-name>propblur3</object-name>
-    <object-name>propdisc3</object-name>
-    <object-name>blade2</object-name>
-    <object-name>propblur2</object-name>
-    <object-name>propdisc2</object-name>
-    <property>rotors/main/cone2-deg</property>
-    <factor> -1 </factor>
-    <center>
-       <x-m>  3.824 </x-m>
-       <y-m>  0.038 </y-m>
-       <z-m> -0.004 </z-m>
-    </center>
-    <axis>
-      <x> 0.000 </x>
-      <y> 1.000 </y>
-      <z> 0.000 </z>
-    </axis>
-  </animation>
-
   <!-- Axe 0 de pliage des pâles pour le cône -->
   <animation>
-    <type>rotate</type>
+    <name>Total0</name>
     <object-name>blade4</object-name>
     <object-name>propblur4</object-name>
     <object-name>propdisc4</object-name>
@@ -175,10 +124,18 @@
     <object-name>blade1</object-name>
     <object-name>propblur1</object-name>
     <object-name>propdisc1</object-name>
+    <object-name>attache</object-name>
+    <object-name>attache2</object-name>
+    <object-name>attache3</object-name>
+  </animation>
+
+  <animation>
+    <type>rotate</type>
+    <object-name>Total0</object-name>
     <property>rotors/main/cone1-deg</property>
     <factor> -1 </factor>
     <center>
-       <x-m> 0.000 </x-m>
+       <x-m> 0.702 </x-m>
        <y-m> 0.000 </y-m>
        <z-m> 0.000 </z-m>
     </center>
@@ -189,16 +146,107 @@
     </axis>
   </animation>
 
-  <!-- Incidence de la pale -->
+  <!-- Axe 1 de pliage des pâles pour le cône -->
+  <animation>
+    <name>Total1</name>
+    <object-name>blade4</object-name>
+    <object-name>propblur4</object-name>
+    <object-name>propdisc4</object-name>
+    <object-name>blade3</object-name>
+    <object-name>propblur3</object-name>
+    <object-name>propdisc3</object-name>
+    <object-name>blade2</object-name>
+    <object-name>propblur2</object-name>
+    <object-name>propdisc2</object-name>
+  </animation>
+
   <animation>
     <type>rotate</type>
+    <object-name>Total1</object-name>
+    <property>rotors/main/cone2-deg</property>
+    <factor> -1 </factor>
+    <center>
+       <x-m>  4.101 </x-m>
+       <y-m>  0.009 </y-m>
+       <z-m> -0.004 </z-m>
+    </center>
+    <axis>
+      <x> 0.000 </x>
+      <y> 1.000 </y>
+      <z> 0.000 </z>
+    </axis>
+  </animation>
+
+  <!-- Axe 2 de pliage des pâles pour le cône -->
+  <animation>
+    <name>Total2</name>
+    <object-name>blade4</object-name>
+    <object-name>propblur4</object-name>
+    <object-name>propdisc4</object-name>
+    <object-name>blade3</object-name>
+    <object-name>propblur3</object-name>
+    <object-name>propdisc3</object-name>
+  </animation>
+
+  <animation>
+    <type>rotate</type>
+    <object-name>Total2</object-name>
+    <property>rotors/main/cone3-deg</property>
+    <factor> -1 </factor>
+    <center>
+       <x-m>  6.482 </x-m>
+       <y-m>  0.006 </y-m>
+       <z-m> -0.008 </z-m>
+    </center>
+    <axis>
+      <x> 0.000 </x>
+      <y> 1.000 </y>
+      <z> 0.000 </z>
+    </axis>
+  </animation>
+
+  <!-- Axe 3 de pliage des pâles pour le cône -->
+  <animation>
+    <name>Total3</name>
+    <object-name>blade4</object-name>
+    <object-name>propblur4</object-name>
+    <object-name>propdisc4</object-name>
+  </animation>
+
+  <animation>
+    <type>rotate</type>
+    <object-name>Total3</object-name>
+    <property>rotors/main/cone4-deg</property>
+    <factor> -1 </factor>
+    <center>
+       <x-m>  8.863 </x-m>
+       <y-m>  0.002 </y-m>
+       <z-m> -0.012 </z-m>
+    </center>
+    <axis>
+      <x> 0.000 </x>
+      <y> 1.000 </y>
+      <z> 0.000 </z>
+    </axis>
+  </animation>
+
+  <!-- Incidence de la pale -->
+  <animation>
+    <name>TotalBlade</name>
     <object-name>blade4</object-name>
     <object-name>blade3</object-name>
     <object-name>blade2</object-name>
     <object-name>blade1</object-name>
+    <object-name>attache</object-name>
+    <object-name>attache2</object-name>
+  </animation>
+
+  <animation>
+    <type>rotate</type>
+    <object-name>TotalBlade</object-name>
     <property>rotors/main/blade[3]/incidence-deg</property>
     <center>
-       <x-m> 0.000 </x-m>
+       <x-m> 0.702 </x-m>
        <y-m> 0.000 </y-m>
        <z-m> 0.000 </z-m>
     </center>

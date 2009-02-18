@@ -113,15 +113,23 @@ var update_engine = func {
 	}
 }
 
+#var update_rotor_cone_angle = func {
+#	r = rotor_rpm.getValue();
+#	var f = 1 - r / 100;
+#	f = clamp (f, 0.1 , 1);
+#	c = cone.getValue();
+#	cone1.setDoubleValue( f *c *0.40 + (1-f) * c );
+#	cone2.setDoubleValue( f *c *0.35);
+#	cone3.setDoubleValue( f *c *0.30);
+#	cone4.setDoubleValue( f *c *0.25);
+#}
+
 var update_rotor_cone_angle = func {
-	r = rotor_rpm.getValue();
-	var f = 1 - r / 100;
-	f = clamp (f, 0.1 , 1);
 	c = cone.getValue();
-	cone1.setDoubleValue( f *c *0.40 + (1-f) * c );
-	cone2.setDoubleValue( f *c *0.35);
-	cone3.setDoubleValue( f *c *0.30);
-	cone4.setDoubleValue( f *c *0.25);
+	cone1.setDoubleValue( c *0.50);
+	cone2.setDoubleValue( c *0.75);
+	cone3.setDoubleValue( c *1.00);
+	cone4.setDoubleValue( c *1.25);
 }
 
 # torquemeter
