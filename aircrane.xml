@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<!--S-64E Skycrane
+
+<!--S-64E Skycrane v02/17/2009 20:45
   Max Gross weight: 42000 lbs
   Max Hook Weight: 20000 lbs
 
@@ -21,7 +22,7 @@
 
   2 Pratt and Whitney jftd12a-4a
   max power 9000 shp ( ca. 7000 kw)
-  limit to 5400 shp
+  limit to 5400 shp (ca. 4200 kw)
 
 
   From TYPE CERTIFICATE DATA SHEET NO. H40NM
@@ -42,21 +43,21 @@
   <approach speed="60"/>
 
   <rotor name="main" 
-         x="2.608" y="0.00" z="1.385"
+         x="2.606" y="0.00" z="1.383"
          nx="0.07" ny="0" nz="1."
          fx="1" fy="0" fz="0"
          ccw="1"
          mincollective="0.2" maxcollective="10.8"
          mincyclicele="-4.5" maxcyclicele="6.5"
-         mincyclicail="-2.0" maxcyclicail="2.0"
+         mincyclicail="-6.0" maxcyclicail="8.0"
          diameter="22.7" 
          numblades="6"
          weightperblade="600"
          twist="-14"
          chord="0.74"
-         rpm="177"
+         rpm="185"
          relbladecenter="0.61"
-         dynamic="1"
+         dynamic="1.4"
          rellenflaphinge="0.07"
          delta3="0.3" delta=".3"
          pitch-a="10" pitch-b="15"
@@ -65,7 +66,7 @@
          notorque="0"
          dragfactor="0.30"
          translift-ve="20" translift-maxfactor="1.3"
-         ground-effect-constant="0.1"
+         ground-effect-constant="0.6"
          taper="1"
          number-of-segments="8"
          number-of-parts="8"
@@ -74,10 +75,10 @@
          airfoil-lift-coefficient="6.3" airfoil-drag-coefficient0="0.0075" airfoil-drag-coefficient1="0.1"
          incidence-stall-zero-speed="18" incidence-stall-half-sonic-speed="9"
          lift-factor-stall="0.18"
-         stall-change-over="5.5"
+         stall-change-over="3"
          drag-factor-stall="8.0"
          cyclic-factor="0.8"
-         rotor-correction-factor="1.1"
+         rotor-correction-factor="0.7"
          balance="0.9985">
          <control-input axis="/controls/flight/aileron-trim" control="CYCLICAIL" split="true"/>
          <control-input axis="/controls/flight/aileron" control="CYCLICAIL" src0="-1.0" src1="1.0" dst0="-1.0" dst1="1.0"/>
@@ -87,7 +88,7 @@
   </rotor>
 
   <rotor name="tail"
-         x="-11.55" y="-0.431" z="2.145"
+         x="-11.118" y="-1.023" z="1.319"
          nx="0.07" ny="-1" nz="-0.05"
          fx="1" fy="0" fz="0"
          ccw="1"
@@ -98,13 +99,13 @@
          weightperblade="100"
          relbladecenter="0.7"
          dynamic="1"
-         rpm="700"
+         rpm="800"
          rellenflaphinge="0.043"
          delta3="1"
          translift="0"
          delta="0.5"
          pitch-a="10" pitch-b="15"
-         airfoil-lift-coefficient="6.3" airfoil-drag-coefficient0="0.0035" airfoil-drag-coefficient1="0.10"
+         airfoil-lift-coefficient="6.9" airfoil-drag-coefficient0="0.0075" airfoil-drag-coefficient1="0.10"
          incidence-stall-zero-speed="9" incidence-stall-half-sonic-speed="18"
          lift-factor-stall="0.18"
          stall-change-over="5.5"
@@ -122,13 +123,13 @@
   </rotor>
 
   <!-- only the engine power below is a known good value -->
-  <rotorgear max-power-engine="7000"
+  <rotorgear max-power-engine="4200"
              max-power-rotor-brake="185"
              rotorgear-friction="3.7"
-             engine-prop-factor="0.05"
+             engine-prop-factor="0.03"
              engine-accel-limit="4"
-             yasimdragfactor="53"
-             yasimliftfactor="385">
+             yasimdragfactor="20"
+             yasimliftfactor="840">
              <control-input axis="/controls/engines/engine[0]/magnetos" control="ROTORGEARENGINEON"/>
              <control-input axis="/controls/rotor/brake" control="ROTORBRAKE" src0="0.0" src1="1.0" dst0="0.0" dst1="1.0"/>
              <control-input axis="/controls/rotor/reltarget" control="ROTORRELTARGET" src0="0.0" src1="2.0" dst0="0.0" dst1="2.0"/>
@@ -147,7 +148,7 @@
   <fuselage ax="1.923" ay="-3.214" az="-1.674" bx="-1.217" by="-3.214" bz="-2.079" width="0.8" taper="0.5" midpoint="0.5"/>
 
   <cockpit x="11.082" y="-1.3" z="2.0"/>
-	
+
   <vstab x="-9.4" y="0" z="1.148"
          chord="1.38"
          length="2.5"
@@ -165,7 +166,7 @@
          sweep="0">
          <stall aoa="0" width="0" peak="1.5"/>
   </hstab>
-  
+
   <gear x="8.295" y="0" z="-4"
         compression="0.1"
         spring="3"
@@ -183,7 +184,7 @@
         damp="1.0"
         sfric="1.5"
         dfric="0.8"
-        initial-load="2">
+        initial-load="1">
         <control-input axis="/controls/gear/brake-left" control="BRAKE"/>
         <control-input axis="/controls/gear/brake-parking" control="BRAKE"/>
   </gear>
@@ -195,7 +196,7 @@
         damp="1.0"
         sfric="1.5"
         dfric="0.8"
-        initial-load="2">
+        initial-load="1">
         <control-input axis="/controls/gear/brake-right" control="BRAKE"/>
         <control-input axis="/controls/gear/brake-parking" control="BRAKE"/>
   </gear>
@@ -209,31 +210,48 @@
         dfric="1">
   </gear>
 
-  <tank x="2.6" y="+0.7" z="-.31" capacity="1351"/>
+  <tank x="2.6" y="0.7" z="-.31" capacity="1351"/>
   <tank x="-2.6" y="-0.7" z="-.31" capacity="734"/>
-  <tank x="2.6" y="0.0" z="0" capacity="851"/>
-  <tank x="-2.6" y="0" z="0" capacity="904"/>
+  <tank x="2.6" y="0.0" z="-0.31" capacity="851"/>
+  <tank x="-2.6" y="0" z="-0.31" capacity="904"/>
 
-  <!-- <ballast x="-0.7" y="+0.0" z="-1.0" mass="450"/> -->
+  <!-- <ballast x="-0.7" y="0.0" z="-1.0" mass="450"/> -->
 
   <ballast x="+8.5" y="+0.0" z=" -4.5" mass="1500"/>
   <ballast x="+5.7" y="+0.0" z=" -4.5" mass="100"/>
-	
+
   <ballast x="+5.7" y="-2.0" z=" -4.5" mass="1300"/>
   <ballast x="+5.7" y=" 2.0" z="  -4.5" mass="1300"/>
-	
+
   <ballast x="+5.7" y="+0.0" z=" -4.5" mass="1400"/>
   <ballast x="+5.7" y="+0.0" z="  -4.5" mass="1400"/>
 
-  <weight x="8.0" y=".33" z="-.5" mass-prop="/sim/weight[0]/weight-lb"/>
   <!-- pilot -->
-  <weight x="8.0" y="-.33" z="-.5" mass-prop="/sim/weight[1]/weight-lb"/>
+  <weight x="8.6" y=".53" z="-2." mass-prop="/sim/weight[0]/weight-lb"/>
+
   <!-- co-pilot -->
-	
-  <weight x="2.5" y="-.33" z="-.5" mass-prop="/sim/weight[2]/weight-lb"/>
-  <!-- left passenger -->
-  <weight x="2.6" y="0" z="-.5" mass-prop="/sim/weight[3]/weight-lb"/>
+  <weight x="8.6" y="-.53" z="-2." mass-prop="/sim/weight[1]/weight-lb"/>
+
+  <!-- operator -->
+  <weight x="7.4" y=".47" z="-.5" mass-prop="/sim/weight[2]/weight-lb"/>
+
   <!-- load -->
+  <weight x="2.6" y="0" z="-1.2" mass-prop="/sim/weight[3]/weight-lb"/>
+
+  <!-- hitch -->
+  <hitch name="aerotow" 
+         x="2.6" y="0.0" z="-0.7" 
+         force-is-calculated-by-other="0">
+         <tow length="30" 
+              weight-per-meter="0.035" 
+              elastic-constant="9000" 
+              break-force="80000" 
+              mp-auto-connect-period="0.0"/>
+         <winch max-tow-length="100" 
+                min-tow-length="30" 
+                initial-tow-length="30"/>
+         <control-input axis="/controls/aerotow/find-aircraft" control="FINDAITOW"/>
+  </hitch>
 
 </airplane>
 
