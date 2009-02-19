@@ -21,6 +21,9 @@
     <object-name>attache</object-name>
     <object-name>attache2</object-name>
     <object-name>attache3</object-name>
+    <object-name>attache4</object-name>
+    <object-name>bielle1</object-name>
+    <object-name>bielle2</object-name>
 
     <!-- Transparence -->
     <object-name>propblur1</object-name>
@@ -59,7 +62,7 @@
     <object-name>DiscComplet</object-name>
     <condition>
       <greater-than>
-        <property>rotors/main/rpm</property>
+        <property>/rotors/main/rpm</property>
         <value>150</value>
       </greater-than>
     </condition>
@@ -79,11 +82,11 @@
     <condition>
       <and>
         <greater-than>
-          <property>rotors/main/rpm</property>
+          <property>/rotors/main/rpm</property>
           <value>60</value>
         </greater-than>
         <less-than>
-          <property>rotors/main/rpm</property>
+          <property>/rotors/main/rpm</property>
           <value>150.001</value>
         </less-than>
       </and>
@@ -103,7 +106,7 @@
     <object-name>PaleComplete</object-name>
     <condition>
       <less-than>
-        <property>rotors/main/rpm</property>
+        <property>/rotors/main/rpm</property>
 	<value>150</value>
       </less-than>
     </condition>
@@ -127,12 +130,13 @@
     <object-name>attache</object-name>
     <object-name>attache2</object-name>
     <object-name>attache3</object-name>
+    <object-name>attache4</object-name>
   </animation>
 
   <animation>
     <type>rotate</type>
     <object-name>Total0</object-name>
-    <property>rotors/main/cone1-deg</property>
+    <property>/rotors/main/cone1-deg</property>
     <factor> -1 </factor>
     <center>
        <x-m> 0.702 </x-m>
@@ -163,7 +167,7 @@
   <animation>
     <type>rotate</type>
     <object-name>Total1</object-name>
-    <property>rotors/main/cone2-deg</property>
+    <property>/rotors/main/cone2-deg</property>
     <factor> -1 </factor>
     <center>
        <x-m>  4.101 </x-m>
@@ -191,7 +195,7 @@
   <animation>
     <type>rotate</type>
     <object-name>Total2</object-name>
-    <property>rotors/main/cone3-deg</property>
+    <property>/rotors/main/cone3-deg</property>
     <factor> -1 </factor>
     <center>
        <x-m>  6.482 </x-m>
@@ -216,7 +220,7 @@
   <animation>
     <type>rotate</type>
     <object-name>Total3</object-name>
-    <property>rotors/main/cone4-deg</property>
+    <property>/rotors/main/cone4-deg</property>
     <factor> -1 </factor>
     <center>
        <x-m>  8.863 </x-m>
@@ -239,12 +243,15 @@
     <object-name>blade1</object-name>
     <object-name>attache</object-name>
     <object-name>attache2</object-name>
+    <object-name>attache4</object-name>
+    <object-name>bielle1</object-name>
+    <object-name>bielle2</object-name>
   </animation>
 
   <animation>
     <type>rotate</type>
     <object-name>TotalBlade</object-name>
-    <property>rotors/main/blade[2]/incidence-deg</property>
+    <property>/rotors/main/blade[2]/incidence-deg</property>
     <center>
        <x-m> 0.702 </x-m>
        <y-m> 0.000 </y-m>
@@ -254,6 +261,22 @@
       <x> 1.000 </x>
       <y> 0.000 </y>
       <z> 0.000 </z>
+    </axis>
+  </animation>
+
+  <animation>
+    <type>rotate</type>
+    <object-name>bielle2</object-name>
+    <property>/rotors/main/blade[2]/incidence-deg</property>
+    <center>
+       <x-m> 0.763 </x-m>
+       <y-m> 0.246 </y-m>
+       <z-m> 0.000 </z-m>
+    </center>
+    <axis>
+      <x> -1.000 </x>
+      <y>  0.000 </y>
+      <z>  0.000 </z>
     </axis>
   </animation>
 
