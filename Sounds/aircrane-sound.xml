@@ -7,14 +7,51 @@
   <fx>
 
     <engine>
-      <name>turbine0-start</name>
+      <name>Start external</name>
       <mode>once</mode>
       <path>Aircraft/AirCrane/Sounds/turbine-start.wav</path>
       <condition>
-        <greater-than>
-          <property>sim/model/aircrane/state</property>
-          <value>0</value>
-        </greater-than>
+        <and>
+          <greater-than>
+            <property>sim/model/aircrane/state</property>
+            <value>0</value>
+          </greater-than>
+          <not>
+            <property>sim/crashed</property>
+          </not>
+          <not>
+            <equals>
+              <property>sim/current-view/view-number</property>
+              <value>0</value>
+            </equals>
+          </not>
+        </and>
+      </condition>
+      <volume>
+	<factor>0.12</factor>
+      </volume>
+      <reference-dist>100</reference-dist>
+      <max-dist>1000</max-dist>
+    </engine>
+
+    <engine>
+      <name>Start internal</name>
+      <mode>once</mode>
+      <path>Aircraft/AirCrane/Sounds/turbine-start-in.wav</path>
+      <condition>
+        <and>
+          <greater-than>
+            <property>sim/model/aircrane/state</property>
+            <value>0</value>
+          </greater-than>
+          <not>
+            <property>sim/crashed</property>
+          </not>
+          <equals>
+            <property>sim/current-view/view-number</property>
+            <value>0</value>
+          </equals>
+        </and>
       </condition>
       <volume>
 	<factor>0.12</factor>
@@ -24,14 +61,51 @@
     </engine>
 
     <engine>
-      <name>turbine0-loop</name>
+      <name>Turbine external</name>
       <mode>looped</mode>
       <path>Aircraft/AirCrane/Sounds/turbine-loop.wav</path>
       <condition>
-        <greater-than>
-          <property>sim/model/aircrane/state</property>
-          <value>0</value>
-        </greater-than>
+        <and>
+          <greater-than>
+            <property>sim/model/aircrane/state</property>
+            <value>0</value>
+          </greater-than>
+          <not>
+            <property>sim/crashed</property>
+          </not>
+          <not>
+            <equals>
+              <property>sim/current-view/view-number</property>
+              <value>0</value>
+            </equals>
+          </not>
+        </and>
+      </condition>
+      <volume>
+	<factor>0.12</factor>
+      </volume>
+      <reference-dist>100</reference-dist>
+      <max-dist>1000</max-dist>
+    </engine>
+
+    <engine>
+      <name>Turbine internal</name>
+      <mode>looped</mode>
+      <path>Aircraft/AirCrane/Sounds/turbine-loop-in.wav</path>
+      <condition>
+        <and>
+          <greater-than>
+            <property>sim/model/aircrane/state</property>
+            <value>0</value>
+          </greater-than>
+          <not>
+            <property>sim/crashed</property>
+          </not>
+          <equals>
+            <property>sim/current-view/view-number</property>
+            <value>0</value>
+          </equals>
+        </and>
       </condition>
       <volume>
 	<factor>0.12</factor>
@@ -41,14 +115,51 @@
     </engine>
 
     <engine>
-      <name>turbine0-shutdown</name>
+      <name>Shutdown external</name>
       <mode>once</mode>
       <path>Aircraft/AirCrane/Sounds/turbine-stop.wav</path>
       <condition>
-        <greater-than>
-          <property>sim/model/aircrane/state</property>
-          <value>0</value>
-        </greater-than>
+        <and>
+          <greater-than>
+            <property>sim/model/aircrane/state</property>
+            <value>0</value>
+          </greater-than>
+          <not>
+            <property>sim/crashed</property>
+          </not>
+          <not>
+            <equals>
+              <property>sim/current-view/view-number</property>
+              <value>0</value>
+            </equals>
+          </not>
+        </and>
+      </condition>
+      <volume>
+	<factor>0.12</factor>
+      </volume>
+      <reference-dist>100</reference-dist>
+      <max-dist>1000</max-dist>
+    </engine>
+
+    <engine>
+      <name>Shutdown internal</name>
+      <mode>once</mode>
+      <path>Aircraft/AirCrane/Sounds/turbine-stop-in.wav</path>
+      <condition>
+        <and>
+          <greater-than>
+            <property>sim/model/aircrane/state</property>
+            <value>0</value>
+          </greater-than>
+          <not>
+            <property>sim/crashed</property>
+          </not>
+          <equals>
+            <property>sim/current-view/view-number</property>
+            <value>0</value>
+          </equals>
+        </and>
       </condition>
       <volume>
 	<factor>0.12</factor>
@@ -58,7 +169,7 @@
     </engine>
 
     <rotor>
-      <name>rotor-outside</name>
+      <name>Rotor external</name>
       <mode>looped</mode>
       <path>Aircraft/AirCrane/Sounds/rotor-loop.wav</path>
       <condition>
@@ -73,7 +184,7 @@
           <not>
             <equals>
               <property>sim/current-view/view-number</property>
-              <value>99</value>
+              <value>0</value>
             </equals>
           </not>
         </and>
@@ -97,9 +208,9 @@
     </rotor>
 
     <rotor>
-      <name>rotor-inside</name>
+      <name>Rotor internal</name>
       <mode>looped</mode>
-      <path>Aircraft/AirCrane/Sounds/rotor-loop.wav</path>
+      <path>Aircraft/AirCrane/Sounds/rotor-loop-in.wav</path>
       <condition>
         <and>
           <greater-than>
