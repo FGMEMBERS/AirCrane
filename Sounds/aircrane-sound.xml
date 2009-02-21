@@ -19,12 +19,26 @@
           <not>
             <property>sim/crashed</property>
           </not>
-          <not>
-            <equals>
-              <property>sim/current-view/view-number</property>
-              <value>0</value>
-            </equals>
-          </not>
+          <and>
+            <not>
+              <equals>
+                <property>sim/current-view/view-number</property>
+                <value>0</value> <!-- Pilote view -->
+              </equals>
+            </not>
+            <not>
+              <equals>
+                <property>sim/current-view/view-number</property>
+                <value>8</value> <!-- Copilote view -->
+              </equals>
+            </not>
+            <not>
+              <equals>
+                <property>sim/current-view/view-number</property>
+                <value>9</value> <!-- Crane view -->
+              </equals>
+            </not>
+          </and>
         </and>
       </condition>
       <volume>
@@ -47,10 +61,20 @@
           <not>
             <property>sim/crashed</property>
           </not>
-          <equals>
-            <property>sim/current-view/view-number</property>
-            <value>0</value>
-          </equals>
+          <or>
+            <equals>
+              <property>sim/current-view/view-number</property>
+              <value>0</value> <!-- Pilote view -->
+            </equals>
+            <equals>
+              <property>sim/current-view/view-number</property>
+              <value>8</value> <!-- Copilote view -->
+            </equals>
+            <equals>
+              <property>sim/current-view/view-number</property>
+              <value>9</value> <!-- Crane view -->
+            </equals>
+          </or>
         </and>
       </condition>
       <volume>
@@ -73,12 +97,26 @@
           <not>
             <property>sim/crashed</property>
           </not>
-          <not>
-            <equals>
-              <property>sim/current-view/view-number</property>
-              <value>0</value>
-            </equals>
-          </not>
+          <and>
+            <not>
+              <equals>
+                <property>sim/current-view/view-number</property>
+                <value>0</value> <!-- Pilote view -->
+              </equals>
+            </not>
+            <not>
+              <equals>
+                <property>sim/current-view/view-number</property>
+                <value>8</value> <!-- Copilote view -->
+              </equals>
+            </not>
+            <not>
+              <equals>
+                <property>sim/current-view/view-number</property>
+                <value>9</value> <!-- Crane view -->
+              </equals>
+            </not>
+          </and>
         </and>
       </condition>
       <volume>
@@ -101,10 +139,20 @@
           <not>
             <property>sim/crashed</property>
           </not>
-          <equals>
-            <property>sim/current-view/view-number</property>
-            <value>0</value>
-          </equals>
+          <or>
+            <equals>
+              <property>sim/current-view/view-number</property>
+              <value>0</value> <!-- Pilote view -->
+            </equals>
+            <equals>
+              <property>sim/current-view/view-number</property>
+              <value>8</value> <!-- Copilote view -->
+            </equals>
+            <equals>
+              <property>sim/current-view/view-number</property>
+              <value>9</value> <!-- Crane view -->
+            </equals>
+          </or>
         </and>
       </condition>
       <volume>
@@ -127,12 +175,26 @@
           <not>
             <property>sim/crashed</property>
           </not>
-          <not>
-            <equals>
-              <property>sim/current-view/view-number</property>
-              <value>0</value>
-            </equals>
-          </not>
+          <and>
+            <not>
+              <equals>
+                <property>sim/current-view/view-number</property>
+                <value>0</value> <!-- Pilote view -->
+              </equals>
+            </not>
+            <not>
+              <equals>
+                <property>sim/current-view/view-number</property>
+                <value>8</value> <!-- Copilote view -->
+              </equals>
+            </not>
+            <not>
+              <equals>
+                <property>sim/current-view/view-number</property>
+                <value>9</value> <!-- Crane view -->
+              </equals>
+            </not>
+          </and>
         </and>
       </condition>
       <volume>
@@ -155,10 +217,20 @@
           <not>
             <property>sim/crashed</property>
           </not>
-          <equals>
-            <property>sim/current-view/view-number</property>
-            <value>0</value>
-          </equals>
+          <or>
+            <equals>
+              <property>sim/current-view/view-number</property>
+              <value>0</value> <!-- Pilote view -->
+            </equals>
+            <equals>
+              <property>sim/current-view/view-number</property>
+              <value>8</value> <!-- Copilote view -->
+            </equals>
+            <equals>
+              <property>sim/current-view/view-number</property>
+              <value>9</value> <!-- Crane view -->
+            </equals>
+          </or>
         </and>
       </condition>
       <volume>
@@ -181,12 +253,26 @@
           <not>
             <property>sim/crashed</property>
           </not>
-          <not>
-            <equals>
-              <property>sim/current-view/view-number</property>
-              <value>0</value>
-            </equals>
-          </not>
+          <and>
+            <not>
+              <equals>
+                <property>sim/current-view/view-number</property>
+                <value>0</value> <!-- Pilote view -->
+              </equals>
+            </not>
+            <not>
+              <equals>
+                <property>sim/current-view/view-number</property>
+                <value>8</value> <!-- Copilote view -->
+              </equals>
+            </not>
+            <not>
+              <equals>
+                <property>sim/current-view/view-number</property>
+                <value>9</value> <!-- Crane view -->
+              </equals>
+            </not>
+          </and>
         </and>
       </condition>
       <volume>
@@ -220,10 +306,20 @@
           <not>
             <property>sim/crashed</property>
           </not>
-          <equals>
-            <property>sim/current-view/view-number</property>
-            <value>0</value>
-          </equals>
+          <or>
+            <equals>
+              <property>sim/current-view/view-number</property>
+              <value>0</value> <!-- Pilote view -->
+            </equals>
+            <equals>
+              <property>sim/current-view/view-number</property>
+              <value>8</value> <!-- Copilote view -->
+            </equals>
+            <equals>
+              <property>sim/current-view/view-number</property>
+              <value>9</value> <!-- Crane view -->
+            </equals>
+          </or>
         </and>
       </condition>
       <volume>

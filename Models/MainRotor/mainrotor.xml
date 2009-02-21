@@ -156,7 +156,7 @@
   <animation>
     <type>rotate</type>
     <object-name>rotorcomplet</object-name>
-    <property>/rotors/main/blade[0]/position-deg</property>
+    <property>rotors/main/blade[0]/position-deg</property>
     <center>
        <x-m> 0.000 </x-m>
        <y-m> 0.000 </y-m>
