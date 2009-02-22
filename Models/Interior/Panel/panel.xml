@@ -12,18 +12,57 @@
     <object-name>panel4</object-name>
   </animation>
 
-  <!-- ai 
+  <!-- ai -->
   <model>
     <path>Aircraft/AirCrane/Models/Interior/Panel/Instruments/ai/ai.xml</path>
     <offsets>
-      <x-m> -0.013 </x-m>
-      <y-m>  0.452 </y-m>
-      <z-m>  0.016 </z-m>
+      <x-m> 0.007 </x-m>
+      <y-m> 0.453 </y-m>
+      <z-m> 0.017 </z-m>
       <roll-deg>    0.000 </roll-deg>
-      <pitch-deg>  -6.000 </pitch-deg>
+      <pitch-deg>   0.000 </pitch-deg>
       <heading-deg> 0.000 </heading-deg>
     </offsets>
-  </model> -->
+  </model>
+
+  <!-- asi -->
+  <model>
+    <path>Aircraft/AirCrane/Models/Interior/Panel/Instruments/asi/asi.xml</path>
+    <offsets>
+      <x-m> -0.001 </x-m>
+      <y-m>  0.323 </y-m>
+      <z-m>  0.035 </z-m>
+      <roll-deg>    0.000 </roll-deg>
+      <pitch-deg>   0.000 </pitch-deg>
+      <heading-deg> 0.000 </heading-deg>
+    </offsets>
+  </model>
+
+  <!-- alt -->
+  <model>
+    <path>Aircraft/AirCrane/Models/Interior/Panel/Instruments/alt/alt.xml</path>
+    <offsets>
+      <x-m> -0.001 </x-m>
+      <y-m>  0.580 </y-m>
+      <z-m>  0.035 </z-m>
+      <roll-deg>    0.000 </roll-deg>
+      <pitch-deg>   0.000 </pitch-deg>
+      <heading-deg> 0.000 </heading-deg>
+    </offsets>
+  </model>
+
+  <!-- torque -->
+  <model>
+    <path>Aircraft/AirCrane/Models/Interior/Panel/Instruments/torque/torque.xml</path>
+    <offsets>
+      <x-m> -0.001 </x-m>
+      <y-m>  0.171 </y-m>
+      <z-m> -0.070 </z-m>
+      <roll-deg>    0.000 </roll-deg>
+      <pitch-deg>   0.000 </pitch-deg>
+      <heading-deg> 0.000 </heading-deg>
+    </offsets>
+  </model>
 
 </PropertyList>
 

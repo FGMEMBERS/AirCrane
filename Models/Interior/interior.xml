@@ -41,9 +41,9 @@
       <x-m> -9.391 </x-m>
       <y-m>  0.000 </y-m>
       <z-m> -1.499 </z-m>
-      <roll-deg>    0.000 </roll-deg>
-      <pitch-deg>   0.000 </pitch-deg>
-      <heading-deg> 0.000 </heading-deg>
+      <roll-deg>     0.000 </roll-deg>
+      <pitch-deg>   -6.000 </pitch-deg>
+      <heading-deg>  0.000 </heading-deg>
     </offsets>
   </model>
 
