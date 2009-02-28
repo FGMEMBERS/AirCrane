@@ -173,7 +173,7 @@
 -->
   </animation>
 
-  <!-- Effet de particules
+  <!-- Effet de particules du rotor au sol
   <model>
     <path>Aircraft/AirCrane/Models/Effects/particles.xml</path>
     <offsets>
@@ -182,6 +182,16 @@
       <z-m> -3.500 </z-m>
    </offsets>
   </model> -->
+
+  <!-- Effet de particules du laché d'eau -->
+  <model>
+    <path>Aircraft/AirCrane/Models/Effects/dropped.xml</path>
+    <offsets>
+      <x-m> -2.606 </x-m>
+      <y-m>  0.000 </y-m>
+      <z-m> -3.500 </z-m>
+   </offsets>
+  </model>
 
   <!-- Intérieur -->
   <model>

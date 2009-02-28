@@ -81,6 +81,8 @@ Air-Crane simulation config.
       </key>
     </help>
 
+    <menubar include="Dialogs/aircrane-menu.xml"/>
+
   </sim>
 
   <controls>
@@ -128,7 +130,8 @@ Air-Crane simulation config.
       <file>Aircraft/AirCrane/Nasal/doors.nas</file>
       <file>Aircraft/AirCrane/Nasal/light.nas</file>
       <file>Aircraft/AirCrane/Nasal/aircrane.nas</file>
-       <file>Aircraft/AirCrane/Nasal/afcs.nas</file>
+      <file>Aircraft/AirCrane/Nasal/liveries.nas</file>
+      <file>Aircraft/AirCrane/Nasal/afcs.nas</file>
     </aircrane>
   </nasal>
 

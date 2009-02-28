@@ -38,6 +38,8 @@ var cone2 = props.globals.getNode("rotors/main/cone2-deg", 1);
 var cone3 = props.globals.getNode("rotors/main/cone3-deg", 1);
 var cone4 = props.globals.getNode("rotors/main/cone4-deg", 1);
 
+var bladesvisible = props.globals.getNode("rotors/main/bladesvisible", 1);
+
 # state:
 # 0 off
 # 1 engine startup
@@ -124,12 +126,27 @@ var update_engine = func {
 #	cone4.setDoubleValue( f *c *0.25);
 #}
 
+# 0.50
+# 0.75
+# 1.00
+# 1.25
 var update_rotor_cone_angle = func {
+	r = rotor_rpm.getValue();
+        #print("r  = ", r);
+
+	var f = r / 186;
+        #print("f1 = ", f);
+
+	f = clamp (f, 0 , 1);
+        #print("f2 = ", f);
+
 	c = cone.getValue();
-	cone1.setDoubleValue( c *0.50);
-	cone2.setDoubleValue( c *0.75);
-	cone3.setDoubleValue( c *1.00);
-	cone4.setDoubleValue( c *1.25);
+        #print("c  = ", c);
+
+	cone1.setDoubleValue( (c * 1.00) + (f * c));
+	cone2.setDoubleValue( (c * 0.10) + (f * c));
+	cone3.setDoubleValue( (c * 0.15) + (f * c));
+	cone4.setDoubleValue( (c * 0.20) + (f * c));
 }
 
 # torquemeter
