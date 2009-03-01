@@ -29,6 +29,9 @@ Air-Crane simulation config.
 
     <model>
       <path archive="y">Aircraft/AirCrane/Models/aircrane.xml</path>
+      <livery>
+        <file type="string">default</file>
+      </livery>
       <aircrane>
         <state type="int">0</state>
         <engine type="float">0.0</engine>
@@ -128,6 +131,7 @@ Air-Crane simulation config.
   <nasal>
     <aircrane>
       <file>Aircraft/AirCrane/Nasal/doors.nas</file>
+      <file>Aircraft/AirCrane/Nasal/immat.nas</file>
       <file>Aircraft/AirCrane/Nasal/light.nas</file>
       <file>Aircraft/AirCrane/Nasal/aircrane.nas</file>
       <file>Aircraft/AirCrane/Nasal/liveries.nas</file>
