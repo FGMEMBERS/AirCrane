@@ -57,13 +57,13 @@ Air-Crane simulation config.
       <max-lb>300</max-lb>
     </weight>
 
-       <weight n="3">
+    <weight n="3">
       <name>Load</name>
-      <weight-lb>10000</weight-lb>
+      <weight-lb>0</weight-lb>
       <max-lb>20000</max-lb>
     </weight>
-    
-    <help>
+
+   <help>
       <title>AirCrane - background and help</title>
       <line></line>
       <key>
