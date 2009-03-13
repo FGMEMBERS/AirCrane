@@ -183,7 +183,7 @@
    </offsets>
   </model> -->
 
-  <!-- Effet de particules du laché d'eau -->
+  <!-- Effet de particules du laché d'eau
   <model>
     <path>Aircraft/AirCrane/Models/Effects/dropped.xml</path>
     <offsets>
@@ -191,7 +191,7 @@
       <y-m>  0.000 </y-m>
       <z-m> -3.500 </z-m>
    </offsets>
-  </model>
+  </model> -->
 
   <!-- Intérieur -->
   <model>
