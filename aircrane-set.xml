@@ -62,8 +62,8 @@ Air-Crane simulation config.
       <weight-lb>0</weight-lb>
       <max-lb>20000</max-lb>
     </weight>
-
-   <help>
+    
+    <help>
       <title>AirCrane - background and help</title>
       <line></line>
       <key>
@@ -81,6 +81,14 @@ Air-Crane simulation config.
       <key>
         <name>r</name>
         <desc>Apply rotor brake</desc>
+      </key>
+      <key>
+        <name>Ctrl d</name>
+        <desc>S.A.S.</desc>
+      </key>
+      <key>
+        <name>Ctrl f</name>
+        <desc>Auto hover</desc>
       </key>
     </help>
 
