@@ -81,10 +81,10 @@
          rotor-correction-factor="0.77"
          balance="0.9985">
          <control-input axis="/controls/flight/aileron-trim" control="CYCLICAIL" split="true"/>
-         <control-input axis="/controls/flight/aileron" control="CYCLICAIL" src0="-1.0" src1="1.0" dst0="-1.0" dst1="1.0"/>
+         <control-input axis="/controls/flight/fcs/roll" control="CYCLICAIL" src0="-1.0" src1="1.0" dst0="-1.0" dst1="1.0"/>
          <control-input axis="/controls/engines/engine[0]/throttle" control="CYCLICAIL" src0="0.0" src1="1.0" dst0="-0.1" dst1="0.1"/>
          <control-input axis="/controls/flight/elevator-trim" control="CYCLICELE" split="true"/>
-         <control-input axis="/controls/flight/elevator" control="CYCLICELE" src0="-1.0" src1="1.0" dst0="-1.0" dst1="1.0"/>
+         <control-input axis="/controls/flight/fcs/pitch" control="CYCLICELE" src0="-1.0" src1="1.0" dst0="-1.0" dst1="1.0"/>
          <control-input axis="/controls/engines/engine[0]/throttle" control="COLLECTIVE" src0="0.0" src1="1.0" dst0="1.0" dst1="-1.0"/>
   </rotor>
 
@@ -120,8 +120,15 @@
          downwashfactor="0.3"
          rotor-correction-factor="0.80"
          balance="0.998">
-         <control-input axis="/controls/flight/rudder" control="COLLECTIVE" invert="true" src0="-1.0" src1="1.0" dst0="-0.66" dst1="0.66"/>
-         <control-input axis="/controls/engines/engine[0]/throttle" control="COLLECTIVE" src0="0.0" src1="0.6" dst0=".45" dst1="-.50"/>
+	 
+	 			 <control-input axis="/controls/flight/fcs/yaw" control="COLLECTIVE" invert="true"
+					 src0="-1.0" src1="1.0" dst0="-0.66" dst1="0.66"/>
+		<control-input axis="/controls/flight/fcs/tail-rotor/throttle" control="COLLECTIVE"
+					   src0="-1.0" src1="1.0"
+					   dst0="-1.0" dst1="1.0"/>
+	 
+     <!--<control-input axis="/controls/flight/fcs/yaw" control="COLLECTIVE" invert="true" src0="-1.0" src1="1.0" dst0="-0.66" dst1="0.66"/>
+         <control-input axis="/controls/engines/engine[0]/throttle" control="COLLECTIVE" src0="0.0" src1="0.6" dst0=".45" dst1="-.50"/>-->
   </rotor>
 
   <!-- only the engine power below is a known good value -->

@@ -134,7 +134,7 @@ var AFCS = {
   new : func(input_path, output_path) {
     var obj = FCSFilter.new(input_path, output_path);
     obj.parents = [FCSFilter, AFCS];
-    setprop("/controls/flight/fcs/auto-hover-enabled", 0);
+    setprop("/controls/flight/fcs/auto-hover-enabled", 0);    
     setprop("/controls/flight/fcs/gains/afcs/fps-brake-gain-pitch", 1.8);
     setprop("/controls/flight/fcs/gains/afcs/fps-brake-gain-roll", 0.8);
     setprop("/controls/flight/fcs/gains/afcs/fps-pitch-brake-freq", 3);
@@ -219,7 +219,7 @@ var SAS = {
     obj.sensitivities = sensitivities; 
     obj.initial_gains = initial_gains;
     props.globals.getNode("/controls/flight/fcs/gains/sas", 1).setValues(obj.initial_gains);
-    setprop("/controls/flight/fcs/sas-enabled", 1);
+    setprop("/controls/flight/fcs/sas-enabled", 1);   
     return obj;
   },
 
@@ -528,10 +528,10 @@ var tail = nil;
 var count = 0;
 
 var sensitivities = {'roll' : 1.0, 'pitch' : 1.0, 'yaw' : 3.0 };
-var sas_initial_gains = {'roll' : 0.02, 'pitch' : -0.10, 'yaw' : 0.04 };
-var cas_input_gains = {'roll' : 30, 'pitch' : -60, 'yaw' : 30, 
+var sas_initial_gains = {'roll' : 0.02, 'pitch' : -0.10, 'yaw' : 0.01 };
+var cas_input_gains = {'roll' : 30, 'pitch' : -60, 'yaw' : 60, 
                        'attitude-roll' : 80, 'attitude-pitch' : -80 };
-var cas_output_gains = {'roll' : 0.24, 'pitch' : -0.4, 'yaw' : 2.0, 
+var cas_output_gains = {'roll' : 0.24, 'pitch' : -0.4, 'yaw' : 4.0, 
                         'roll-brake-freq' : 40, 'pitch-brake-freq' : 12, 
                         'roll-brake' : 1.6, 'pitch-brake' : 24, 
                         'anti-side-slip-gain' : -16};
