@@ -173,6 +173,23 @@
 -->
   </animation>
 
+  <!-- Une ombre pour OSG -->
+  <model>
+    <name>shadowOSG</name>
+    <path>Aircraft/AirCrane/Models/shadow.xml</path>
+  </model>
+
+  <animation>
+    <type>select</type>
+    <object-name>shadowOSG</object-name>
+    <condition>
+      <equals>
+        <property>/sim[0]/rendering/shadows-ac</property>
+        <value>true</value>
+      </equals>
+    </condition>
+  </animation>
+
   <!-- Effet de particules du rotor au sol
   <model>
     <path>Aircraft/AirCrane/Models/Effects/particles.xml</path>
