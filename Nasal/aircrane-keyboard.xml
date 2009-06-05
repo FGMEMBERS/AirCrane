@@ -12,16 +12,22 @@
   </key>
 
   
+  <key n="5">
+    <name>Ctrl-e</name>
+    <desc>Toggle CAS enable</desc>
+    <binding>
+      <command>nasal</command>
+      <script>aircrane.cas.toggleEnable();</script>
+    </binding>
+  </key>
+
+  
   <key n="6">
     <name>Ctrl-f</name>
     <desc>Toggle AutoHover</desc>
     <binding>
       <command>nasal</command>
       <script>aircrane.afcs.toggleAutoHover();</script>
-    </binding>
-    <binding>
-      <command>nasal</command>
-      <script>aircrane.cas.toggleEnable();</script>
     </binding>
   </key>
 
@@ -70,18 +76,12 @@
     </mod-up>
   </key>
 
- <!-- added binding for cas-toggle as workaround for cas-bug in afcs.nas-->
-
   <key n="125">
     <name>}</name>
     <desc>Start Engines</desc>
     <binding>
       <command>nasal</command>
       <script>aircrane.engines(1)</script>
-    </binding>
-     <binding>
-      <command>nasal</command>
-      <script>aircrane.cas.toggleEnable();</script>
     </binding>
   </key>
 
@@ -91,10 +91,6 @@
     <binding>
       <command>nasal</command>
       <script>aircrane.engines(0)</script>
-    </binding>
-    <binding>
-      <command>nasal</command>
-      <script>aircrane.cas.toggleEnable();</script>
     </binding>
   </key>
 

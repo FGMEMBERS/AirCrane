@@ -295,7 +295,7 @@ var CAS = {
     props.globals.getNode("/controls/flight/fcs/gains/cas/output", 1).setValues(obj.output_gains);
     setprop("/autopilot/locks/altitude", '');
     setprop("/autopilot/locks/heading", '');
-    setprop("/controls/flight/fcs/cas-enabled", 0);
+    setprop("/controls/flight/fcs/cas-enabled", 1);
     return obj;
   },
 
@@ -491,7 +491,7 @@ var TailRotorCollective = {
     var cas_input_gain = cas.calcGain('yaw');
     var target_rate = cas_input * cas_input_gain;
     var rate = getprop("/orientation/yaw-rate-degps");
-    var error_rate = getprop("/controls/flight/fcs/cas/yaw");
+    var error_rate = getprop("/controls/flight/fcs/cas/delta_yaw");
     var error_adjuster_gain = getprop("/controls/flight/fcs/gains/tail-rotor/error-adjuster-gain");
     var minimum = getprop("/controls/flight/fcs/tail-rotor/src-minimum");
     var maximum = getprop("/controls/flight/fcs/tail-rotor/src-maximum");
@@ -538,8 +538,11 @@ var cas_output_gains = {'roll' : 0.24, 'pitch' : -0.4, 'yaw' : 4.0,
 
 var update = func {
   count += 1;
-  # AFCS, CAS, and SAS run at 60Hz
-  if (math.mod(count, 2) == 0) {
+  rpm = getprop("/rotors/main/rpm");
+  # AFCS, CAS, and SAS run at 60Hz only when engine rpm > 1
+  # this rpm filter prevents CAS/SAS work when engine is not running,
+  # which may cause Nasal runtime error
+  if (math.mod(count, 2) == 0 or rpm < 10) {
     return;
   }
   cas.apply('roll');
