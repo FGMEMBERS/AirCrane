@@ -84,7 +84,11 @@ Air-Crane simulation config.
       </key>
       <key>
         <name>Ctrl d</name>
-        <desc>S.A.S.</desc>
+        <desc>Toggle S.A.S.</desc>
+      </key>
+      <key>
+        <name>Ctrl e</name>
+        <desc>Toggle C.A.S.</desc>
       </key>
       <key>
         <name>Ctrl f</name>
@@ -143,7 +147,10 @@ Air-Crane simulation config.
       <file>Aircraft/AirCrane/Nasal/light.nas</file>
       <file>Aircraft/AirCrane/Nasal/aircrane.nas</file>
       <file>Aircraft/AirCrane/Nasal/liveries.nas</file>
-      <file>Aircraft/AirCrane/Nasal/afcs.nas</file>
+      <file>Aircraft/AirCrane/Nasal/bladevisible.nas</file>
+      <file>Aircraft/AirCrane/Nasal/fcs-management.nas</file>
+
+      <file>Aircraft/Generic/fcs.nas</file>
     </aircrane>
   </nasal>
 

@@ -38,8 +38,6 @@ var cone2 = props.globals.getNode("rotors/main/cone2-deg", 1);
 var cone3 = props.globals.getNode("rotors/main/cone3-deg", 1);
 var cone4 = props.globals.getNode("rotors/main/cone4-deg", 1);
 
-var bladesvisible = props.globals.getNode("rotors/main/bladesvisible", 1);
-
 # state:
 # 0 off
 # 1 engine startup
