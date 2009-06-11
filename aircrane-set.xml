@@ -150,7 +150,7 @@ Air-Crane simulation config.
       <file>Aircraft/AirCrane/Nasal/bladevisible.nas</file>
       <file>Aircraft/AirCrane/Nasal/fcs-management.nas</file>
 
-      <file>Aircraft/Generic/fcs.nas</file>
+      <file>Aircraft/Generic/helicopter-fcs.nas</file>
     </aircrane>
   </nasal>
 
