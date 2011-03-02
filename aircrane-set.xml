@@ -2,7 +2,6 @@
 <!--
 ************************************************************************
 Air-Crane simulation config.
-
 ************************************************************************
 -->
 
@@ -34,10 +33,26 @@ Air-Crane simulation config.
       </livery>
       <aircrane>
         <state type="int">0</state>
-        <engine type="float">0.0</engine>
-        <rotor-step-deg type="float">-1.0</rotor-step-deg>
+        <engine type="float">0</engine>
+        <rotor-step-deg type="float">-1</rotor-step-deg>
       </aircrane>
     </model>
+
+    <multiplay>
+      <chat_display>1</chat_display>
+      <generic> 
+        <int type="int">0</int>  <!-- 0 immat -->
+        <int type="int">0</int>  <!-- 1 immat -->
+        <int type="int">0</int>  <!-- 2 immat -->
+        <int type="int">0</int>  <!-- 3 immat -->
+        <int type="int">0</int>  <!-- 4 immat -->
+        <int type="int">0</int>  <!-- 5 immat -->
+        <int type="bool">0</int> <!-- 6 smoke -->
+        <int type="int">0</int>  <!-- 7 color -->
+        <float n="0" alias="/instrumentation/doors/crew/position-norm"/>
+        <float n="1" alias="/instrumentation/doors/passenger/position-norm"/>
+      </generic>
+    </multiplay>
 
    <weight n="0">
       <name>Pilot</name>
@@ -141,17 +156,20 @@ Air-Crane simulation config.
   </rotors>
 
   <nasal>
-    <aircrane>
+    <doors>
       <file>Aircraft/AirCrane/Nasal/doors.nas</file>
+    </doors>
+    <aircrane>
       <file>Aircraft/AirCrane/Nasal/immat.nas</file>
       <file>Aircraft/AirCrane/Nasal/light.nas</file>
       <file>Aircraft/AirCrane/Nasal/aircrane.nas</file>
       <file>Aircraft/AirCrane/Nasal/liveries.nas</file>
       <file>Aircraft/AirCrane/Nasal/bladevisible.nas</file>
-      <file>Aircraft/AirCrane/Nasal/fcs-management.nas</file>
-
-      <file>Aircraft/Generic/helicopter-fcs.nas</file>
     </aircrane>
+    <fcs>
+      <file>Aircraft/AirCrane/Nasal/fcs-management.nas</file>
+      <file>Aircraft/Generic/helicopter-fcs.nas</file>
+    </fcs>
   </nasal>
 
 </PropertyList>

@@ -7,62 +7,77 @@
   <nasal>
     <load>
       var livery_update = aircraft.livery_update.new("Aircraft/AirCrane/Models/Liveries", 10);
+
+      var self = cmdarg();
+
+      var float_0 = self.getNode("sim/multiplay/generic/float[0]", 1);
+      var float_1 = self.getNode("sim/multiplay/generic/float[1]", 1);
+      
+      var crew_door = self.getNode("instrumentation/doors/crew/position-norm", 1);
+      var passenger_door = self.getNode("instrumentation/doors/passenger/position-norm", 1);
+    
+      crew_door.alias(float_0);
+      passenger_door.alias(float_1);
     </load>
+
     <unload>
       livery_update.stop();
+      crew_door.unalias();
+      passenger_door.unalias();
     </unload>
   </nasal>
 
   <animation>
     <!-- Objets opaques -->
     <object-name>fuselage</object-name>
-    <object-name>supportlight</object-name>
-    <object-name>antennes</object-name>
-    <object-name>caches</object-name>
-    <object-name>caches2</object-name>
-    <object-name>caches3</object-name>
-    <object-name>caches4</object-name>
-    <object-name>moteurs</object-name>
-    <object-name>intmoteurs</object-name>
-    <object-name>cables1</object-name>
-    <object-name>cables2</object-name>
-    <object-name>cables3</object-name>
-    <object-name>rebords</object-name>
-    <object-name>arbres</object-name>
-    <object-name>arbre2</object-name>
-    <object-name>supports</object-name>
-    <object-name>aileron</object-name>
-    <object-name>structure</object-name>
-    <object-name>axerotor</object-name>
-    <object-name>cotesaxerotor</object-name>
-    <object-name>echelles</object-name>
-    <object-name>tampons</object-name>
-    <object-name>pate1</object-name>
-    <object-name>pate2</object-name>
-    <object-name>pate3</object-name>
-    <object-name>pate4</object-name>
     <object-name>porteG</object-name>
     <object-name>porteD</object-name>
-    <object-name>supportaileron</object-name>
-    <object-name>blocmoteur1</object-name>
-    <object-name>roueG</object-name>
-    <object-name>roueD</object-name>
-    <object-name>roueA</object-name>
+    <object-name>antennes</object-name>
+    <object-name>rebords</object-name>
+    <object-name>supportlight</object-name>
     <object-name>axeAH</object-name>
     <object-name>axeAB</object-name>
     <object-name>axeGH</object-name>
     <object-name>axeGB</object-name>
     <object-name>axeDH</object-name>
     <object-name>axeDB</object-name>
-    <object-name>axetail</object-name>
     <object-name>articuleAH</object-name>
     <object-name>articuleAB</object-name>
     <object-name>articuleGH</object-name>
     <object-name>articuleGB</object-name>
     <object-name>articuleDH</object-name>
     <object-name>articuleDB</object-name>
-    <object-name>lampetail</object-name>
     <object-name>lampenez</object-name>
+    <object-name>pate1</object-name>
+    <object-name>pate2</object-name>
+    <object-name>pate3</object-name>
+    <object-name>pate4</object-name>
+    <object-name>caches</object-name>
+    <object-name>caches2</object-name>
+    <object-name>caches4</object-name>
+    <object-name>aileron</object-name>
+    <object-name>blocmoteur1</object-name>
+    <object-name>structure</object-name>
+    <object-name>supportaileron</object-name>
+    <object-name>lampetail</object-name>
+
+    <object-name>axetail</object-name>
+    <object-name>supports</object-name>
+    <object-name>tampons</object-name>
+    <object-name>arbres</object-name>
+    <object-name>arbre2</object-name>
+    <object-name>axerotor</object-name>
+    <object-name>cotesaxerotor</object-name>
+    <object-name>moteurs</object-name>
+    <object-name>intmoteurs</object-name>
+    <object-name>caches3</object-name>
+    <object-name>cables1</object-name>
+    <object-name>cables2</object-name>
+    <object-name>cables3</object-name>
+    <object-name>roueG</object-name>
+    <object-name>roueD</object-name>
+    <object-name>roueA</object-name>
+    <object-name>echelles</object-name>
 
     <!-- Transparence -->
     <object-name>vitres</object-name>
@@ -73,71 +88,56 @@
   </animation>
 
   <animation>
-    <type>shader</type>
-    <shader>chrome</shader>
-    <texture>glass_shader.png</texture>
-    <object-name>vitres</object-name>
-  </animation>
-
-  <animation>
-    <type>noshadow</type>
-    <object-name>vitres</object-name>
-    <object-name>lampeG</object-name>
-    <object-name>lampeD</object-name>
-    <object-name>lampetailtrs</object-name>
-    <object-name>lampeneztrs</object-name>
-  </animation>
-
-  <animation>
     <type>material</type>
     <object-name>fuselage</object-name>
-    <object-name>supportlight</object-name>
-    <object-name>antennes</object-name>
-    <object-name>caches</object-name>
-    <object-name>caches2</object-name>
-    <object-name>caches3</object-name>
-    <object-name>caches4</object-name>
-    <object-name>moteurs</object-name>
-    <object-name>intmoteurs</object-name>
-    <object-name>cables1</object-name>
-    <object-name>cables2</object-name>
-    <object-name>cables3</object-name>
-    <object-name>rebords</object-name>
-    <object-name>arbres</object-name>
-    <object-name>arbre2</object-name>
-    <object-name>supports</object-name>
-    <object-name>aileron</object-name>
-    <object-name>structure</object-name>
-    <object-name>axerotor</object-name>
-    <object-name>cotesaxerotor</object-name>
-    <object-name>echelles</object-name>
-    <object-name>tampons</object-name>
-    <object-name>pate1</object-name>
-    <object-name>pate2</object-name>
-    <object-name>pate3</object-name>
-    <object-name>pate4</object-name>
     <object-name>porteG</object-name>
     <object-name>porteD</object-name>
-    <object-name>supportaileron</object-name>
-    <object-name>blocmoteur1</object-name>
-    <object-name>roueG</object-name>
-    <object-name>roueD</object-name>
-    <object-name>roueA</object-name>
+    <object-name>antennes</object-name>
+    <object-name>rebords</object-name>
+    <object-name>supportlight</object-name>
     <object-name>axeAH</object-name>
     <object-name>axeAB</object-name>
     <object-name>axeGH</object-name>
     <object-name>axeGB</object-name>
     <object-name>axeDH</object-name>
     <object-name>axeDB</object-name>
-    <object-name>axetail</object-name>
     <object-name>articuleAH</object-name>
     <object-name>articuleAB</object-name>
     <object-name>articuleGH</object-name>
     <object-name>articuleGB</object-name>
     <object-name>articuleDH</object-name>
     <object-name>articuleDB</object-name>
-    <object-name>lampetail</object-name>
     <object-name>lampenez</object-name>
+    <object-name>pate1</object-name>
+    <object-name>pate2</object-name>
+    <object-name>pate3</object-name>
+    <object-name>pate4</object-name>
+    <object-name>caches</object-name>
+    <object-name>caches2</object-name>
+    <object-name>caches4</object-name>
+    <object-name>aileron</object-name>
+    <object-name>blocmoteur1</object-name>
+    <object-name>structure</object-name>
+    <object-name>supportaileron</object-name>
+    <object-name>lampetail</object-name>
+
+    <object-name>axetail</object-name>
+    <object-name>supports</object-name>
+    <object-name>tampons</object-name>
+    <object-name>arbres</object-name>
+    <object-name>arbre2</object-name>
+    <object-name>axerotor</object-name>
+    <object-name>cotesaxerotor</object-name>
+    <object-name>moteurs</object-name>
+    <object-name>intmoteurs</object-name>
+    <object-name>caches3</object-name>
+    <object-name>cables1</object-name>
+    <object-name>cables2</object-name>
+    <object-name>cables3</object-name>
+    <object-name>roueG</object-name>
+    <object-name>roueD</object-name>
+    <object-name>roueA</object-name>
+    <object-name>echelles</object-name>
 
     <property-base>sim/model/livery</property-base>
     <texture-prop>texture</texture-prop>
@@ -173,22 +173,62 @@
 -->
   </animation>
 
+  <effect>
+    <inherits-from>Aircraft/Generic/Effects/Fuselagereflect</inherits-from>
+    <object-name>fuselage</object-name>
+    <object-name>porteG</object-name>
+    <object-name>porteD</object-name>
+    <object-name>antennes</object-name>
+    <object-name>rebords</object-name>
+    <object-name>supportlight</object-name>
+    <object-name>axeAH</object-name>
+    <object-name>axeAB</object-name>
+    <object-name>axeGH</object-name>
+    <object-name>axeGB</object-name>
+    <object-name>axeDH</object-name>
+    <object-name>axeDB</object-name>
+    <object-name>articuleAH</object-name>
+    <object-name>articuleAB</object-name>
+    <object-name>articuleGH</object-name>
+    <object-name>articuleGB</object-name>
+    <object-name>articuleDH</object-name>
+    <object-name>articuleDB</object-name>
+    <object-name>lampenez</object-name>
+    <object-name>pate1</object-name>
+    <object-name>pate2</object-name>
+    <object-name>pate3</object-name>
+    <object-name>pate4</object-name>
+    <object-name>caches</object-name>
+    <object-name>caches2</object-name>
+    <object-name>caches4</object-name>
+    <object-name>aileron</object-name>
+    <object-name>blocmoteur1</object-name>
+    <object-name>structure</object-name>
+    <object-name>supportaileron</object-name>
+    <object-name>lampetail</object-name>
+  </effect>
+
+  <animation>
+    <type>shader</type>
+    <shader>chrome</shader>
+    <texture>Aircraft/Generic/Effects/glass_shader.png</texture>
+    <object-name>vitres</object-name>
+  </animation>
+
+  <animation>
+    <type>noshadow</type>
+    <object-name>vitres</object-name>
+    <object-name>lampeG</object-name>
+    <object-name>lampeD</object-name>
+    <object-name>lampetailtrs</object-name>
+    <object-name>lampeneztrs</object-name>
+  </animation>
+
   <!-- Une ombre pour OSG -->
   <model>
     <name>shadowOSG</name>
     <path>Aircraft/AirCrane/Models/shadow.xml</path>
   </model>
-
-  <animation>
-    <type>select</type>
-    <object-name>shadowOSG</object-name>
-    <condition>
-      <equals>
-        <property>/sim[0]/rendering/shadows-ac</property>
-        <value>true</value>
-      </equals>
-    </condition>
-  </animation>
 
   <!-- Effet de particules du rotor au sol
   <model>
@@ -214,12 +254,9 @@
   <model>
     <path>Aircraft/AirCrane/Models/Interior/interior.xml</path>
     <offsets>
-      <x-m> 0.0 </x-m>
-      <y-m> 0.0 </y-m>
-      <z-m> 0.0 </z-m>
-      <roll-deg>    0.0 </roll-deg>
-      <pitch-deg>   0.0 </pitch-deg>
-      <heading-deg> 0.0 </heading-deg>
+      <x-m> 0 </x-m>
+      <y-m> 0 </y-m>
+      <z-m> 0</z-m>
     </offsets>
   </model>
 
@@ -227,12 +264,9 @@
   <model>
     <path>Aircraft/AirCrane/Models/Immat/immat.xml</path>
     <offsets>
-      <x-m> 0.0 </x-m>
-      <y-m> 0.0 </y-m>
-      <z-m> 0.0 </z-m>
-      <roll-deg>    0.0 </roll-deg>
-      <pitch-deg>   0.0 </pitch-deg>
-      <heading-deg> 0.0 </heading-deg>
+      <x-m> 0 </x-m>
+      <y-m> 0 </y-m>
+      <z-m> 0 </z-m>
     </offsets>
   </model>
 
@@ -243,9 +277,9 @@
       <x-m> -2.606 </x-m>
       <y-m>  0.000 </y-m>
       <z-m>  1.383 </z-m>
-      <roll-deg>    0.000 </roll-deg>
-      <pitch-deg>  -3.000 </pitch-deg>
-      <heading-deg> 0.000 </heading-deg>
+      <roll-deg>    0 </roll-deg>
+      <pitch-deg>  -3 </pitch-deg>
+      <heading-deg> 0 </heading-deg>
     </offsets>
   </model>
 
@@ -256,9 +290,9 @@
       <x-m> 11.118 </x-m>
       <y-m> -1.023 </y-m>
       <z-m>  1.319 </z-m>
-      <roll-deg>   90.000 </roll-deg>
-      <pitch-deg>   0.000 </pitch-deg>
-      <heading-deg> 0.000 </heading-deg>
+      <roll-deg>   90 </roll-deg>
+      <pitch-deg>   0 </pitch-deg>
+      <heading-deg> 0 </heading-deg>
     </offsets>
   </model>
 
@@ -275,17 +309,17 @@
   <animation>
     <type>rotate</type>
     <object-name>EnsembleRoueAvant</object-name>
-    <property>controls/flight/rudder</property>
-    <factor> 35.0 </factor>
+    <property>surface-positions/rudder-pos-norm</property>
+    <factor> 35 </factor>
     <center>
       <x-m> -8.740 </x-m>
       <y-m>  0.000 </y-m>
       <z-m> -2.989 </z-m>
     </center>
     <axis>
-      <x>  0.000 </x>
-      <y>  0.000 </y>
-      <z> -1.000 </z>
+      <x>  0 </x>
+      <y>  0 </y>
+      <z> -1 </z>
     </axis>
   </animation>
 
@@ -321,9 +355,9 @@
       <entry><ind> 1.000 </ind><dep>  0.11 </dep></entry>
     </interpolation>
     <axis>
-      <x> 0.0 </x>
-      <y> 0.0 </y>
-      <z> 1.0 </z>
+      <x> 0 </x>
+      <y> 0 </y>
+      <z> 1 </z>
     </axis>
   </animation>
  
@@ -342,9 +376,9 @@
       <z-m> -3.171 </z-m>
     </center>
     <axis>
-      <x> 0.0 </x>
-      <y> 1.0 </y>
-      <z> 0.0 </z>
+      <x> 0 </x>
+      <y> 1 </y>
+      <z> 0 </z>
     </axis>
   </animation>
  
@@ -363,9 +397,9 @@
       <z-m> -3.302 </z-m>
     </center>
     <axis>
-      <x> 0.0 </x>
-      <y> 1.0 </y>
-      <z> 0.0 </z>
+      <x> 0 </x>
+      <y> 1 </y>
+      <z> 0 </z>
     </axis>
   </animation>
 
@@ -379,9 +413,9 @@
       <entry><ind> 1.00 </ind><dep>  0.28 </dep></entry>
     </interpolation>
     <axis>
-      <x> 0.0 </x>
-      <y> 0.0 </y>
-      <z> 1.0 </z>
+      <x> 0 </x>
+      <y> 0 </y>
+      <z> 1 </z>
     </axis>
   </animation>
  
@@ -400,9 +434,9 @@
       <z-m> -2.465 </z-m>
     </center>
     <axis>
-      <x> 0.0 </x>
-      <y> 1.0 </y>
-      <z> 0.0 </z>
+      <x> 0 </x>
+      <y> 1 </y>
+      <z> 0 </z>
     </axis>
   </animation>
  
@@ -421,9 +455,9 @@
       <z-m> -2.848 </z-m>
     </center>
     <axis>
-      <x> 0.0 </x>
-      <y> 1.0 </y>
-      <z> 0.0 </z>
+      <x> 0 </x>
+      <y> 1 </y>
+      <z> 0 </z>
     </axis>
   </animation>
 
@@ -437,9 +471,9 @@
       <entry><ind> 1.00 </ind><dep>  0.28 </dep></entry>
     </interpolation>
     <axis>
-      <x> 0.0 </x>
-      <y> 0.0 </y>
-      <z> 1.0 </z>
+      <x> 0 </x>
+      <y> 0 </y>
+      <z> 1 </z>
     </axis>
   </animation>
  
@@ -458,9 +492,9 @@
       <z-m> -2.465 </z-m>
     </center>
     <axis>
-      <x> 0.0 </x>
-      <y> 1.0 </y>
-      <z> 0.0 </z>
+      <x> 0 </x>
+      <y> 1 </y>
+      <z> 0 </z>
     </axis>
   </animation>
  
@@ -479,9 +513,9 @@
       <z-m> -2.848 </z-m>
     </center>
     <axis>
-      <x> 0.0 </x>
-      <y> 1.0 </y>
-      <z> 0.0 </z>
+      <x> 0 </x>
+      <y> 1 </y>
+      <z> 0 </z>
     </axis>
   </animation>
 
@@ -497,9 +531,9 @@
       <z-m> -3.680 </z-m>
     </center>
     <axis>
-      <x>  0.000 </x>
-      <y> -1.000 </y>
-      <z>  0.000 </z>
+      <x>  0 </x>
+      <y> -1 </y>
+      <z>  0 </z>
     </axis>
   </animation>
 
@@ -514,9 +548,9 @@
       <z-m> -3.530 </z-m>
     </center>
     <axis>
-      <x>  0.000 </x>
-      <y> -1.000 </y>
-      <z>  0.000 </z>
+      <x>  0 </x>
+      <y> -1 </y>
+      <z>  0 </z>
     </axis>
   </animation>
 
@@ -531,9 +565,9 @@
       <z-m> -3.530 </z-m>
     </center>
     <axis>
-      <x>  0.000 </x>
-      <y> -1.000 </y>
-      <z>  0.000 </z>
+      <x>  0 </x>
+      <y> -1 </y>
+      <z>  0 </z>
     </axis>
   </animation>
 

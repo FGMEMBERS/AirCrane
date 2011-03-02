@@ -2,10 +2,10 @@
 
 <PropertyList>
   <sim>
-      <model>
+    <model>
+      <livery>
         <name type="string">Default</name>
-        <livery>
-          <texture>texture.png</texture>
+        <texture>texture.png</texture>
 <!--
         <diffuse>
           <red>   0.5 </red>
@@ -37,7 +37,7 @@
 
         <shininess>10</shininess>
 -->
-        </livery>
-      </model>
+      </livery>
+    </model>
   </sim>
 </PropertyList>

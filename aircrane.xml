@@ -42,6 +42,10 @@
 
   <approach speed="60"/>
 
+  <cruise speed="84" alt="0">
+    <control-setting axis="/controls/engines/engine[0]/throttle" value="1"/>
+  </cruise>
+
   <rotor name="main" 
          x="2.606" y="0.00" z="1.383"
          nx="0.087" ny="0" nz="1."
@@ -120,15 +124,12 @@
          downwashfactor="0.3"
          rotor-correction-factor="0.80"
          balance="0.998">
-	 
-	 			 <control-input axis="/controls/flight/fcs/yaw" control="COLLECTIVE" invert="true"
-					 src0="-1.0" src1="1.0" dst0="-0.66" dst1="0.66"/>
-		<control-input axis="/controls/flight/fcs/tail-rotor/throttle" control="COLLECTIVE"
-					   src0="-1.0" src1="1.0"
-					   dst0="-1.0" dst1="1.0"/>
-	 
-     <!--<control-input axis="/controls/flight/fcs/yaw" control="COLLECTIVE" invert="true" src0="-1.0" src1="1.0" dst0="-0.66" dst1="0.66"/>
-         <control-input axis="/controls/engines/engine[0]/throttle" control="COLLECTIVE" src0="0.0" src1="0.6" dst0=".45" dst1="-.50"/>-->
+         <control-input axis="/controls/flight/fcs/yaw" control="COLLECTIVE" invert="true" src0="-1.0" src1="1.0" dst0="-0.66" dst1="0.66"/>
+         <control-input axis="/controls/flight/fcs/tail-rotor/throttle" control="COLLECTIVE" src0="-1.0" src1="1.0" dst0="-1.0" dst1="1.0"/>
+<!--
+         <control-input axis="/controls/flight/fcs/yaw" control="COLLECTIVE" invert="true" src0="-1.0" src1="1.0" dst0="-0.66" dst1="0.66"/>
+         <control-input axis="/controls/engines/engine[0]/throttle" control="COLLECTIVE" src0="0.0" src1="0.6" dst0=".45" dst1="-.50"/>
+-->
   </rotor>
 
   <!-- only the engine power below is a known good value -->
@@ -152,9 +153,9 @@
   <!-- Tail -->
   <fuselage ax="-6.956" ay="0" az="-0.34" bx="-10.244" by="0" bz="1.133" width="2" taper="0.5" midpoint="0" cx="0.5" cz=".125" idrag="0"/>
   <!-- wheel left -->
-  <fuselage ax="1.923" ay="3.214" az="-1.674" bx="-1.217" by="3.214" bz="-2.079" width="0.8" taper="0.5" midpoint="0.5" cx="0.5" cz=".125" idrag="0"/>
+  <fuselage ax="1.923" ay="3.214" az="-1.674" bx="-1.217" by="3.214" bz="-2.079" width="0.8" taper="0.5" midpoint="0.5" cx="0.5" cz="0.125" idrag="0"/>
   <!-- wheel right -->
-  <fuselage ax="1.923" ay="-3.214" az="-1.674" bx="-1.217" by="-3.214" bz="-2.079" width="0.8" taper="0.5" midpoint="0.5" cx="0.5" cz=".125" idrag="0"/>
+  <fuselage ax="1.923" ay="-3.214" az="-1.674" bx="-1.217" by="-3.214" bz="-2.079" width="0.8" taper="0.5" midpoint="0.5" cx="0.5" cz="0.125" idrag="0"/>
 
   <cockpit x="11.082" y="-1.3" z="2.0"/>
 

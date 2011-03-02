@@ -7,7 +7,7 @@
     <desc>Toggle SAS enable</desc>
     <binding>
       <command>nasal</command>
-      <script>aircrane.sas.toggleEnable();</script>
+      <script>fcs.sas.toggleEnable();</script>
     </binding>
   </key>
 
@@ -17,7 +17,7 @@
     <desc>Toggle CAS enable</desc>
     <binding>
       <command>nasal</command>
-      <script>aircrane.cas.toggleEnable();</script>
+      <script>fcs.cas.toggleEnable();</script>
     </binding>
   </key>
 
@@ -27,7 +27,7 @@
     <desc>Toggle AutoHover</desc>
     <binding>
       <command>nasal</command>
-      <script>aircrane.afcs.toggleAutoHover();</script>
+      <script>fcs.afcs.toggleAutoHover();</script>
     </binding>
   </key>
 
@@ -36,7 +36,7 @@
     <desc>Passenger door</desc>
     <binding>
       <command>nasal</command>
-      <script>aircrane.doorsystem.passengerexport();</script>
+      <script>doors.doorsystem.passengerexport();</script>
     </binding>
   </key>
 
@@ -45,7 +45,7 @@
     <desc>Crew door</desc>
     <binding>
       <command>nasal</command>
-      <script>aircrane.doorsystem.crewexport();</script>
+      <script>doors.doorsystem.crewexport();</script>
     </binding>
   </key>
 
