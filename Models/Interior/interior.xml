@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="UTF-8"?>
+<?xml version="1.0" encoding="ISO-8859-1"?>
 
 <PropertyList>
 
@@ -17,9 +17,13 @@
     <object-name>grueinstr</object-name>
     <object-name>plaque</object-name>
     <object-name>cranejoystick</object-name>
-
+    <object-name>intporteG</object-name>
+    <object-name>intporteD</object-name>
+    
     <!-- Objets transparents -->
     <object-name>intvitres</object-name>
+    <object-name>intvitresporteG</object-name>
+    <object-name>intvitresporteD</object-name>
   </animation>
 
   <animation>
@@ -27,13 +31,28 @@
     <shader>chrome</shader>
     <texture>Aircraft/Generic/Effects/glass_shader.png</texture>
     <object-name>intvitres</object-name>
+    <object-name>intvitresporteG</object-name>
+    <object-name>intvitresporteD</object-name>
   </animation>
 
   <animation>
     <type>noshadow</type>
     <object-name>intvitres</object-name>
+    <object-name>intvitresporteG</object-name>
+    <object-name>intvitresporteD</object-name>
   </animation>
 
+  <!-- working for Rembrandt -->
+  <effect>
+    <inherits-from>Effects/model-transparent</inherits-from>
+    <condition>
+      <property>sim/rendering/rembrandt/enabled</property>
+    </condition>
+    <object-name>intvitres</object-name>
+    <object-name>intvitresporteG</object-name>
+    <object-name>intvitresporteD</object-name>
+  </effect>
+  
   <!-- Planche de bord -->
   <model>
     <path>Aircraft/AirCrane/Models/Interior/Panel/panel.xml</path>
@@ -41,9 +60,7 @@
       <x-m> -9.391 </x-m>
       <y-m>  0.000 </y-m>
       <z-m> -1.499 </z-m>
-      <roll-deg>     0 </roll-deg>
       <pitch-deg>   -6 </pitch-deg>
-      <heading-deg>  0 </heading-deg>
     </offsets>
   </model>
 
@@ -57,15 +74,75 @@
     </offsets>
   </model>
 
-  <!-- Copilote
-  <model>
-    <path>Aircraft/Alphajet/Models/Pilot/pilot.xml</path>
-    <offsets>
-      <x-m> -1.607 </x-m>
-      <y-m>  0.000 </y-m>
-      <z-m> -0.300 </z-m>
-    </offsets>
-  </model> -->
-
+  <!-- animation des portes -->
+  <animation>
+    <name>IntLaPorteGauche</name>
+    <object-name>intporteG</object-name>
+    <object-name>intvitresporteG</object-name>
+  </animation>
+  
+  <animation>
+    <type>pick</type>
+    <object-name>IntLaPorteGauche</object-name>
+    <visible>true</visible>
+    <action>
+      <button>0</button>
+      <repeatable>false</repeatable>
+      <binding>
+        <command>nasal</command>
+        <script>doors.crew.toggle();</script>
+      </binding>
+    </action>
+  </animation>
+  
+  <animation>
+    <type>rotate</type>
+    <object-name>IntLaPorteGauche</object-name>
+    <property>sim/model/door-positions/crew/position-norm</property>
+    <factor> -100 </factor>
+    <axis>
+      <x1-m> -9.06146 </x1-m>
+      <y1-m> -1.08691 </y1-m> 
+      <z1-m> -1.57367 </z1-m>
+      <x2-m> -8.87113 </x2-m>
+      <y2-m> -0.92390 </y2-m>
+      <z2-m> -0.79338 </z2-m>
+    </axis>
+  </animation>
+  
+  <animation>
+    <name>IntLaPorteDroite</name>
+    <object-name>intporteD</object-name>
+    <object-name>intvitresporteD</object-name>
+  </animation>
+  
+  <animation>
+    <type>pick</type>
+    <object-name>IntLaPorteDroite</object-name>
+    <visible>true</visible>
+    <action>
+      <button>0</button>
+      <repeatable>false</repeatable>
+      <binding>
+        <command>nasal</command>
+        <script>doors.passenger.toggle();</script>
+      </binding>
+    </action>
+  </animation>
+  
+  <animation>
+    <type>rotate</type>
+    <object-name>IntLaPorteDroite</object-name>
+    <property>sim/model/door-positions/passenger/position-norm</property>
+    <factor> 100 </factor>
+    <axis>
+      <x1-m> -9.06146 </x1-m>
+      <y1-m>  1.08731 </y1-m> 
+      <z1-m> -1.57367 </z1-m>
+      <x2-m> -8.87113 </x2-m>
+      <y2-m>  0.92431 </y2-m>
+      <z2-m> -0.79338 </z2-m>
+    </axis>
+  </animation>
+  
 </PropertyList>
-

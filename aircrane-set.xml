@@ -1,9 +1,4 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<!--
-************************************************************************
-Air-Crane simulation config.
-************************************************************************
--->
+<?xml version="1.0" encoding="ISO-8859-1"?>
 
 <PropertyList>
 
@@ -13,6 +8,13 @@ Air-Crane simulation config.
     <author>BARANGER Emmanuel (3D), Heiko Schulz (FDM)</author>
     <status>alpha</status>
     <license>GPL v2</license>
+
+    <rating>
+      <FDM type="int">     4 </FDM>
+      <systems type="int"> 1 </systems>
+      <cockpit type="int"> 1 </cockpit>
+      <model type="int">   4 </model>
+    </rating>
 
     <flight-model>yasim</flight-model>
     <aero>aircrane</aero>
@@ -41,16 +43,22 @@ Air-Crane simulation config.
     <multiplay>
       <chat_display>1</chat_display>
       <generic> 
-        <int type="int">0</int>  <!-- 0 immat -->
-        <int type="int">0</int>  <!-- 1 immat -->
-        <int type="int">0</int>  <!-- 2 immat -->
-        <int type="int">0</int>  <!-- 3 immat -->
-        <int type="int">0</int>  <!-- 4 immat -->
-        <int type="int">0</int>  <!-- 5 immat -->
-        <int type="bool">0</int> <!-- 6 smoke -->
-        <int type="int">0</int>  <!-- 7 color -->
+        <int type="int" n="0">  0 </int>                                           <!--  0 immat -->
+        <int type="int" n="1">  0 </int>                                           <!--  1 immat -->
+        <int type="int" n="2">  0 </int>                                           <!--  2 immat -->
+        <int type="int" n="3">  0 </int>                                           <!--  3 immat -->
+        <int type="int" n="4">  0 </int>                                           <!--  4 immat -->
+        <int type="int" n="5">  0 </int>                                           <!--  5 immat -->
+        <int type="bool" n="6" alias="/smoke/active"> 0 </int>                     <!--  6 start smoke -->
+        <int type="int" n="7" alias="/smoke/particlepersec"> 50 </int>             <!--  7 particlepersec -->
+        <int type="int" n="10" alias="/controls/armament/trigger">0</int>          <!-- 10 reserved for bombable mode -->
         <float n="0" alias="/instrumentation/doors/crew/position-norm"/>
         <float n="1" alias="/instrumentation/doors/passenger/position-norm"/>
+        <float n="2" alias="/position/gear-agl-m">  0 </float>                     <!--  2 altitude for MP shadow -->
+        <float n="3" alias="/position/altitude-ft">  0 </float>                    <!--  3 altitude for smoke -->
+        <float n="6" alias="/engines/engine[0]/rpm" />
+        <string n="0" type="string" />
+        <string n="9" type="string" />                                        <!-- string[9] reserved for bombable mode -->
       </generic>
     </multiplay>
 
@@ -173,4 +181,3 @@ Air-Crane simulation config.
   </nasal>
 
 </PropertyList>
-

@@ -81,6 +81,8 @@
 
     <!-- Transparence -->
     <object-name>vitres</object-name>
+    <object-name>vitresporteG</object-name>
+    <object-name>vitresporteD</object-name>
     <object-name>lampeG</object-name>
     <object-name>lampeD</object-name>
     <object-name>lampetailtrs</object-name>
@@ -142,39 +144,23 @@
     <property-base>sim/model/livery</property-base>
     <texture-prop>texture</texture-prop>
     <texture>texture.png</texture>
-<!--
-    <diffuse>
-      <red-prop>diffuse/red</red-prop>
-      <green-prop>diffuse/green</green-prop>
-      <blue-prop>diffuse/blue</blue-prop>
-    </diffuse>
-
-    <ambient>
-      <red-prop>ambient/red</red-prop>
-      <green-prop>ambient/green</green-prop>
-      <blue-prop>ambient/blue</blue-prop>
-    </ambient>
--->
     <specular>
       <red-prop>specular/red</red-prop>
       <green-prop>specular/green</green-prop>
       <blue-prop>specular/blue</blue-prop>
     </specular>
-
     <emission>
       <red-prop>emission/red</red-prop>
       <green-prop>emission/green</green-prop>
       <blue-prop>emission/blue</blue-prop>
     </emission>
-<!--
-    <shininess>
-      <shininess-prop>shininess</shininess-prop>
-    </shininess>
--->
   </animation>
 
   <effect>
     <inherits-from>Aircraft/Generic/Effects/Fuselagereflect</inherits-from>
+    <condition>
+      <not><property>sim/rendering/rembrandt/enabled</property></not>
+    </condition>
     <object-name>fuselage</object-name>
     <object-name>porteG</object-name>
     <object-name>porteD</object-name>
@@ -208,31 +194,109 @@
     <object-name>lampetail</object-name>
   </effect>
 
+  <effect>
+    <inherits-from>Effects/model-combined-deferred</inherits-from>
+    <condition>
+      <property>sim/rendering/rembrandt/enabled</property>
+    </condition>
+    <object-name>fuselage</object-name>
+    <object-name>porteG</object-name>
+    <object-name>porteD</object-name>
+    <object-name>antennes</object-name>
+    <object-name>rebords</object-name>
+    <object-name>supportlight</object-name>
+    <object-name>axeAH</object-name>
+    <object-name>axeAB</object-name>
+    <object-name>axeGH</object-name>
+    <object-name>axeGB</object-name>
+    <object-name>axeDH</object-name>
+    <object-name>axeDB</object-name>
+    <object-name>articuleAH</object-name>
+    <object-name>articuleAB</object-name>
+    <object-name>articuleGH</object-name>
+    <object-name>articuleGB</object-name>
+    <object-name>articuleDH</object-name>
+    <object-name>articuleDB</object-name>
+    <object-name>lampenez</object-name>
+    <object-name>pate1</object-name>
+    <object-name>pate2</object-name>
+    <object-name>pate3</object-name>
+    <object-name>pate4</object-name>
+    <object-name>caches</object-name>
+    <object-name>caches2</object-name>
+    <object-name>caches4</object-name>
+    <object-name>aileron</object-name>
+    <object-name>blocmoteur1</object-name>
+    <object-name>structure</object-name>
+    <object-name>supportaileron</object-name>
+    <object-name>lampetail</object-name>
+  </effect>
+  
   <animation>
     <type>shader</type>
     <shader>chrome</shader>
     <texture>Aircraft/Generic/Effects/glass_shader.png</texture>
     <object-name>vitres</object-name>
+    <object-name>vitresporteG</object-name>
+    <object-name>vitresporteD</object-name>
   </animation>
 
   <animation>
     <type>noshadow</type>
     <object-name>vitres</object-name>
+    <object-name>vitresporteG</object-name>
+    <object-name>vitresporteD</object-name>
     <object-name>lampeG</object-name>
     <object-name>lampeD</object-name>
     <object-name>lampetailtrs</object-name>
     <object-name>lampeneztrs</object-name>
   </animation>
 
+  <!-- working for Rembrandt -->
+  <effect>
+    <inherits-from>Effects/model-transparent</inherits-from>
+    <condition>
+      <property>sim/rendering/rembrandt/enabled</property>
+    </condition>
+    <object-name>vitres</object-name>
+    <object-name>vitresporteG</object-name>
+    <object-name>vitresporteD</object-name>
+    <object-name>lampeG</object-name>
+    <object-name>lampeD</object-name>
+    <object-name>lampetailtrs</object-name>
+    <object-name>lampeneztrs</object-name>
+  </effect>
+  
   <!-- Une ombre pour OSG -->
   <model>
-    <name>shadowOSG</name>
     <path>Aircraft/AirCrane/Models/shadow.xml</path>
+    <offsets>
+      <x-m>  0.0 </x-m>
+      <y-m>  0.0 </y-m>
+      <z-m> -3.8 </z-m>
+    </offsets>
   </model>
 
+  <!-- Intérieur -->
+  <model>
+    <name>Interieur</name>
+    <path>Aircraft/AirCrane/Models/Interior/interior.xml</path>
+  </model>
+  
+  <!-- For Rembrandt -->
+  <animation>
+    <type>noshadow</type>
+    <object-name>Interieur</object-name>
+  </animation>
+  
+  <!-- Immatriculatoin -->
+  <model>
+    <path>Aircraft/AirCrane/Models/Immat/immat.xml</path>
+  </model>
+  
   <!-- Effet de particules du rotor au sol
   <model>
-    <path>Aircraft/AirCrane/Models/Effects/particles.xml</path>
+    <path>Aircraft/AirCrane/Models/Effects/particles/particles.xml</path>
     <offsets>
       <x-m> -2.606 </x-m>
       <y-m>  0.000 </y-m>
@@ -242,33 +306,13 @@
 
   <!-- Effet de particules du laché d'eau
   <model>
-    <path>Aircraft/AirCrane/Models/Effects/dropped.xml</path>
+    <path>Aircraft/AirCrane/Models/Effects/particles/dropped.xml</path>
     <offsets>
       <x-m> -2.606 </x-m>
       <y-m>  0.000 </y-m>
       <z-m> -3.500 </z-m>
    </offsets>
   </model> -->
-
-  <!-- Intérieur -->
-  <model>
-    <path>Aircraft/AirCrane/Models/Interior/interior.xml</path>
-    <offsets>
-      <x-m> 0 </x-m>
-      <y-m> 0 </y-m>
-      <z-m> 0</z-m>
-    </offsets>
-  </model>
-
-  <!-- Immatriculatoin -->
-  <model>
-    <path>Aircraft/AirCrane/Models/Immat/immat.xml</path>
-    <offsets>
-      <x-m> 0 </x-m>
-      <y-m> 0 </y-m>
-      <z-m> 0 </z-m>
-    </offsets>
-  </model>
 
   <!-- Rotor principale -->
   <model>
@@ -277,9 +321,7 @@
       <x-m> -2.606 </x-m>
       <y-m>  0.000 </y-m>
       <z-m>  1.383 </z-m>
-      <roll-deg>    0 </roll-deg>
       <pitch-deg>  -3 </pitch-deg>
-      <heading-deg> 0 </heading-deg>
     </offsets>
   </model>
 
@@ -291,8 +333,6 @@
       <y-m> -1.023 </y-m>
       <z-m>  1.319 </z-m>
       <roll-deg>   90 </roll-deg>
-      <pitch-deg>   0 </pitch-deg>
-      <heading-deg> 0 </heading-deg>
     </offsets>
   </model>
 
@@ -571,6 +611,77 @@
     </axis>
   </animation>
 
+  <!-- animation des portes -->
+  <animation>
+    <name>LaPorteGauche</name>
+    <object-name>porteG</object-name>
+    <object-name>vitresporteG</object-name>
+  </animation>
+  
+  <animation>
+    <type>pick</type>
+    <object-name>LaPorteGauche</object-name>
+    <visible>true</visible>
+    <action>
+      <button>0</button>
+      <repeatable>false</repeatable>
+      <binding>
+        <command>nasal</command>
+        <script>doors.crew.toggle();</script>
+      </binding>
+    </action>
+  </animation>
+  
+  <animation>
+    <type>rotate</type>
+    <object-name>LaPorteGauche</object-name>
+    <property>sim/model/door-positions/crew/position-norm</property>
+    <factor> -100 </factor>
+    <axis>
+      <x1-m> -9.06146 </x1-m>
+      <y1-m> -1.08691 </y1-m> 
+      <z1-m> -1.57367 </z1-m>
+      <x2-m> -8.87113 </x2-m>
+      <y2-m> -0.92390 </y2-m>
+      <z2-m> -0.79338 </z2-m>
+    </axis>
+  </animation>
+  
+  <animation>
+    <name>LaPorteDroite</name>
+    <object-name>porteD</object-name>
+    <object-name>vitresporteD</object-name>
+  </animation>
+  
+  <animation>
+    <type>pick</type>
+    <object-name>LaPorteDroite</object-name>
+    <visible>true</visible>
+    <action>
+      <button>0</button>
+      <repeatable>false</repeatable>
+      <binding>
+        <command>nasal</command>
+        <script>doors.passenger.toggle();</script>
+      </binding>
+    </action>
+  </animation>
+  
+  <animation>
+    <type>rotate</type>
+    <object-name>LaPorteDroite</object-name>
+    <property>sim/model/door-positions/passenger/position-norm</property>
+    <factor> 100 </factor>
+    <axis>
+      <x1-m> -9.06146 </x1-m>
+      <y1-m>  1.08731 </y1-m> 
+      <z1-m> -1.57367 </z1-m>
+      <x2-m> -8.87113 </x2-m>
+      <y2-m>  0.92431 </y2-m>
+      <z2-m> -0.79338 </z2-m>
+    </axis>
+  </animation>
+  
   <!-- Effets lumineux -->
   <model>
     <path>Aircraft/AirCrane/Models/light/beacon.xml</path>
@@ -618,4 +729,3 @@
   </model>
 
 </PropertyList>
-

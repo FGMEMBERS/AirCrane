@@ -9,7 +9,7 @@ OBJECT poly
 name "assemble"
 data 8
 assemble
-texture "colors.png"
+texture "mainrotor.png"
 texrep 1 1
 crease 30.000000
 numvert 3034
@@ -24509,7 +24509,7 @@ OBJECT poly
 name "axeV"
 data 4
 axeV
-texture "colors.png"
+texture "mainrotor.png"
 texrep 1 1
 crease 30.000000
 numvert 2316
@@ -42579,7 +42579,7 @@ OBJECT poly
 name "pistons"
 data 7
 pistons
-texture "colors.png"
+texture "mainrotor.png"
 texrep 1 1
 crease 30.000000
 numvert 3822
@@ -72811,7 +72811,7 @@ OBJECT poly
 name "plateau"
 data 7
 plateau
-texture "colors.png"
+texture "mainrotor.png"
 texrep 1 1
 crease 30.000000
 numvert 878
@@ -80551,7 +80551,7 @@ OBJECT poly
 name "rotor"
 data 5
 rotor
-texture "colors.png"
+texture "mainrotor.png"
 texrep 1 1
 crease 30.000000
 numvert 258

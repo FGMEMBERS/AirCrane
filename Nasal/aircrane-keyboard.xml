@@ -1,6 +1,24 @@
-<?xml version="1.0" encoding="UTF-8"?>
+<?xml version="1.0" encoding="ISO-8859-1"?>
 
 <PropertyList>
+
+  <key n="100">
+    <name>d</name>
+    <desc>Crew door</desc>
+    <binding>
+      <command>nasal</command>
+      <script>doors.crew.toggle();</script>
+    </binding>
+  </key>
+
+  <key n="68">
+    <name>D</name>
+    <desc>Passenger door</desc>
+    <binding>
+      <command>nasal</command>
+      <script>doors.passenger.toggle();</script>
+    </binding>
+  </key>
 
   <key n="4">
     <name>Ctrl-d</name>
@@ -10,7 +28,6 @@
       <script>fcs.sas.toggleEnable();</script>
     </binding>
   </key>
-
   
   <key n="5">
     <name>Ctrl-e</name>
@@ -20,7 +37,6 @@
       <script>fcs.cas.toggleEnable();</script>
     </binding>
   </key>
-
   
   <key n="6">
     <name>Ctrl-f</name>
@@ -28,24 +44,6 @@
     <binding>
       <command>nasal</command>
       <script>fcs.afcs.toggleAutoHover();</script>
-    </binding>
-  </key>
-
-  <key n="68">
-    <name>D</name>
-    <desc>Passenger door</desc>
-    <binding>
-      <command>nasal</command>
-      <script>doors.doorsystem.passengerexport();</script>
-    </binding>
-  </key>
-
-  <key n="100">
-    <name>d</name>
-    <desc>Crew door</desc>
-    <binding>
-      <command>nasal</command>
-      <script>doors.doorsystem.crewexport();</script>
     </binding>
   </key>
 
@@ -95,4 +93,3 @@
   </key>
 
 </PropertyList>
-
