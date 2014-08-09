@@ -13,9 +13,9 @@
       var float_0 = self.getNode("sim/multiplay/generic/float[0]", 1);
       var float_1 = self.getNode("sim/multiplay/generic/float[1]", 1);
       
-      var crew_door = self.getNode("instrumentation/doors/crew/position-norm", 1);
-      var passenger_door = self.getNode("instrumentation/doors/passenger/position-norm", 1);
-    
+      var crew_door = self.getNode("sim/model/door-positions/crew/position-norm", 1);
+      var passenger_door = self.getNode("sim/model/door-positions/passenger/position-norm", 1);
+      
       crew_door.alias(float_0);
       passenger_door.alias(float_1);
     </load>
@@ -144,11 +144,6 @@
     <property-base>sim/model/livery</property-base>
     <texture-prop>texture</texture-prop>
     <texture>texture.png</texture>
-    <specular>
-      <red-prop>specular/red</red-prop>
-      <green-prop>specular/green</green-prop>
-      <blue-prop>specular/blue</blue-prop>
-    </specular>
     <emission>
       <red-prop>emission/red</red-prop>
       <green-prop>emission/green</green-prop>
@@ -158,9 +153,6 @@
 
   <effect>
     <inherits-from>Aircraft/Generic/Effects/Fuselagereflect</inherits-from>
-    <condition>
-      <not><property>sim/rendering/rembrandt/enabled</property></not>
-    </condition>
     <object-name>fuselage</object-name>
     <object-name>porteG</object-name>
     <object-name>porteD</object-name>
@@ -193,80 +185,15 @@
     <object-name>supportaileron</object-name>
     <object-name>lampetail</object-name>
   </effect>
-
-  <effect>
-    <inherits-from>Effects/model-combined-deferred</inherits-from>
-    <condition>
-      <property>sim/rendering/rembrandt/enabled</property>
-    </condition>
-    <object-name>fuselage</object-name>
-    <object-name>porteG</object-name>
-    <object-name>porteD</object-name>
-    <object-name>antennes</object-name>
-    <object-name>rebords</object-name>
-    <object-name>supportlight</object-name>
-    <object-name>axeAH</object-name>
-    <object-name>axeAB</object-name>
-    <object-name>axeGH</object-name>
-    <object-name>axeGB</object-name>
-    <object-name>axeDH</object-name>
-    <object-name>axeDB</object-name>
-    <object-name>articuleAH</object-name>
-    <object-name>articuleAB</object-name>
-    <object-name>articuleGH</object-name>
-    <object-name>articuleGB</object-name>
-    <object-name>articuleDH</object-name>
-    <object-name>articuleDB</object-name>
-    <object-name>lampenez</object-name>
-    <object-name>pate1</object-name>
-    <object-name>pate2</object-name>
-    <object-name>pate3</object-name>
-    <object-name>pate4</object-name>
-    <object-name>caches</object-name>
-    <object-name>caches2</object-name>
-    <object-name>caches4</object-name>
-    <object-name>aileron</object-name>
-    <object-name>blocmoteur1</object-name>
-    <object-name>structure</object-name>
-    <object-name>supportaileron</object-name>
-    <object-name>lampetail</object-name>
-  </effect>
-  
-  <animation>
-    <type>shader</type>
-    <shader>chrome</shader>
-    <texture>Aircraft/Generic/Effects/glass_shader.png</texture>
-    <object-name>vitres</object-name>
-    <object-name>vitresporteG</object-name>
-    <object-name>vitresporteD</object-name>
-  </animation>
-
-  <animation>
-    <type>noshadow</type>
-    <object-name>vitres</object-name>
-    <object-name>vitresporteG</object-name>
-    <object-name>vitresporteD</object-name>
-    <object-name>lampeG</object-name>
-    <object-name>lampeD</object-name>
-    <object-name>lampetailtrs</object-name>
-    <object-name>lampeneztrs</object-name>
-  </animation>
 
   <!-- working for Rembrandt -->
   <effect>
-    <inherits-from>Effects/model-transparent</inherits-from>
-    <condition>
-      <property>sim/rendering/rembrandt/enabled</property>
-    </condition>
+    <inherits-from>Aircraft/AirCrane/Models/Effects/Glass/glass</inherits-from>
     <object-name>vitres</object-name>
     <object-name>vitresporteG</object-name>
     <object-name>vitresporteD</object-name>
-    <object-name>lampeG</object-name>
-    <object-name>lampeD</object-name>
-    <object-name>lampetailtrs</object-name>
-    <object-name>lampeneztrs</object-name>
   </effect>
-  
+
   <!-- Une ombre pour OSG -->
   <model>
     <path>Aircraft/AirCrane/Models/shadow.xml</path>
@@ -279,15 +206,8 @@
 
   <!-- Intérieur -->
   <model>
-    <name>Interieur</name>
     <path>Aircraft/AirCrane/Models/Interior/interior.xml</path>
   </model>
-  
-  <!-- For Rembrandt -->
-  <animation>
-    <type>noshadow</type>
-    <object-name>Interieur</object-name>
-  </animation>
   
   <!-- Immatriculatoin -->
   <model>

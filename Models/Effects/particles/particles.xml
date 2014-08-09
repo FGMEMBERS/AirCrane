@@ -10,9 +10,6 @@
     <lighting>false</lighting>
 
     <offsets>
-      <x-m> 0 </x-m>
-      <y-m> 0 </y-m>
-      <z-m> 0 </z-m>
       <roll-deg> 90 </roll-deg>
     </offsets>
 
@@ -153,4 +150,3 @@
   </animation>
 
 </PropertyList>
-

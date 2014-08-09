@@ -9,15 +9,6 @@
     <emissive>false</emissive>
     <lighting>false</lighting>
 
-    <offsets>
-      <x-m> 0 </x-m>
-      <y-m> 0 </y-m>
-      <z-m> 0 </z-m>
-      <roll-deg>    0.0 </roll-deg>
-      <pitch-deg>   0.0 </pitch-deg>
-      <heading-deg> 0.0 </heading-deg>
-    </offsets>
-
     <attach>world</attach>
 
     <align>billboard</align> <!-- fixed -->
@@ -39,13 +30,13 @@
       <and>
         <not>
           <equals>
-            <property>/instrumentation/doors/crew/position-norm</property>
+            <property>sim/model/door-positions/crew/position-norm</property>
             <value>0</value>
           </equals>
         </not>
         <not>
           <equals>
-            <property>/instrumentation/doors/crew/position-norm</property>
+            <property>sim/model/door-positions/crew/position-norm</property>
             <value>1</value>
           </equals>
         </not>
@@ -122,4 +113,3 @@
   </particlesystem>
 
 </PropertyList>
-

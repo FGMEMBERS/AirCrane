@@ -10,9 +10,6 @@
     <lighting>false</lighting>
 
     <offsets>
-      <x-m> 0 </x-m>
-      <y-m> 0 </y-m>
-      <z-m> 0 </z-m>
       <roll-deg> 90 </roll-deg>
     </offsets>
 
@@ -22,8 +19,8 @@
 
     <placer>
       <type>sector</type>
-      <radius-min-m> 0.0 </radius-min-m>
-      <radius-max-m> 0.0 </radius-max-m>
+      <radius-min-m> 0 </radius-min-m>
+      <radius-max-m> 0 </radius-max-m>
       <phi-min-deg> 0 </phi-min-deg>
       <phi-max-deg> 0 </phi-max-deg>
     </placer>
@@ -157,4 +154,3 @@
   </animation>
 
 </PropertyList>
-
