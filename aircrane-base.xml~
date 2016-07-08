@@ -2,8 +2,7 @@
 
 <PropertyList>
 
-<<<<<<< HEAD
-	<sim include="System/views.xml">
+<sim include="System/views.xml">
 
 	<description>AirCrane (Yasim)</description>
 	<author>BARANGER Emmanuel (3D), Heiko Schulz (FDM)</author>
@@ -61,7 +60,7 @@
 			<string n="9" type="string" />
 		</generic>
 	</multiplay>
-=======
+
   <sim include="System/views.xml">
 
     <description>AirCrane (Yasim)</description>
