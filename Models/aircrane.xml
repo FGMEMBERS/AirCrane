@@ -151,6 +151,22 @@
     </emission>
   </animation>
 
+  <!-- Livery Effect Container-->
+  <animation>
+    <type>material</type>
+    <object-name>Container</object-name>
+    <object-name>Hoze</object-name>
+
+    <property-base>sim/model/livery</property-base>
+    <texture-prop>texture</texture-prop>
+    <texture>texture.png</texture>
+    <emission>
+      <red-prop>emission/red</red-prop>
+      <green-prop>emission/green</green-prop>
+      <blue-prop>emission/blue</blue-prop>
+    </emission>
+  </animation>
+
   <effect>
     <inherits-from>Aircraft/Generic/Effects/Fuselagereflect</inherits-from>
     <object-name>fuselage</object-name>
