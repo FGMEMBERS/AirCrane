@@ -25,13 +25,6 @@
 				</binding>
 			</item>
 			<item>
-				<label>Toggle Container</label>
-				<binding>
-					<command>property-toggle</command>
-					<property>sim/container/visible</property>
-				</binding>
-			</item>
-			<item>
 				<label>Immatriculation</label>
 				<binding>
 					<command>nasal</command>

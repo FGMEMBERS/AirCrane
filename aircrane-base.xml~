@@ -44,7 +44,7 @@
 			<int type="bool" n="6" alias="/smoke/active"> 0 </int>                     <!--  6 start smoke -->
 			<int type="int" n="7" alias="/smoke/particlepersec"> 50 </int>             <!--  7 particlepersec -->
 
-			<int type="bool" n="8" alias="/sim/container/visible"> 1 </int>		   <!-- container visible or not -->
+			<int type="bool" n="8" alias="/sim/container/visible"> 1 </int>
 
 			<int type="int" n="10" alias="/controls/armament/trigger">0</int>          <!-- 10 reserved for bombable mode -->
 
