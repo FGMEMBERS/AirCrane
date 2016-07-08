@@ -92,10 +92,10 @@
      inkscape:pageopacity="0.0"
      inkscape:pageshadow="2"
      inkscape:zoom="0.24748737"
-     inkscape:cx="958.75891"
-     inkscape:cy="1023.6399"
+     inkscape:cx="954.22105"
+     inkscape:cy="967.22878"
      inkscape:document-units="px"
-     inkscape:current-layer="layer1"
+     inkscape:current-layer="layer7"
      showgrid="false"
      inkscape:window-width="1024"
      inkscape:window-height="729"
@@ -110,7 +110,7 @@
         <dc:format>image/svg+xml</dc:format>
         <dc:type
            rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
-        <dc:title />
+        <dc:title></dc:title>
       </cc:Work>
     </rdf:RDF>
   </metadata>
@@ -4577,7 +4577,7 @@ ds8zebGcmJYHpl62te9euWuj6l4lcJaALwL44gFtaoBF259PAfx+AfyDp8BH/87LlzUA/O0XL9J/
        width="2048" />
     <g
        id="g4333-28"
-       transform="translate(121.08432,206.72299)"
+       transform="matrix(1,0,0,0.87175286,121.08432,411.82622)"
        style="fill:#447821">
       <g
          style="fill:#447821;fill-opacity:1"
@@ -4687,7 +4687,8 @@ ds8zebGcmJYHpl62te9euWuj6l4lcJaALwL44gFtaoBF259PAfx+AfyDp8BH/87LlzUA/O0XL9J/
     </g>
     <g
        id="g4333"
-       style="fill:#447821">
+       style="fill:#447821"
+       transform="matrix(0.99477075,0,0,0.91795955,3.1248784,129.10752)">
       <g
          style="fill:#447821;fill-opacity:1"
          id="g3916"
@@ -4814,7 +4815,7 @@ ds8zebGcmJYHpl62te9euWuj6l4lcJaALwL44gFtaoBF259PAfx+AfyDp8BH/87LlzUA/O0XL9J/
      id="layer7"
      inkscape:label="UVMap"
      sodipodi:insensitive="true"
-     style="display:none">
+     style="display:inline">
     <image
        y="0"
        x="0"
