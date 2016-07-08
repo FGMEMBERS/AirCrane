@@ -12,7 +12,7 @@
 	<fuel-fraction>0.8</fuel-fraction>
 
 	<startup>
-		<splash-texture>Aircraft/AirCrane/aircrane-splash.png</splash-texture>
+		<splash-texture>Aircraft/AirCrane/Splash/aircrane-Splash-USATour.png</splash-texture>
 	</startup> 
 
 	<sound>
@@ -69,10 +69,6 @@
     <license>GPL v2</license>
 
     <fuel-fraction>0.8</fuel-fraction>
-
-    <startup>
-      <splash-texture>Aircraft/AirCrane/Splash/aircrane-Splash-USATour.png</splash-texture>
-    </startup> 
 
     <sound>
       <path>Aircraft/AirCrane/Sounds/aircrane-sound.xml</path>
