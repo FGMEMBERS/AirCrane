@@ -6,8 +6,8 @@
     
     <model>
       <livery>
-        <name type="string">Default</name>
-        <texture>texture.png</texture>
+        <name type="string">749</name>
+        <texture>Liveries/texture-749.png</texture>
       </livery>
     </model>
     

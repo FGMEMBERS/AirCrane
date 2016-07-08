@@ -6,8 +6,8 @@
     
     <model>
       <livery>
-        <name type="string">Default</name>
-        <texture>texture.png</texture>
+        <name type="string">SDGE</name>
+        <texture>Liveries/SDGE.png</texture>
       </livery>
     </model>
     
