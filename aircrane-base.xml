@@ -31,6 +31,11 @@
 		</aircrane>
 	</model>
 
+	<container>
+		<visible type="bool">true</visible>
+		<cable type="float">0.00</cable>
+	</container>
+
 	<multiplay>
 		<chat_display>1</chat_display>
 		<generic> 
@@ -45,6 +50,7 @@
 			<int type="int" n="7" alias="/smoke/particlepersec"> 50 </int>             <!--  7 particlepersec -->
 
 			<int type="bool" n="8" alias="/sim/container/visible"> 1 </int>		   <!-- container visible or not -->
+			<float type="float" n="5" alias="/sim/container/cable"> 0.00 </float>      <!-- how far is the container cable out -->
 
 			<int type="int" n="10" alias="/controls/armament/trigger">0</int>          <!-- 10 reserved for bombable mode -->
 
@@ -141,6 +147,7 @@
       <file>Aircraft/AirCrane/Nasal/aircrane.nas</file>
       <file>Aircraft/AirCrane/Nasal/liveries.nas</file>
       <file>Aircraft/AirCrane/Nasal/bladevisible.nas</file>
+      <file>Aircraft/AirCrane/Nasal/container.nas</file>
     </aircrane>
     <fcs>
       <file>Aircraft/AirCrane/Nasal/fcs-management.nas</file>

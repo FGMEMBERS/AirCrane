@@ -13,14 +13,17 @@
 			var float_0 = self.getNode("sim/multiplay/generic/float[0]", 1);
 			var float_1 = self.getNode("sim/multiplay/generic/float[1]", 1);
 			var bool_8 = self.getNode("sim/multiplay/generic/int[8]", 1);
+			var float_5 = self.getNode("sim/multiplay/generic/float[5], 1);
       
 			var crew_door = self.getNode("sim/model/door-positions/crew/position-norm", 1);
 			var passenger_door = self.getNode("sim/model/door-positions/passenger/position-norm", 1);
-			var container_visible = self.getNode("sim/container/visible, 1); 
+			var container_visible = self.getNode("sim/container/visible", 1); 
+			var container_cable = self.getNode("sim/container/cable", 1);
       
 			crew_door.alias(float_0);
 			passenger_door.alias(float_1);
 			container_visible.alias(bool_8);
+			container_cable.alias(float_5);
 			
 		</load>
 
@@ -29,6 +32,7 @@
 			crew_door.unalias();
 			passenger_door.unalias();
 			container_visible.unalias();
+			container_cable.unalias();
 		</unload>
 	</nasal>
 
@@ -737,5 +741,22 @@
 		</condition>
 	</animation>
 
+	<animation>
+		<type>translate</type>
+		<object-name>container_complete</object-name>
+		<condition>
+			<equals>
+				<property>sim/container/visible</property>
+				<value>true</value>
+			</equals>
+		</condition>
+		<property>sim/container/cable</property>
+		<factor>-1</factor>
+		<axis>
+			<x>0</x>
+			<y>0</y>
+			<z>1</z>
+		</axis>
+	</animation>
 
 </PropertyList>

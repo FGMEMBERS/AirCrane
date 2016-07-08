@@ -92,4 +92,26 @@
     </binding>
   </key>
 
+	<key n="49">
+		<name>1</name>
+		<desc>Lower container</desc>
+		<binding>
+			<command>nasal</command>
+			<script>
+				aircrane.container_down();
+			</script>
+		</binding>
+	</key>
+
+	<key n="50">
+		<name>2</name>
+		<desc>Raise container</desc>
+		<binding>
+			<command>nasal</command>
+			<script>
+				aircrane.container_up();
+			</script>
+		</binding>
+	</key>
+
 </PropertyList>

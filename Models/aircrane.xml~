@@ -13,14 +13,17 @@
 			var float_0 = self.getNode("sim/multiplay/generic/float[0]", 1);
 			var float_1 = self.getNode("sim/multiplay/generic/float[1]", 1);
 			var bool_8 = self.getNode("sim/multiplay/generic/int[8]", 1);
+			var float_5 = self.getNode("sim/multiplay/generic/float[5], 1);
       
 			var crew_door = self.getNode("sim/model/door-positions/crew/position-norm", 1);
 			var passenger_door = self.getNode("sim/model/door-positions/passenger/position-norm", 1);
-			var container_visible = self.getNode("sim/container/visible, 1); 
+			var container_visible = self.getNode("sim/container/visible", 1); 
+			var container_cable = self.getNode("sim/container/cable", 1);
       
 			crew_door.alias(float_0);
 			passenger_door.alias(float_1);
 			container_visible.alias(bool_8);
+			container_cable.alias(float_5);
 			
 		</load>
 
@@ -29,6 +32,7 @@
 			crew_door.unalias();
 			passenger_door.unalias();
 			container_visible.unalias();
+			container_cable.unalias();
 		</unload>
 	</nasal>
 
@@ -149,13 +153,77 @@
     <property-base>sim/model/livery</property-base>
     <texture-prop>texture</texture-prop>
     <texture>texture.png</texture>
-    <emission>
-      <red-prop>emission/red</red-prop>
-      <green-prop>emission/green</green-prop>
-      <blue-prop>emission/blue</blue-prop>
-    </emission>
   </animation>
 
+  <!-- Livery Effect Container-->
+  <animation>
+    <type>material</type>
+    <object-name>Container</object-name>
+    <object-name>Hoze</object-name>
+
+    <property-base>sim/model/livery</property-base>
+    <texture-prop>texture</texture-prop>
+    <texture>texture.png</texture>
+  </animation>
+
+  <!-- Shaders -->
+  <effect>
+   <inherits-from>Effects/AirCrane-reflect</inherits-from>
+    <object-name>fuselage</object-name>
+    <object-name>porteG</object-name>
+    <object-name>porteD</object-name>
+    <object-name>antennes</object-name>
+    <object-name>rebords</object-name>
+    <object-name>supportlight</object-name>
+    <object-name>axeAH</object-name>
+    <object-name>axeAB</object-name>
+    <object-name>axeGH</object-name>
+    <object-name>axeGB</object-name>
+    <object-name>axeDH</object-name>
+    <object-name>axeDB</object-name>
+    <object-name>articuleAH</object-name>
+    <object-name>articuleAB</object-name>
+    <object-name>articuleGH</object-name>
+    <object-name>articuleGB</object-name>
+    <object-name>articuleDH</object-name>
+    <object-name>articuleDB</object-name>
+    <object-name>lampenez</object-name>
+    <object-name>pate1</object-name>
+    <object-name>pate2</object-name>
+    <object-name>pate3</object-name>
+    <object-name>pate4</object-name>
+    <object-name>caches</object-name>
+    <object-name>caches2</object-name>
+    <object-name>caches4</object-name>
+    <object-name>aileron</object-name>
+    <object-name>blocmoteur1</object-name>
+    <object-name>structure</object-name>
+    <object-name>supportaileron</object-name>
+    <object-name>lampetail</object-name>
+
+    <object-name>axetail</object-name>
+    <object-name>supports</object-name>
+    <object-name>tampons</object-name>
+    <object-name>arbres</object-name>
+    <object-name>arbre2</object-name>
+    <object-name>axerotor</object-name>
+    <object-name>cotesaxerotor</object-name>
+    <object-name>moteurs</object-name>
+    <object-name>intmoteurs</object-name>
+    <object-name>caches3</object-name>
+    <object-name>cables1</object-name>
+    <object-name>cables2</object-name>
+    <object-name>cables3</object-name>
+    <object-name>echelles</object-name>
+   </effect>
+
+   <!-- Shaders Container -->
+   <effect>
+     <inherits-from>Effects/AirCrane-reflect</inherits-from>
+     <object-name>Container</object-name>
+    </effect>
+
+<!--
   <effect>
     <inherits-from>Aircraft/Generic/Effects/Fuselagereflect</inherits-from>
     <object-name>fuselage</object-name>
@@ -190,6 +258,7 @@
     <object-name>supportaileron</object-name>
     <object-name>lampetail</object-name>
   </effect>
+-->
 
   <!-- working for Rembrandt -->
   <effect>
@@ -672,5 +741,22 @@
 		</condition>
 	</animation>
 
+	<animation>
+		<type>translate</type>
+		<object-name>container_complete</object-name>
+		<condition>
+			<equals>
+				<property>sim/container/visible</property>
+				<value>true</value>
+			</equals>
+		</condition>
+		<property>sim/container/cable</property>
+		<factor>-1</factor>
+		<axis>
+			<x>0</x>
+			<y>0</y>
+			<z>1</z>
+		</axis>
+	</animation>
 
 </PropertyList>
