@@ -2,7 +2,7 @@
 
 <PropertyList>
 
-	<path>Aircraft/AirCrane/Models/AirCrane2.ac</path>
+	<path>AirCrane2.ac</path>
 
 	<nasal>
 		<load>
