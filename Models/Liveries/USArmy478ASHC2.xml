@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<PropertyList>
+  <sim>
+    <model>
+      <livery>
+        <name type="string">US Army 478th ASHC #2</name>
+        <texture>Liveries/USArmy478ASHC2.png</texture>
+
+      </livery>
+    </model>
+  </sim>
+</PropertyList>
