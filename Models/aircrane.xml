@@ -7,12 +7,14 @@
 	<nasal>
 		<load>
 			var livery_update = aircraft.livery_update.new("Aircraft/AirCrane/Models/Liveries", 10);
+
+			var self = cmdarg();
+
 			
 		</load>
 
 		<unload>
 			livery_update.stop();
-
 		</unload>
 	</nasal>
 
