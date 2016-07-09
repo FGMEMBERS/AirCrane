@@ -766,9 +766,9 @@
 		<lighting>true</lighting>
   
 		<offsets>
-			<x-m>1</x-m>
-			<y-m>1</y-m>
-			<z-m>1</z-m>
+			<x-m>0</x-m>
+			<y-m>0</y-m>
+			<z-m>-4</z-m>
 			<pitch-deg>90</pitch-deg>
 		</offsets>
 
@@ -848,7 +848,7 @@
 					</alpha>
 				</color>
 				<size>
-					<value>0.1</value>
+					<value>4</value>
 				</size>
 			</end>
   
@@ -856,8 +856,8 @@
 				<value>10</value>
 			</life-sec>
 
-			<mass-kg>0.01</mass-kg>
-			<radius-m>0.5</radius-m>
+			<mass-kg>0.25</mass-kg>
+			<radius-m>0.1</radius-m>
 		</particle>
   
 		<program>
