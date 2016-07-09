@@ -14,3 +14,13 @@ var container_up = func {
 	}
 }
 
+var container_release = func {
+	if (getprop("/sim/weight[3]/weight-lb")>0) {
+		setprop("/sim/weight[3]/weight-lb", getprop("/sim/weight[3]/weight-lb")-50.00);
+		setprop("/sim/container/release", 1);
+	} else {
+		setprop("/sim/weight[3]/weight-lb", 0.00);
+		setprop("/sim/container/release", 0);
+	}
+}
+

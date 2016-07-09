@@ -278,7 +278,7 @@
     </offsets>
   </model>
 
-  <!-- Intérieur -->
+  <!-- Interieur -->
   <model>
     <path>Aircraft/AirCrane/Models/Interior/interior.xml</path>
   </model>
@@ -298,7 +298,7 @@
    </offsets>
   </model> -->
 
-  <!-- Effet de particules du laché d'eau
+  <!-- Effet de particules du laches d'eau
   <model>
     <path>Aircraft/AirCrane/Models/Effects/particles/dropped.xml</path>
     <offsets>
@@ -758,5 +758,114 @@
 			<z>1</z>
 		</axis>
 	</animation>
+
+	<particlesystem>
+		<name>water</name>
+		<!-- <texture>particle.rgb</texture> -->
+		<emissive>false</emissive>
+		<lighting>true</lighting>
+  
+		<offsets>
+			<x-m>1</x-m>
+			<y-m>1</y-m>
+			<z-m>1</z-m>
+			<pitch-deg>90</pitch-deg>
+		</offsets>
+
+		<condition>
+			<equals>
+				<property>sim/container/release</property>
+				<value>true</value>
+			</equals>
+		</condition> -->
+		<attach>world</attach>
+  
+		<placer>
+			<type>point</type>
+		</placer>
+  
+		<shooter>
+			<theta-min-deg>84</theta-min-deg>
+			<theta-max-deg>86</theta-max-deg>
+			<phi-min-deg>-1.5</phi-min-deg>
+			<phi-max-deg>1.5</phi-max-deg>
+			<speed>
+				<value>10</value>
+				<spread>2.5</spread>
+			</speed>
+			<rotation-speed>
+				<x-min-deg-sec>0</x-min-deg-sec>
+				<y-min-deg-sec>0</y-min-deg-sec>
+				<z-min-deg-sec>0</z-min-deg-sec>
+				<x-max-deg-sec>0</x-max-deg-sec>
+				<y-max-deg-sec>0</y-max-deg-sec>
+				<z-max-deg-sec>0</z-max-deg-sec>
+			</rotation-speed>
+		</shooter>
+      
+		<counter>
+			<particles-per-sec>
+				<value>100</value>
+				<spread>0</spread>
+			</particles-per-sec>
+		</counter>
+		<align>billboard</align>
+       
+		<particle>
+			<start>
+				<color>
+					<red>
+						<value>0.9</value>
+					</red>
+					<green>
+						<value>0.9</value>
+					</green>
+					<blue>
+						<value>0.9</value>
+					</blue>
+					<alpha>
+						<value>1.0</value>
+					</alpha>
+				</color>
+				<size>
+					<value>0.001</value>
+				</size>
+			</start>
+  
+			<end>
+				<color>
+					<red>
+						<value>0.1</value>
+					</red>
+					<green>
+						<value>0.1</value>
+					</green>
+					<blue>
+						<value>0.1</value>
+					</blue>
+					<alpha>
+						<value>0.0</value>
+					</alpha>
+				</color>
+				<size>
+					<value>0.1</value>
+				</size>
+			</end>
+  
+			<life-sec>
+				<value>10</value>
+			</life-sec>
+
+			<mass-kg>0.001</mass-kg>
+			<radius-m>0.1</radius-m>
+		</particle>
+  
+		<program>
+			<fluid>air</fluid>
+			<gravity type="bool">true</gravity>
+			<wind type="bool">true</wind>
+		</program>
+
+	</particlesystem>
 
 </PropertyList>

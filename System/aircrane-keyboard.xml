@@ -95,7 +95,7 @@
 	<key n="49">
 		<name>1</name>
 		<desc>Lower container</desc>
-		<binding>
+		<repeatable type="bool">true</repeatable>		<binding>
 			<command>nasal</command>
 			<script>
 				aircrane.container_down();
@@ -106,12 +106,32 @@
 	<key n="50">
 		<name>2</name>
 		<desc>Raise container</desc>
+		<repeatable type="bool">true</repeatable>
 		<binding>
 			<command>nasal</command>
 			<script>
 				aircrane.container_up();
 			</script>
 		</binding>
+	</key>
+
+	<key n="51">
+		<name>3</name>
+		<desc>Release water</desc>
+		<repeatable type="bool">true</repeatable>
+		<binding>
+			<command>nasal</command>
+			<script>
+				aircrane.container_release();
+			</script>
+		</binding>
+		<mod-up>
+			<binding>
+				<command>property-assign</command>
+				<property>sim/container/release</property>
+				<value>false</value>
+			</binding>
+		</mod-up>
 	</key>
 
 </PropertyList>

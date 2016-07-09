@@ -34,6 +34,7 @@
 	<container>
 		<visible type="bool">true</visible>
 		<cable type="float">0.00</cable>
+		<release type="bool">false</release>
 	</container>
 
 	<multiplay>

@@ -34,7 +34,8 @@
 	<container>
 		<visible type="bool">true</visible>
 		<cable type="float">0.00</cable>
-	<container>
+		<release type="bool">true</release>
+	</container>
 
 	<multiplay>
 		<chat_display>1</chat_display>
