@@ -734,10 +734,16 @@
 		<object-name>container_complete</object-name>
 		<type>select</type>
 		<condition>
-			<equals>
-				<property>sim/container/visible</property>
-				<value>true</value>
-			</equals>
+			<or>
+				<equals>
+					<property>sim/container/visible</property>
+					<value>true</value>
+				</equals>
+				<equals>
+					<property>sim/multiplay/generic/int[8]</property>
+					<value>1</value>
+				</equals>
+			</or>
 		</condition>
 	</animation>
 
