@@ -52,6 +52,7 @@
 
 			<int type="bool" n="8" alias="/sim/container/visible"> 1 </int>		   <!-- container visible or not -->
 			<float type="float" n="5" alias="/sim/container/cable"> 0.00 </float>      <!-- how far is the container cable out -->
+			<int type="bool" n="9" alias="/sim/container/release"> 0 </int>		   <!-- water release -->
 
 			<int type="int" n="10" alias="/controls/armament/trigger">0</int>          <!-- 10 reserved for bombable mode -->
 

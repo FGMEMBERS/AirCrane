@@ -767,11 +767,16 @@
 		</offsets>
 
 		<condition>
+			<!-- equals>
+				<property>sim/nultiplay/generic/int[9]</property>
+				<value>1</value>
+			</equals -->
 			<equals>
-				<property>sim/container/release</property>
+				<property>/sim/container/release</property>
 				<value>true</value>
 			</equals>
-		</condition> -->
+		</condition>
+
 		<attach>world</attach>
   
 		<placer>
@@ -783,10 +788,10 @@
 			<theta-max-deg>86</theta-max-deg>
 			<phi-min-deg>-1.5</phi-min-deg>
 			<phi-max-deg>1.5</phi-max-deg>
-			<speed>
-				<value>10</value>
-				<spread>2.5</spread>
-			</speed>
+			<speed-mps>
+				<value>0</value>
+				<spread>0</spread>
+			</speed-mps>
 			<rotation-speed>
 				<x-min-deg-sec>0</x-min-deg-sec>
 				<y-min-deg-sec>0</y-min-deg-sec>
@@ -799,10 +804,11 @@
       
 		<counter>
 			<particles-per-sec>
-				<value>100</value>
+				<value>1</value>
 				<spread>0</spread>
 			</particles-per-sec>
 		</counter>
+
 		<align>billboard</align>
        
 		<particle>
@@ -822,20 +828,20 @@
 					</alpha>
 				</color>
 				<size>
-					<value>0.001</value>
+					<value>0.25</value>
 				</size>
 			</start>
   
 			<end>
 				<color>
 					<red>
-						<value>0.1</value>
+						<value>0.5</value>
 					</red>
 					<green>
-						<value>0.1</value>
+						<value>0.5</value>
 					</green>
 					<blue>
-						<value>0.1</value>
+						<value>0.5</value>
 					</blue>
 					<alpha>
 						<value>0.0</value>
