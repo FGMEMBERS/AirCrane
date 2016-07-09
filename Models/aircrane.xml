@@ -856,8 +856,8 @@
 				<value>10</value>
 			</life-sec>
 
-			<mass-kg>0.001</mass-kg>
-			<radius-m>0.1</radius-m>
+			<mass-kg>0.01</mass-kg>
+			<radius-m>0.5</radius-m>
 		</particle>
   
 		<program>
