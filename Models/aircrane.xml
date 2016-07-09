@@ -730,16 +730,16 @@
 		<object-name>container_complete</object-name>
 		<type>select</type>
 		<condition>
-			<or>
+			<!-- or>
 				<equals>
 					<property>sim/container/visible</property>
 					<value>true</value>
-				</equals>
+				</equals -->
 				<equals>
 					<property>sim/multiplay/generic/int[8]</property>
 					<value>1</value>
 				</equals>
-			</or>
+			<!-- /or -->
 		</condition>
 	</animation>
 
