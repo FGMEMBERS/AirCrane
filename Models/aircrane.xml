@@ -2,7 +2,7 @@
 
 <PropertyList>
 
-	<path>aircrane.ac</path>
+	<path>AirCrane2.ac</path>
 
 	<nasal>
 		<load>
@@ -751,6 +751,15 @@
 			<y>0</y>
 			<z>1</z>
 		</axis>
+	</animation>
+
+	<animation>
+		<type>scale</type>
+		<object-name>ContainerTether</object-name>
+		<property>sim/multiplay/generic/float[5]</property>
+		<x-factor>1</x-factor>
+		<y-factor>1</y-factor>
+		<z-factor>1</z-factor>
 	</animation>
 
 	<particlesystem>
