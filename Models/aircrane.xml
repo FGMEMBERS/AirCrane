@@ -757,9 +757,20 @@
 		<type>scale</type>
 		<object-name>ContainerTether</object-name>
 		<property>sim/multiplay/generic/float[5]</property>
-		<x-factor>1</x-factor>
-		<y-factor>1</y-factor>
-		<z-factor>1</z-factor>
+		<x-min>1</x-min>
+		<x-max>1</x-max>
+		<x-offset>0</x-offset>
+
+		<y-min>1</y-min>
+		<y-max>1</y-max>
+		<y-offset>0</y-offset>
+
+		<z-factor>0.12</z-factor>
+		<center>
+			<x-m>0</x-m>
+			<y-m>1</y-m>
+			<z-m>-1</z-m>
+		</center>	
 	</animation>
 
 	<particlesystem>
