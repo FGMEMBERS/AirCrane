@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+
+<PropertyList>
+
+  <sim include="views.xml">
+
+    <fuel-fraction>0.8</fuel-fraction>
+
+    <startup>
+      <splash-texture>Aircraft/AirCrane/aircrane-splash.png</splash-texture>
+    </startup> 
+
+    <sound>
+      <path>Aircraft/AirCrane/Sounds/aircrane-sound.xml</path>
+    </sound>
+
+    <model>
+      <path archive="y">Aircraft/AirCrane/Models/aircrane.xml</path>
+      <livery>
+        <file type="string">default</file>
+      </livery>
+      <aircrane>
+        <state type="int">0</state>
+        <engine type="float">0</engine>
+        <rotor-step-deg type="float">-1</rotor-step-deg>
+      </aircrane>
+    </model>
+
+    <multiplay>
+      <chat_display>1</chat_display>
+      <generic> 
+        <int type="int" n="0">  0 </int>                                           <!--  0 immat -->
+        <int type="int" n="1">  0 </int>                                           <!--  1 immat -->
+        <int type="int" n="2">  0 </int>                                           <!--  2 immat -->
+        <int type="int" n="3">  0 </int>                                           <!--  3 immat -->
+        <int type="int" n="4">  0 </int>                                           <!--  4 immat -->
+        <int type="int" n="5">  0 </int>                                           <!--  5 immat -->
+        <int type="bool" n="6" alias="/smoke/active"> 0 </int>                     <!--  6 start smoke -->
+        <int type="int" n="7" alias="/smoke/particlepersec"> 50 </int>             <!--  7 particlepersec -->
+        <int type="int" n="10" alias="/controls/armament/trigger">0</int>          <!-- 10 reserved for bombable mode -->
+        <float n="0" alias="/sim/model/door-positions/crew/position-norm"/>
+        <float n="1" alias="/sim/model/door-positions/passenger/position-norm"/>
+        <float n="2" alias="/position/gear-agl-m">  0 </float>                     <!--  2 altitude for MP shadow -->
+        <float n="3" alias="/position/altitude-ft">  0 </float>                    <!--  3 altitude for smoke -->
+        <float n="4" alias="/engines/engine[0]/rpm"/>
+        <!-- For Bombable -->
+        <int type="int" n="10" alias="controls/armament/trigger">0</int>
+        <string n="9" type="string" />
+      </generic>
+    </multiplay>
+
+   <weight n="0">
+      <name>Pilot</name>
+      <weight-lb>180</weight-lb>
+      <max-lb>300</max-lb>
+    </weight>
+
+    <weight n="1">
+      <name>Co-Pilot</name>
+      <weight-lb>180</weight-lb>
+      <max-lb>300</max-lb>
+    </weight>
+
+    <weight n="2">
+      <name>Right Passenger</name>
+      <weight-lb>0</weight-lb>
+      <max-lb>300</max-lb>
+    </weight>
+
+    <weight n="3">
+      <name>Load</name>
+      <weight-lb>0</weight-lb>
+      <max-lb>20000</max-lb>
+    </weight>
+    
+    <help include="help.xml"/>
+
+    <menubar include="../Dialogs/aircrane-menu.xml"/>
+
+  </sim>
+
+  <input include="aircrane-keyboard.xml"/>
+  
+  <controls include="controls.xml"/>
+
+  <instrumentation include="instrumentation.xml"/>
+
+  <rotors include="rotors.xml"/>
+
+  <nasal>
+    <doors>
+      <file>Aircraft/AirCrane/Nasal/doors.nas</file>
+    </doors>
+    <aircrane>
+      <file>Aircraft/AirCrane/Nasal/immat.nas</file>
+      <file>Aircraft/AirCrane/Nasal/light.nas</file>
+      <file>Aircraft/AirCrane/Nasal/aircrane.nas</file>
+      <file>Aircraft/AirCrane/Nasal/liveries.nas</file>
+      <file>Aircraft/AirCrane/Nasal/bladevisible.nas</file>
+    </aircrane>
+    <fcs>
+      <file>Aircraft/AirCrane/Nasal/fcs-management.nas</file>
+      <file>Aircraft/Generic/helicopter-fcs.nas</file>
+    </fcs>
+  </nasal>
+
+</PropertyList>
