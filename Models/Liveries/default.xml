@@ -7,6 +7,7 @@
     <model>
       <livery>
         <name type="string">Default</name>
+        <index type="int">1</index>
         <texture>texture.png</texture>
         <specular>
           <red>   0.3 </red>
@@ -14,6 +15,26 @@
           <blue>  0.3 </blue>
         </specular>
       </livery>
+      <liverytail>
+        <name type="string">Default</name>
+        <index type="int">1</index>
+        <texture>TailRotor/tailrotor.png</texture>
+        <specular>
+          <red>   0.3 </red>
+          <green> 0.3 </green>
+          <blue>  0.3 </blue>
+        </specular>
+      </liverytail>
+      <liverytank>
+        <name type="string">Default</name>
+        <index type="int">1</index>
+        <texture>Water-System/water-system.png</texture>
+        <specular>
+          <red>   0.3 </red>
+          <green> 0.3 </green>
+          <blue>  0.3 </blue>
+        </specular>
+      </liverytank>
     </model>
     
   </sim>

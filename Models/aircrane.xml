@@ -1,32 +1,49 @@
 <?xml version="1.0" encoding="ISO-8859-1"?>
 
 <PropertyList>
-
+  
   <path>aircrane.ac</path>
-
+  
+  <!-- MP sound call -->
+  <sound>
+    <path>Aircraft/AirCrane/Sounds/mp-sound.xml</path>
+  </sound>
+  
   <nasal>
     <load>
-      var livery_update = aircraft.livery_update.new("Aircraft/AirCrane/Models/Liveries", 10);
-
+      <![CDATA[
+        var livery_update = aircraft.livery_update.new("Aircraft/AirCrane/Models/Liveries", 10);
+      ]]>
+      
       var self = cmdarg();
-
+      
       var float_0 = self.getNode("sim/multiplay/generic/float[0]", 1);
       var float_1 = self.getNode("sim/multiplay/generic/float[1]", 1);
+      var float_2 = self.getNode("sim/multiplay/generic/float[5]", 1);
+      var float_3 = self.getNode("sim/multiplay/generic/float[6]", 1);
       
       var crew_door = self.getNode("sim/model/door-positions/crew/position-norm", 1);
       var passenger_door = self.getNode("sim/model/door-positions/passenger/position-norm", 1);
+      var ram_scoop = self.getNode("sim/model/firetank/deployramscoop/position-norm", 1);
+      var flex_hose = self.getNode("sim/model/firetank/deployflexhose/position-norm", 1);
       
       crew_door.alias(float_0);
       passenger_door.alias(float_1);
+      ram_scoop.alias(float_2);
+      flex_hose.alias(float_3);
     </load>
-
+    
     <unload>
-      livery_update.stop();
-      crew_door.unalias();
-      passenger_door.unalias();
+      <![CDATA[
+        livery_update.stop();
+      ]]>
+      crew_door.unalias(float_0);
+      passenger_door.unalias(float_1);
+      ram_scoop.unalias(float_2);
+      flex_hose.unalias(float_3);
     </unload>
   </nasal>
-
+  
   <animation>
     <!-- Objets opaques -->
     <object-name>fuselage</object-name>
@@ -60,7 +77,8 @@
     <object-name>structure</object-name>
     <object-name>supportaileron</object-name>
     <object-name>lampetail</object-name>
-
+    <object-name>tankpins</object-name>
+    
     <object-name>axetail</object-name>
     <object-name>supports</object-name>
     <object-name>tampons</object-name>
@@ -78,7 +96,7 @@
     <object-name>roueD</object-name>
     <object-name>roueA</object-name>
     <object-name>echelles</object-name>
-
+    
     <!-- Transparence -->
     <object-name>vitres</object-name>
     <object-name>vitresporteG</object-name>
@@ -88,7 +106,7 @@
     <object-name>lampetailtrs</object-name>
     <object-name>lampeneztrs</object-name>
   </animation>
-
+  
   <animation>
     <type>material</type>
     <object-name>fuselage</object-name>
@@ -122,7 +140,8 @@
     <object-name>structure</object-name>
     <object-name>supportaileron</object-name>
     <object-name>lampetail</object-name>
-
+    <object-name>tankpins</object-name>
+    
     <object-name>axetail</object-name>
     <object-name>supports</object-name>
     <object-name>tampons</object-name>
@@ -140,17 +159,30 @@
     <object-name>roueD</object-name>
     <object-name>roueA</object-name>
     <object-name>echelles</object-name>
-
-    <property-base>sim/model/livery</property-base>
+    
+    <property-base>sim/model/livery/</property-base>
     <texture-prop>texture</texture-prop>
     <texture>texture.png</texture>
+    <emission>
+      <red-prop>emission/red</red-prop>
+      <green-prop>emission/green</green-prop>
+      <blue-prop>emission/blue</blue-prop>
+    </emission>
+  </animation>
+  
+  <animation>
+    <type>material</type>
+    <object-name>rotortail</object-name>
+    <property-base>sim/model/liverytail/</property-base>
+    <texture-prop>texture</texture-prop>
+    <texture>tailrotor.png</texture>
     <specular>
-      <red-prop>specular/red</red-prop>
-      <green-prop>specular/green</green-prop>
-      <blue-prop>specular/blue</blue-prop>
+      <red-prop>emission/red</red-prop>
+      <green-prop>emission/green</green-prop>
+      <blue-prop>emission/blue</blue-prop>
     </specular>
   </animation>
-
+  
   <effect>
     <inherits-from>Aircraft/Generic/Effects/Fuselagereflect</inherits-from>
     <object-name>fuselage</object-name>
@@ -184,8 +216,9 @@
     <object-name>structure</object-name>
     <object-name>supportaileron</object-name>
     <object-name>lampetail</object-name>
-  </effect>
 
+  </effect>
+  
   <!-- working for Rembrandt -->
   <effect>
     <inherits-from>Aircraft/AirCrane/Models/Effects/Glass/glass</inherits-from>
@@ -193,7 +226,7 @@
     <object-name>vitresporteG</object-name>
     <object-name>vitresporteD</object-name>
   </effect>
-
+  
   <!-- Une ombre pour OSG -->
   <model>
     <path>Aircraft/AirCrane/Models/shadow.xml</path>
@@ -203,7 +236,80 @@
       <z-m> -3.8 </z-m>
     </offsets>
   </model>
-
+  
+  <!-- Water System -->
+  <model>
+    <path>Aircraft/AirCrane/Models/Water-System/water-system.xml</path>
+  </model>
+  
+  <animation>
+    <type>material</type>
+    <object-name>tank</object-name>
+    <object-name>tankleftdoor</object-name>
+    <object-name>tankrightdoor</object-name>
+    <object-name>ramscoophingetop</object-name>
+    <object-name>ramscoophingebottom</object-name>
+    <object-name>ramscoophingepin</object-name>
+    <object-name>ramscoop</object-name>
+    <object-name>ramscoopconnector</object-name>
+    <object-name>ramscoopdock</object-name>
+    <object-name>ramscoopjoint</object-name>
+    <object-name>flexfillhose.001</object-name>
+    <object-name>flexfillhose.002</object-name>
+    <object-name>flexfillhose.003</object-name>
+    <object-name>flexfillhose.004</object-name>
+    <object-name>flexfillhose.005</object-name>
+    <object-name>flexfillhose.006</object-name>
+    <object-name>flexfillhose.007</object-name>
+    <object-name>flexfillhose.008</object-name>
+    <object-name>flexfillhose.009</object-name>
+    <object-name>flexfillhose.010</object-name>
+    <object-name>flexfillhose.011</object-name>
+    <object-name>flexfillhose.012</object-name>
+    <object-name>flexfillhose.013</object-name>
+    <object-name>flexfillhose.014</object-name>
+    <object-name>flexfillhose.015</object-name>
+    <object-name>flexfillhose.016</object-name>
+    <object-name>flexfillhose.017</object-name>
+    <object-name>flexfillhose.018</object-name>
+    <object-name>flexfillhose.019</object-name>
+    <object-name>flexfillhose.020</object-name>
+    <object-name>flexfillhose.021</object-name>
+    <object-name>flexfillhose.022</object-name>
+    <object-name>flexfillhose.023</object-name>
+    <object-name>flexfillhose.024</object-name>
+    <object-name>flexfillhose.025</object-name>
+    <object-name>flexfillhose.026</object-name>
+    <object-name>flexfillhose.027</object-name>
+    <object-name>flexfillhose.028</object-name>
+    <object-name>flexfillhose.029</object-name>
+    <object-name>flexfillhose.030</object-name>
+    <object-name>flexfillhoseconnector</object-name>
+    <object-name>flexfillhoseend</object-name>
+    <object-name>controlboxfor</object-name>
+    <object-name>controlboxaft</object-name>
+    <object-name>watercannonjointfl</object-name>
+    <object-name>watercannonjointfr</object-name>
+    <object-name>watercannonjointal</object-name>
+    <object-name>watercannonjointar</object-name>
+    <object-name>watercannon</object-name>
+    <object-name>watercannonhose</object-name>
+    <object-name>watercannonframe</object-name>
+    <object-name>cablesfss</object-name>
+    <object-name>cachesfss</object-name>
+    <object-name>tankdockpins</object-name>
+    <object-name>flexhoserelease</object-name>
+    
+    <property-base>sim/model/liverytank/</property-base>
+    <texture-prop>texture</texture-prop>
+    <texture>Water-System/water-system.png</texture>
+    <emission>
+      <red-prop>emission/red</red-prop>
+      <green-prop>emission/green</green-prop>
+      <blue-prop>emission/blue</blue-prop>
+    </emission>
+  </animation>
+  
   <!-- Intérieur -->
   <model>
     <path>Aircraft/AirCrane/Models/Interior/interior.xml</path>
@@ -214,26 +320,26 @@
     <path>Aircraft/AirCrane/Models/Immat/immat.xml</path>
   </model>
   
-  <!-- Effet de particules du rotor au sol
+  <!-- Effet de particules du rotor au sol -->
+  <model>	
+    <path>Aircraft/AirCrane/Models/Effects/particles/rotorwashidle.xml</path>
+    <offsets>
+      <x-m> -2.900 </x-m>
+      <y-m>  0.000 </y-m>
+      <z-m>  1.100 </z-m>
+      <roll-deg> 90 </roll-deg>
+    </offsets>
+  </model>
+
   <model>
-    <path>Aircraft/AirCrane/Models/Effects/particles/particles.xml</path>
+    <path>Aircraft/AirCrane/Models/Effects/particles/rotorwashpower.xml</path>
     <offsets>
       <x-m> -2.606 </x-m>
       <y-m>  0.000 </y-m>
       <z-m> -3.500 </z-m>
    </offsets>
-  </model> -->
-
-  <!-- Effet de particules du laché d'eau
-  <model>
-    <path>Aircraft/AirCrane/Models/Effects/particles/dropped.xml</path>
-    <offsets>
-      <x-m> -2.606 </x-m>
-      <y-m>  0.000 </y-m>
-      <z-m> -3.500 </z-m>
-   </offsets>
-  </model> -->
-
+  </model>
+  
   <!-- Rotor principale -->
   <model>
     <path>Aircraft/AirCrane/Models/MainRotor/mainrotor.xml</path>
@@ -241,10 +347,10 @@
       <x-m> -2.606 </x-m>
       <y-m>  0.000 </y-m>
       <z-m>  1.383 </z-m>
-      <pitch-deg>  -3 </pitch-deg>
+      <pitch-deg> -3 </pitch-deg>
     </offsets>
   </model>
-
+  
   <!-- Rotor de queue -->
   <model>
     <path>Aircraft/AirCrane/Models/TailRotor/tailrotor.xml</path>
@@ -252,10 +358,10 @@
       <x-m> 11.118 </x-m>
       <y-m> -1.023 </y-m>
       <z-m>  1.319 </z-m>
-      <roll-deg>   90 </roll-deg>
+      <roll-deg> 90 </roll-deg>
     </offsets>
   </model>
-
+ 
   <!-- Rotation de la roue avant en fonction de la gouverne de direction -->
   <animation>
     <name>EnsembleRoueAvant</name>
@@ -265,7 +371,7 @@
     <object-name>articuleAH</object-name>
     <object-name>articuleAB</object-name>
   </animation>
-
+  
   <animation>
     <type>rotate</type>
     <object-name>EnsembleRoueAvant</object-name>
@@ -282,7 +388,7 @@
       <z> -1 </z>
     </axis>
   </animation>
-
+  
   <!-- Compression -->
   <animation>
     <name>RoueAvant</name>
@@ -290,7 +396,7 @@
     <object-name>axeAB</object-name>
     <object-name>articuleAB</object-name>
   </animation>
-
+  
   <animation>
     <name>RoueGauche</name>
     <object-name>roueG</object-name>
@@ -304,7 +410,7 @@
     <object-name>axeDB</object-name>
     <object-name>articuleDB</object-name>
   </animation>
-
+  
   <animation>
     <type>translate</type>
     <object-name>RoueAvant</object-name>
@@ -320,7 +426,7 @@
       <z> 1 </z>
     </axis>
   </animation>
- 
+  
   <animation>
     <type>rotate</type>
     <object-name>articuleAH</object-name>
@@ -341,7 +447,7 @@
       <z> 0 </z>
     </axis>
   </animation>
- 
+  
   <animation>
     <type>rotate</type>
     <object-name>articuleAB</object-name>
@@ -362,7 +468,7 @@
       <z> 0 </z>
     </axis>
   </animation>
-
+  
   <animation>
     <type>translate</type>
     <object-name>RoueGauche</object-name>
@@ -378,7 +484,7 @@
       <z> 1 </z>
     </axis>
   </animation>
- 
+  
   <animation>
     <type>rotate</type>
     <object-name>articuleGH</object-name>
@@ -399,7 +505,7 @@
       <z> 0 </z>
     </axis>
   </animation>
- 
+  
   <animation>
     <type>rotate</type>
     <object-name>articuleGB</object-name>
@@ -420,7 +526,7 @@
       <z> 0 </z>
     </axis>
   </animation>
-
+  
   <animation>
     <type>translate</type>
     <object-name>RoueDroite</object-name>
@@ -436,7 +542,7 @@
       <z> 1 </z>
     </axis>
   </animation>
- 
+  
   <animation>
     <type>rotate</type>
     <object-name>articuleDH</object-name>
@@ -457,7 +563,7 @@
       <z> 0 </z>
     </axis>
   </animation>
- 
+  
   <animation>
     <type>rotate</type>
     <object-name>articuleDB</object-name>
@@ -478,7 +584,7 @@
       <z> 0 </z>
     </axis>
   </animation>
-
+  
   <!-- Rotation des roues lors du roulage -->
   <animation>
     <type>spin</type>
@@ -496,7 +602,7 @@
       <z>  0 </z>
     </axis>
   </animation>
-
+  
   <animation>
     <type>spin</type>
     <object-name>roueG</object-name>
@@ -513,7 +619,7 @@
       <z>  0 </z>
     </axis>
   </animation>
-
+  
   <animation>
     <type>spin</type>
     <object-name>roueD</object-name>
@@ -530,7 +636,7 @@
       <z>  0 </z>
     </axis>
   </animation>
-
+  
   <!-- animation des portes -->
   <animation>
     <name>LaPorteGauche</name>
@@ -611,7 +717,7 @@
       <z-m>  1.495 </z-m>
     </offsets>
   </model>
-
+  
   <model>
     <path>Aircraft/AirCrane/Models/light/beacon.xml</path>
     <offsets>
@@ -620,7 +726,7 @@
       <z-m>  0.104 </z-m>
     </offsets>
   </model>
-
+  
   <model>
     <path>Aircraft/AirCrane/Models/light/beacon.xml</path>
     <offsets>
@@ -629,7 +735,7 @@
       <z-m> -3.181 </z-m>
     </offsets>
   </model>
-
+  
   <model>
     <path>Aircraft/AirCrane/Models/light/RedLight.xml</path>
     <offsets>
@@ -638,7 +744,7 @@
       <z-m> -1.496 </z-m>
     </offsets>
   </model>
-
+  
   <model>
     <path>Aircraft/AirCrane/Models/light/GreenLight.xml</path>
     <offsets>

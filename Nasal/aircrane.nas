@@ -378,6 +378,10 @@ var main_loop = func {
   update_slide();
   update_engine();
   update_rotor_cone_angle();
+
+  rotor_wash_loop();
+  tank_operations();
+
   settimer(main_loop, 0);
 }
 
@@ -416,6 +420,31 @@ setlistener("/sim/signals/fdm-initialized", func {
       crash(!cmdarg().getBoolValue())
     }
   });
+
+  # firebug fire starter ctrl+shift+leftmouseclick
+  setlistener("/sim/signals/click", func {
+	  if (__kbd.shift.getBoolValue()) {
+		  var click_pos = geo.click_position();
+		  if (__kbd.ctrl.getBoolValue()) {
+			  wildfire.ignite(click_pos);
+		  } else {
+			  wildfire.resolve_foam_drop(click_pos, 50, 1);
+		  }
+	  }
+  });
+
+  # Listen for impact of released payload
+  setlistener("/sim/ai/aircraft/impact/retardant", func (n) {
+    #print("Retardant impact!");
+    var node = props.globals.getNode(n.getValue());
+    var pos  = geo.Coord.new().set_latlon
+                   (node.getNode("impact/latitude-deg").getValue(),
+                    node.getNode("impact/longitude-deg").getValue(),
+                    node.getNode("impact/elevation-m").getValue());
+    # The arguments are: position, radius and volume (currently unused).
+    wildfire.resolve_foam_drop(pos, 10, 0);
+    #wildfire.resolve_retardant_drop(pos, 10, 0);
+ });
 
   # the attitude indicator needs pressure
   # settimer(func { setprop("engines/engine/rpm", 3000) }, 8);

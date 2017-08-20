@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="ISO-8859-1"?>
 
-
 <!--S-64E Skycrane v02/17/2009 20:45
   Max Gross weight: 42000 lbs
   Max Hook Weight: 20000 lbs
@@ -36,8 +35,24 @@
   (IAS) 115 kt. up to 38,000 lb. gross weight
 
   FDM based also on information for the ch53d given in NASA-CR-3144; TR-1087-1
--->
 
+  Fire suppression system 2,650 gallon tank
+  Micro processor coverage levels
+  1 - 1 gal/100 sq. ft.
+  2 - 2 gal/100 sq. ft.
+  3 - 3 gal/100 sq. ft.
+  4 - 4 gal/100 sq. ft.
+  5 - 5 gal/100 sq. ft.
+  6 - 6 gal/100 sq. ft.
+  7 - 7 gal/100 sq. ft.
+  8 - 8 gal/100 sq. ft.
+  9 - entire loade in 3 sec (2,500 gal)
+
+  Water cannon = 300 gal per minute (appx. 8 minutes)
+  Coverage range of 200 ft
+  Hover Snorkel tank fill 2,500 gal 45 sec.
+  Sea Snorkel tank fill 40 sec at 35-45 knots
+-->
 <airplane mass="19234" version="YASIM_VERSION_CURRENT">
 
   <approach speed="60"/>
@@ -84,13 +99,13 @@
          cyclic-factor="0.4"
          rotor-correction-factor="0.77"
          balance="0.9985">
-         <control-input axis="/controls/flight/aileron-trim" control="CYCLICAIL" split="true"/>
-         <control-input axis="/controls/flight/fcs/roll" control="CYCLICAIL" src0="-1.0" src1="1.0" dst0="-1.0" dst1="1.0"/>
-         <control-input axis="/controls/engines/engine[0]/throttle" control="CYCLICAIL" src0="0.0" src1="1.0" dst0="-0.1" dst1="0.1"/>
+         <control-input control="CYCLICAIL"  axis="/controls/flight/aileron-trim" split="true"/>
+         <control-input control="CYCLICAIL"  axis="/controls/flight/fcs/roll"            src0="-1.0" src1="1.0" dst0="-1.0" dst1="1.0"/>
+         <control-input control="CYCLICAIL"  axis="/controls/engines/engine[0]/throttle" src0=" 0.0" src1="1.0" dst0="-0.1" dst1="0.1"/>
          
-         <control-input axis="/controls/flight/elevator-trim" control="CYCLICELE" split="true"/>
-         <control-input axis="/controls/flight/fcs/pitch" control="CYCLICELE" src0="-1.0" src1="1.0" dst0="-1.0" dst1="1.0"/>
-         <control-input axis="/controls/engines/engine[0]/throttle" control="COLLECTIVE" src0="0.0" src1="1.0" dst0="1.0" dst1="-1.0"/>
+         <control-input control="CYCLICELE"  axis="/controls/flight/elevator-trim" split="true"/>
+         <control-input control="CYCLICELE"  axis="/controls/flight/fcs/pitch"           src0="-1.0" src1="1.0" dst0="-1.0" dst1=" 1.0"/>
+         <control-input control="COLLECTIVE" axis="/controls/engines/engine[0]/throttle" src0=" 0.0" src1="1.0" dst0=" 1.0" dst1="-1.0"/>
   </rotor>
 
   <rotor name="tail"
@@ -121,11 +136,11 @@
          number-of-parts="4"
          rel-len-blade-start="0.33"
          rotor-correction-factor="0.9">
-         <control-input axis="/controls/flight/fcs/yaw" control="COLLECTIVE" invert="true" src0="-1.0" src1="1.0" dst0="-0.66" dst1="0.66"/>
-         <control-input axis="/controls/flight/fcs/tail-rotor/throttle" control="COLLECTIVE" src0="-1.0" src1="1.0" dst0="-1.0" dst1="1.0"/>
+         <control-input control="COLLECTIVE" axis="/controls/flight/fcs/yaw" invert="true"   src0="-1.0" src1="1.0" dst0="-0.66" dst1="0.66"/>
+         <control-input control="COLLECTIVE" axis="/controls/flight/fcs/tail-rotor/throttle" src0="-1.0" src1="1.0" dst0="-1.00" dst1="1.00"/>
 <!--
-         <control-input axis="/controls/flight/fcs/yaw" control="COLLECTIVE" invert="true" src0="-1.0" src1="1.0" dst0="-0.66" dst1="0.66"/>
-         <control-input axis="/controls/engines/engine[0]/throttle" control="COLLECTIVE" src0="0.0" src1="0.6" dst0=".45" dst1="-.50"/>
+         <control-input control="COLLECTIVE" axis="/controls/flight/fcs/yaw" invert="true" src0="-1.0" src1="1.0" dst0="-0.66" dst1=" 0.66"/>
+         <control-input control="COLLECTIVE" axis="/controls/engines/engine[0]/throttle"   src0=" 0.0" src1="0.6" dst0=" 0.45" dst1="-0.50"/>
 -->
   </rotor>
 
@@ -137,10 +152,10 @@
              engine-accel-limit="4"
              yasimdragfactor="60"
              yasimliftfactor="110">
-             <control-input axis="/controls/engines/engine[0]/magnetos" control="ROTORGEARENGINEON"/>
-             <control-input axis="/controls/rotor/brake" control="ROTORBRAKE" src0="0.0" src1="1.0" dst0="0.0" dst1="1.0"/>
-             <control-input axis="/controls/rotor/reltarget" control="ROTORRELTARGET" src0="0.0" src1="2.0" dst0="0.0" dst1="2.0"/>
-             <control-input axis="/controls/rotor/maxreltorque" control="ROTORENGINEMAXRELTORQUE" src0="0.0" src1="2.0" dst0="0.0" dst1="2.0"/>
+             <control-input control="ROTORGEARENGINEON"       axis="/controls/engines/engine[0]/magnetos"/>
+             <control-input control="ROTORBRAKE"              axis="/controls/rotor/brake"        src0="0.0" src1="1.0" dst0="0.0" dst1="1.0"/>
+             <control-input control="ROTORRELTARGET"          axis="/controls/rotor/reltarget"    src0="0.0" src1="2.0" dst0="0.0" dst1="2.0"/>
+             <control-input control="ROTORENGINEMAXRELTORQUE" axis="/controls/rotor/maxreltorque" src0="0.0" src1="2.0" dst0="0.0" dst1="2.0"/>
   </rotorgear>
 
   <cockpit x="7.589" y="0.694" z="-0.570"/>
@@ -182,7 +197,7 @@
         damp="1.0"
         sfric="1.5"
         dfric="0.8">
-        <control-input axis="/controls/flight/rudder" control="STEER" square="true" src0="-1" dst0="-1.0" src1="1" dst1="1.0"/>
+        <control-input  control="STEER" axis="/controls/flight/rudder" square="true" src0="-1" dst0="-1.0" src1="1" dst1="1.0"/>
         <control-output control="STEER" prop="controls/gear/steering"/>
   </gear>
 
@@ -194,8 +209,8 @@
         sfric="1.5"
         dfric="0.8"
         initial-load="1">
-        <control-input axis="/controls/gear/brake-left" control="BRAKE"/>
-        <control-input axis="/controls/gear/brake-parking" control="BRAKE"/>
+        <control-input control="BRAKE" axis="/controls/gear/brake-left"/>
+        <control-input control="BRAKE" axis="/controls/gear/brake-parking"/>
   </gear>
 
   <!-- right gear -->
@@ -206,8 +221,8 @@
         sfric="1.5"
         dfric="0.8"
         initial-load="1">
-        <control-input axis="/controls/gear/brake-right" control="BRAKE"/>
-        <control-input axis="/controls/gear/brake-parking" control="BRAKE"/>
+        <control-input control="BRAKE" axis="/controls/gear/brake-right"/>
+        <control-input control="BRAKE" axis="/controls/gear/brake-parking"/>
   </gear>
 
   <!-- Tail skid-->
@@ -219,10 +234,10 @@
         dfric="1">
   </gear>
 
-  <tank x="2.6" y="0.7" z="-.31" capacity="1351"/>
-  <tank x="-2.6" y="-0.7" z="-.31" capacity="734"/>
-  <tank x="2.6" y="0.0" z="-0.31" capacity="851"/>
-  <tank x="-2.6" y="0" z="-0.31" capacity="904"/>
+  <tank x=" 2.6" y=" 0.7" z="-0.31" capacity="1351"/>
+  <tank x="-2.6" y="-0.7" z="-0.31" capacity="734"/>
+  <tank x=" 2.6" y=" 0.0" z="-0.31" capacity="851"/>
+  <tank x="-2.6" y=" 0.0" z="-0.31" capacity="904"/>
 
   <!-- <ballast x="-0.7" y="0.0" z="-1.0" mass="450"/> -->
 
@@ -230,10 +245,10 @@
   <ballast x="+5.7" y="+0.0" z=" -4.5" mass="100"/>
 
   <ballast x="+5.7" y="-3.0" z=" -4.5" mass="1300"/>
-  <ballast x="+5.7" y=" 3.0" z="  -4.5" mass="1300"/>
+  <ballast x="+5.7" y=" 3.0" z=" -4.5" mass="1300"/>
 
   <ballast x="+5.7" y="+0.0" z="  2.0" mass="1400"/>
-  <ballast x="+5.7" y="+0.0" z="  -2.0" mass="1400"/>
+  <ballast x="+5.7" y="+0.0" z=" -2.0" mass="1400"/>
   <ballast x="+2.0" y="+0.0" z="  0.0" mass="4000"/>
   <ballast x="-1.0" y="+0.0" z="  0.0" mass="-2000"/>
   <ballast x="+5.0" y="+0.0" z="  0.0" mass="-2000"/>

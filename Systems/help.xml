@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="ISO-8859-1"?>
 
 <PropertyList>
-
+  
   <title>AirCrane - background and help</title>
   <line>______________________________________________</line>
   <key>
@@ -31,6 +31,22 @@
   <key>
     <name>Ctrl f</name>
     <desc>Auto hover</desc>
+  </key>
+  <key>
+    <name>j</name>
+    <desc>Toggle Ram Scoop Deploy</desc>
+  </key>
+  <key>
+    <name>J</name>
+    <desc>Toggle Water Sniffer Deploy</desc>
+  </key>
+  <key>
+    <name>k</name>
+    <desc>Toggle Cannon Valve</desc>
+  </key>
+  <key>
+    <name>K</name>
+    <desc>Toggle Tank Doors</desc>
   </key>
   
 </PropertyList>
