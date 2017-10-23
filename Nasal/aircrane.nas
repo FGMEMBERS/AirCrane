@@ -380,7 +380,7 @@ var main_loop = func {
   update_rotor_cone_angle();
 
   rotor_wash_loop();
-  tank_operations();
+  flexhose_animation();
 
   settimer(main_loop, 0);
 }
@@ -445,6 +445,21 @@ setlistener("/sim/signals/fdm-initialized", func {
     wildfire.resolve_foam_drop(pos, 10, 0);
     #wildfire.resolve_retardant_drop(pos, 10, 0);
  });
+
+  var tankop_timer = maketimer(0.25, func{tank_operations()});
+
+  if (getprop("/sim/model/firetank/enabled"))
+      tankop_timer.start();
+    else
+      setlistener("/sim/model/firetank/enabled", func {
+        if (getprop("/sim/model/firetank/enabled"))
+          tankop_timer.start();
+        else {
+          tankop_timer.stop();
+          setprop("sim/model/firetank/opencannonvalve", 0);
+          setprop("sim/model/firetank/opentankdoors", 0);
+        }
+      });
 
   # the attitude indicator needs pressure
   # settimer(func { setprop("engines/engine/rpm", 3000) }, 8);

@@ -207,6 +207,7 @@
       <file>Aircraft/AirCrane/Nasal/liveries.nas</file>
       <file>Aircraft/AirCrane/Nasal/bladevisible.nas</file>
       <file>Aircraft/AirCrane/Nasal/rotorwash.nas</file>
+      <file>Aircraft/AirCrane/Nasal/hoseanimation.nas</file>
       <file>Aircraft/AirCrane/Nasal/tankoperations.nas</file>
     </aircrane>
     <fcs>
